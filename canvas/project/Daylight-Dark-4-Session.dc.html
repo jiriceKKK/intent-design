@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daylight dark · Active session</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="daylight.css">
+<link rel="stylesheet" href="daylight-dark.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@200..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-daylight dl-dark dl-deep">
+  <div style="position: absolute; left: 20px; right: 20px; top: 60px; display: flex; align-items: center; justify-content: space-between;">
+    <span class="dl-pill-dusk dl-glass-dark">Essay outline</span>
+    <span class="dl-pill-dusk dl-glass-dark">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.8 L 13.2 3.8 V 7.6 C 13.2 10.8, 11 13.2, 8 14.2 C 5 13.2, 2.8 10.8, 2.8 7.6 V 3.8 Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5.8 8 L 7.4 9.6 L 10.4 6.4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      Blocking 3 apps
+    </span>
+  </div>
+
+  <h1 style="position: absolute; left: 28px; right: 28px; top: 124px; text-align: center; font-size: 25px; line-height: 31px; font-weight: 600; letter-spacing: -0.022em; color: #F2F4FA; text-wrap: balance;">Open the document and write three bullet points.</h1>
+
+  <div style="position: absolute; left: 65px; top: 300px; width: 260px; height: 260px; border-radius: 130px; background: rgba(255, 255, 255, 0.035); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);"></div>
+  <svg width="390" height="844" viewBox="0 0 390 844" fill="none" style="position: absolute; left: 0; top: 0;" role="img" aria-label="25.2 percent of the session elapsed, 74.8 percent remaining">
+    <defs>
+      <linearGradient id="dd-ring" x1="195" y1="312" x2="313" y2="430" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#F4F6FF"></stop>
+        <stop offset="1" stop-color="#AEBBFF"></stop>
+      </linearGradient>
+    </defs>
+    <circle cx="195" cy="430" r="112" stroke="rgba(255,255,255,0.1)" stroke-width="10"></circle>
+    <circle cx="195" cy="430" r="112" pathLength="100" stroke-dasharray="25.2 100" stroke="url(#dd-ring)" stroke-width="10" stroke-linecap="round" transform="rotate(-90 195 430)"></circle>
+    <circle cx="306.99" cy="431.41" r="17" fill="rgba(174,187,255,0.22)"></circle>
+    <circle cx="306.99" cy="431.41" r="7" fill="#FFFFFF"></circle>
+  </svg>
+  <div style="position: absolute; left: 65px; top: 300px; width: 260px; height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+    <p class="dl-timer" aria-label="18 minutes 42 seconds remaining">18:42</p>
+    <p class="dl-dusk-label" style="color: #AEB5CC;">remaining of 25 min</p>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; top: 612px; display: flex; justify-content: center;">
+    <button type="button" class="dl-btn dl-glass-dark" style="height: 48px; color: #FFFFFF; font-size: 15px;">I’m feeling stuck</button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 728px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <button type="button" class="dl-btn dl-glass-dark" style="height: 58px; border-radius: 29px; color: #FFFFFF;">End</button>
+    <button type="button" class="dl-btn" style="height: 58px; border-radius: 29px; background: #F2F4FA; color: #12162C;">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1.3" fill="#12162C"></rect><rect x="9.5" y="2.5" width="3" height="11" rx="1.3" fill="#12162C"></rect></svg>
+      Pause
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

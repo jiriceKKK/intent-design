@@ -6,7 +6,7 @@ Five independent visual directions for **Intent**, an iPhone app that helps peop
 (plus a seventh frame: Progress scrolled down, with the chart switched to "All time")
 
 **Live canvas:** https://claude.ai/artifact/XbazTkHX2r56kDk6y1UcHg (private until shared from the page's Share menu).
-Page *Five concepts*: one row per concept, one column per screen, all at 390 × 844. Page *Compare two*: pick any two concepts and a screen and see them side by side at the same scale (press Play on that board).
+Page *Five concepts*: one row per concept (plus Daylight's dark appearance as row 4b), one column per screen, all at 390 × 844. Page *Compare two*: pick any two concepts and a screen and see them side by side at the same scale (press Play on that board).
 
 ## The concepts
 
@@ -17,6 +17,11 @@ Page *Five concepts*: one row per concept, one column per screen, all at 390 × 
 | 3 | **Margin** · paper, ink, highlighter · Newsreader + IBM Plex Mono | The next sentence is the interface. An editorial page: serif headline for what to do, typed margin notes for times and labels, hairline rules instead of cards, one highlighter stroke per screen. | Little containment, so controls and states depend on precise typesetting (Dynamic Type, translation); can feel austere; word-only tabs are less glanceable. |
 | 4 | **Daylight** · soft sky, glass, sun orange · Geist | Plans live in the light of your actual day. The day is the sun's circular path cut by the horizon (daylight above, evening below) with each action at its cue and a rendered sun marking now; glass panels and floating controls in the current iOS idiom; a session dims the room to dusk and ends with a sunrise. | Least ownable (closest to stock iOS); glass over gradients is demanding for contrast and performance; "after dinner" can only be placed approximately. |
 | 5 | **Cairn** · limestone, sage, slate, lichen · Zen Maru Gothic | Leave a marker; it will still be there. Smooth, tactile stones: the next step rests on the largest one, the prepared next step is a marker for your future self, finished tasks stack into a small cairn. | Shaded objects add visual weight and render cost; irregular shapes are harder to keep consistent; the metaphor must never become a collection game. |
+
+### Daylight dark (variant of 4)
+
+Daylight's dark appearance, for when iOS is set to Dark Mode (canvas row 4b; also selectable on *Compare two*). The same circular path, cues, layout and content on a night sky. A rendered moon takes the sun's place as the "now" marker and the light source, and accents change from sun orange to moonlight silver and violet. The moon shows the real phase for the date on the screens (Sunday 4 October 2026: last quarter, waning, about 43 % lit); its place on the circle is the "now" marker, not its position in the real sky. The session goes one step darker than the planning screens, and at session end the moon rises behind the sheet.
+Tradeoff: with every screen dark, the light-planning / dark-focus contrast of the light theme is gone, so the session has to go darker still to feel different; moonlight also makes finishing feel calm rather than celebratory.
 
 ## Shared rules (all five)
 
@@ -33,6 +38,7 @@ Page *Five concepts*: one row per concept, one column per screen, all at 390 × 
 - `renders/` — every screen as a 780 × 1688 PNG (@2x). `renders/sheets/` — contact sheets per concept and per screen.
 - `tools/shoot.sh` — renders boards to PNG with Playwright. It needs the canvas runtime (`support.js`, served by the Design artifact type and not included here): `DC_RUNTIME=/path/to/support.js ./tools/shoot.sh --all`.
 - `tools/geometry.py` — sample data and exact geometry for charts and progress marks. `tools/sheet.py` — contact sheets.
+- `tools/sun.py`, `tools/moon.py` — procedural renders of the Daylight sun and moon (`python3 tools/moon.py canvas/project` writes `moon.png` and `moon-low.png`).
 
 ## Hodnocení (česky)
 
@@ -43,7 +49,8 @@ Page *Five concepts*: one row per concept, one column per screen, all at 390 × 
 - **Margin** je nejklidnější a nejuniverzálnější. Riziko: skoro žádné kontejnery, takže hodně stojí na precizní sazbě; někomu může připadat strohý.
 - **Daylight** nejvíc odpovídá současnému iOS. Riziko: má nejslabší vlastní identitu a sklo je náročné na kontrast i výkon.
 - **Cairn** je nejhmatatelnější a nejvíc emocionální. Riziko: je vizuálně nejtěžší a jeho metafora nesmí sklouznout ke sbírání.
+- **Daylight tmavý** (varianta Daylightu, ne šestý koncept) přenáší stejný systém do noci: místo slunce je tu měsíc ve skutečné fázi pro 4. října 2026 a akcenty mají barvu měsíčního světla. Riziko: když je tmavé všechno, mizí rozdíl mezi světlým plánováním a tmavým soustředěním, proto je sezení ještě o stupeň tmavší; měsíční světlo je chladnější, takže konec sezení působí spíš klidně než oslavně.
 
-**Doporučené ověření s lidmi:** pětivteřinový test obrazovky Today („co uděláte teď?“), první klepnutí na Start, jestli lidé bez barev poznají úkol od rutiny, jestli Progress po pauze nevyvolává pocit viny a jestli jde v tmavém sezení přečíst čas a průběh.
+**Doporučené ověření s lidmi:** pětivteřinový test obrazovky Today („co uděláte teď?“), první klepnutí na Start, jestli lidé bez barev poznají úkol od rutiny, jestli Progress po pauze nevyvolává pocit viny a jestli jde v tmavém sezení přečíst čas a průběh; u tmavého Daylightu také, jestli lidé chápou měsíc jako značku „teď“.
 
-**Omezení:** makety jsou statické (interaktivní je jen srovnávací tabule); nic nebylo zkoušeno na skutečném zařízení; písma jsou z Google Fonts; tmavý režim plánovacích obrazovek ani Dynamic Type navržené nejsou; Liquid Glass je napodobené pomocí CSS. Výběr nechávám na vás.
+**Omezení:** makety jsou statické (interaktivní je jen srovnávací tabule); nic nebylo zkoušeno na skutečném zařízení; písma jsou z Google Fonts; tmavý režim je navržený jen pro Daylight a Dynamic Type navržený není; Liquid Glass je napodobené pomocí CSS. Výběr nechávám na vás.

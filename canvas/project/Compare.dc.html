@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="threshold.css">
 <link rel="stylesheet" href="margin.css">
 <link rel="stylesheet" href="daylight.css">
+<link rel="stylesheet" href="daylight-dark.css">
 <link rel="stylesheet" href="cairn.css">
 </head>
 <body>
@@ -32,8 +33,8 @@ body{margin:0}
   </div>
   <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px; margin-top: 6px;">
     <div style="display: flex; flex-direction: column; gap: 12px;">
-      <div role="group" aria-label="Left concept" style="display: flex; gap: 4px;">
-        <sc-for list="{{ left }}" as="it" hint-placeholder-count="5">
+      <div role="group" aria-label="Left concept" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px;">
+        <sc-for list="{{ left }}" as="it" hint-placeholder-count="6">
           <button type="button" class="cmp-seg" aria-pressed="{{ it.pressed }}" onClick="{{ it.pick }}" style="padding: 0 9px;">{{ it.label }}</button>
         </sc-for>
       </div>
@@ -66,6 +67,13 @@ body{margin:0}
         <sc-if value="{{ L.daylight_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-5-End" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ L.daylight_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ L.daylight_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylightdark_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylightdark_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylightdark_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylightdark_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylightdark_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylightdark_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylightdark_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ L.cairn_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-1-Today" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ L.cairn_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ L.cairn_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
@@ -76,8 +84,8 @@ body{margin:0}
       </div>
     </div>
     <div style="display: flex; flex-direction: column; gap: 12px;">
-      <div role="group" aria-label="Right concept" style="display: flex; gap: 4px;">
-        <sc-for list="{{ right }}" as="it" hint-placeholder-count="5">
+      <div role="group" aria-label="Right concept" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px;">
+        <sc-for list="{{ right }}" as="it" hint-placeholder-count="6">
           <button type="button" class="cmp-seg" aria-pressed="{{ it.pressed }}" onClick="{{ it.pick }}" style="padding: 0 9px;">{{ it.label }}</button>
         </sc-for>
       </div>
@@ -110,6 +118,13 @@ body{margin:0}
         <sc-if value="{{ R.daylight_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-5-End" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ R.daylight_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ R.daylight_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylightdark_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylightdark_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylightdark_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylightdark_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylightdark_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylightdark_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylightdark_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-Dark-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ R.cairn_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-1-Today" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ R.cairn_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
         <sc-if value="{{ R.cairn_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
@@ -125,8 +140,8 @@ body{margin:0}
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":940,"height":1120}}'>
 class Component extends DCLogic {
   renderVals() {
-    const C = ['thread', 'threshold', 'margin', 'daylight', 'cairn'];
-    const NAMES = { thread: 'Thread', threshold: 'Threshold', margin: 'Margin', daylight: 'Daylight', cairn: 'Cairn' };
+    const C = ['thread', 'threshold', 'margin', 'daylight', 'daylightdark', 'cairn'];
+    const NAMES = { thread: 'Thread', threshold: 'Threshold', margin: 'Margin', daylight: 'Daylight', daylightdark: 'Daylight dark', cairn: 'Cairn' };
     const SCREENS = ['1 Today', '2 Set up', '3 Plans', '4 Session', '5 Session end', '6 Progress', '6 Progress · All time'];
     const s = this.state.screen ?? 0;
     const a = this.state.a ?? 'thread';

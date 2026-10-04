@@ -8,7 +8,7 @@
       "title": "Cairn · 1 Today",
       "w": 390,
       "x": 0,
-      "y": 5740
+      "y": 7080
     },
     "Cairn-2-Setup.dc.html": {
       "h": 844,
@@ -16,7 +16,7 @@
       "title": "Cairn · 2 Set up a task",
       "w": 390,
       "x": 470,
-      "y": 5740
+      "y": 7080
     },
     "Cairn-3-Plans.dc.html": {
       "h": 844,
@@ -24,7 +24,7 @@
       "title": "Cairn · 3 Plans",
       "w": 390,
       "x": 940,
-      "y": 5740
+      "y": 7080
     },
     "Cairn-4-Session.dc.html": {
       "h": 844,
@@ -32,7 +32,7 @@
       "title": "Cairn · 4 Active session",
       "w": 390,
       "x": 1410,
-      "y": 5740
+      "y": 7080
     },
     "Cairn-5-End.dc.html": {
       "h": 844,
@@ -40,7 +40,7 @@
       "title": "Cairn · 5 Session end",
       "w": 390,
       "x": 1880,
-      "y": 5740
+      "y": 7080
     },
     "Cairn-6-Progress.dc.html": {
       "h": 844,
@@ -48,7 +48,7 @@
       "title": "Cairn · 6 Progress",
       "w": 390,
       "x": 2350,
-      "y": 5740
+      "y": 7080
     },
     "Cairn-6b-Progress-All.dc.html": {
       "h": 844,
@@ -56,7 +56,7 @@
       "title": "Cairn · 6 Progress · scrolled, All time",
       "w": 390,
       "x": 2820,
-      "y": 5740
+      "y": 7080
     },
     "Compare.dc.html": {
       "h": 1120,
@@ -290,6 +290,62 @@
       "w": 390,
       "x": 2820,
       "y": 1720
+    },
+    "Daylight-Dark-1-Today.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Daylight dark · 1 Today",
+      "w": 390,
+      "x": 0,
+      "y": 5740
+    },
+    "Daylight-Dark-2-Setup.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Daylight dark · 2 Set up a task",
+      "w": 390,
+      "x": 470,
+      "y": 5740
+    },
+    "Daylight-Dark-3-Plans.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Daylight dark · 3 Plans",
+      "w": 390,
+      "x": 940,
+      "y": 5740
+    },
+    "Daylight-Dark-4-Session.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Daylight dark · 4 Active session",
+      "w": 390,
+      "x": 1410,
+      "y": 5740
+    },
+    "Daylight-Dark-5-End.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Daylight dark · 5 Session end",
+      "w": 390,
+      "x": 1880,
+      "y": 5740
+    },
+    "Daylight-Dark-6-Progress.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Daylight dark · 6 Progress",
+      "w": 390,
+      "x": 2350,
+      "y": 5740
+    },
+    "Daylight-Dark-6b-Progress-All.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Daylight dark · 6 Progress · scrolled, All time",
+      "w": 390,
+      "x": 2820,
+      "y": 5740
     }
   },
   "createdOnFiles": {
@@ -307,7 +363,7 @@
       "text": "CAIRN — leave a marker; it will still be there\n\nIdea: smooth stones you can almost pick up. The next step sits on the largest stone with its start time resting on top like a marker; the prepared next step is a marker left for your future self; finished tasks stack into a small cairn. Nothing falls over while you are away: pausing never knocks progress down.\n\nPalette: limestone, sage, slate, lichen · Type: Zen Maru Gothic\n\nWeakness / tradeoff: shaded, tactile objects add visual weight and rendering cost, irregular shapes are harder to keep consistent at every size, and the stone metaphor must never turn into a collection game for counting sessions.",
       "w": 500,
       "x": -580,
-      "y": 5740
+      "y": 7080
     },
     "s-compare": {
       "fill": "gray",
@@ -333,7 +389,7 @@
     },
     "s-read": {
       "fill": "gray",
-      "text": "How to read this canvas\n\n• Rows are the five concepts. Columns are the same six screens in the same order: 1 Today · 2 Set up a task · 3 Plans · 4 Active session · 5 Session end · 6 Progress. The seventh frame is screen 6 scrolled, with the chart switched to “All time”.\n• Every concept uses the same sample content. All numbers are sample data.\n• Status bar and home indicator are left to iOS: every layout keeps the top 54 px and the bottom 34 px clear.\n• Every session timer shows 18:42 of 25:00 → 25.2 % elapsed, 74.8 % remaining.\n• Page “Compare two”: pick any two concepts and one screen, side by side at full size (press Play on that board).",
+      "text": "How to read this canvas\n\n• Rows are the five concepts, plus Daylight in its dark appearance (row 4b, between Daylight and Cairn). Columns are the same six screens in the same order: 1 Today · 2 Set up a task · 3 Plans · 4 Active session · 5 Session end · 6 Progress. The seventh frame is screen 6 scrolled, with the chart switched to “All time”.\n• Every concept uses the same sample content. All numbers are sample data.\n• Status bar and home indicator are left to iOS: every layout keeps the top 54 px and the bottom 34 px clear.\n• Every session timer shows 18:42 of 25:00 → 25.2 % elapsed, 74.8 % remaining.\n• Page “Compare two”: pick any two concepts and one screen, side by side at full size (press Play on that board).",
       "w": 500,
       "x": -580,
       "y": -300
@@ -358,7 +414,7 @@
       "text": "5 · Cairn — leave a marker; it will still be there",
       "w": 240,
       "x": 0,
-      "y": 5490
+      "y": 6830
     },
     "t-compare": {
       "kind": "title1",
@@ -408,6 +464,21 @@
       "w": 240,
       "x": 0,
       "y": 1470
+    },
+    "t-daylight-dark": {
+      "kind": "title1",
+      "maxW": 3210,
+      "text": "4b · Daylight dark — the same day, by moonlight",
+      "w": 240,
+      "x": 0,
+      "y": 5490
+    },
+    "s-daylight-dark": {
+      "fill": "purple",
+      "w": 500,
+      "x": -580,
+      "y": 5740,
+      "text": "DAYLIGHT · DARK — the same day, by moonlight\n\nIdea: Daylight’s dark appearance, following the iOS setting. The same circular path, cues and content on a night sky. The moon takes the sun’s place: it marks now on the path and lights the screens, and accents change from sun orange to moonlight silver and violet. The moon shows the real phase for the date on the screens (Sunday 4 October 2026: last quarter, waning, about 43 % lit); where it sits on the circle is the “now” marker, not its real position in the sky. The session goes one step deeper into the night, and at session end the moon rises behind the sheet.\n\nPalette: night blue, moonlight silver, violet, dark glass · Type: Geist\n\nWeakness / tradeoff: when every screen is dark, the light-planning / dark-focus contrast of the light theme is gone, so the session has to go darker still to feel different. Moonlight is cooler and quieter than the sun, so finishing feels calm rather than celebratory, and the glass layers need extra care to keep text contrast on dark gradients."
     }
   },
   "order": [
@@ -439,6 +510,13 @@
     "Daylight-5-End.dc.html",
     "Daylight-6-Progress.dc.html",
     "Daylight-6b-Progress-All.dc.html",
+    "Daylight-Dark-1-Today.dc.html",
+    "Daylight-Dark-2-Setup.dc.html",
+    "Daylight-Dark-3-Plans.dc.html",
+    "Daylight-Dark-4-Session.dc.html",
+    "Daylight-Dark-5-End.dc.html",
+    "Daylight-Dark-6-Progress.dc.html",
+    "Daylight-Dark-6b-Progress-All.dc.html",
     "Cairn-1-Today.dc.html",
     "Cairn-2-Setup.dc.html",
     "Cairn-3-Plans.dc.html",
