@@ -32,9 +32,25 @@ def read(name):
         return f.read()
 
 
-def data_uri(name, mime):
-    with open(os.path.join(PROJECT, name), 'rb') as f:
+def data_uri(name, mime, folder=PROJECT):
+    with open(os.path.join(folder, name), 'rb') as f:
         return f'data:{mime};base64,' + base64.b64encode(f.read()).decode()
+
+
+ICONS = os.path.join(os.path.dirname(__file__), '..', 'icon')
+
+
+def icon_uri(kind, px=288):
+    """The app icon at 3x its 96 px display size (full size if Pillow is missing)."""
+    name = f'Intent-icon-{kind}.png'
+    try:
+        import io
+        from PIL import Image
+        im = Image.open(os.path.join(ICONS, name)).convert('RGB').resize((px, px), Image.LANCZOS)
+        buf = io.BytesIO(); im.save(buf, 'PNG', optimize=True)
+        return 'data:image/png;base64,' + base64.b64encode(buf.getvalue()).decode()
+    except ImportError:
+        return data_uri(name, 'image/png', ICONS)
 
 
 def fetch(url):
@@ -81,6 +97,11 @@ def build():
         grid.append(f'<div class="rowhead"><span><i class="dot dot-{key}" aria-hidden="true"></i>{title} <small>· {sub}</small></span></div>')
         for screen, label in SCREENS:
             grid.append(f'<figure><figcaption>{label}</figcaption><div class="phone">{board(prefix + screen, images)}</div></figure>')
+    icons = ''
+    if os.path.exists(os.path.join(ICONS, 'Intent-icon-light.png')):   # made by tools/icon.mjs
+        icons = '<div class="icons">' + ''.join(
+            f'<figure><img src="{icon_uri(k)}" alt="App icon, {k}" width="96" height="96"><figcaption>App icon · {k}</figcaption></figure>'
+            for k in ('light', 'dark')) + '</div>'
     css = read('daylight.css') + '\n' + read('daylight-dark.css')
     return f'''<!doctype html>
 <html lang="en">
@@ -96,7 +117,12 @@ def build():
 :root {{ --page: #E4E3DF; --text: #1F1F1D; --soft: #5C5B57; }}
 html, body {{ margin: 0; background: var(--page); color: var(--text); }}
 body {{ font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; }}
-.intro {{ padding: 40px 48px 8px; max-width: 760px; }}
+.intro {{ padding: 40px 48px 8px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px; max-width: 2970px; }}
+.intro-text {{ max-width: 760px; }}
+.icons {{ display: flex; gap: 20px; }}
+.icons figure {{ margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }}
+.icons img {{ width: 96px; height: 96px; border-radius: 21.5px; display: block; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 14px 28px -16px rgba(0, 0, 0, 0.5); }}
+.icons figcaption {{ font-size: 12px; font-weight: 600; color: var(--soft); }}
 .intro h1 {{ margin: 0; font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -0.02em; }}
 .intro p {{ margin: 8px 0 0; font-size: 15px; line-height: 22px; color: var(--soft); }}
 .scroller {{ overflow-x: auto; padding: 16px 0 24px; }}
@@ -121,8 +147,11 @@ figcaption {{ font-size: 13px; font-weight: 600; color: var(--soft); }}
 </head>
 <body>
 <header class="intro">
-  <h1>Intent — Daylight</h1>
-  <p>The same seven screens in both appearances: the sun by day (light) and the moon by night (dark). Static mockups at iPhone size, 390 × 844. All numbers are sample data.</p>
+  <div class="intro-text">
+    <h1>Intent — Daylight</h1>
+    <p>The same seven screens in both appearances: the sun by day (light) and the moon by night (dark). Static mockups at iPhone size, 390 × 844. All numbers are sample data.</p>
+  </div>
+  {icons}
 </header>
 <main class="scroller">
 <div class="grid">
