@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thread · Session end</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="thread.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-thread">
+  <svg width="390" height="96" viewBox="0 0 390 96" fill="none" aria-hidden="true" style="position: absolute; left: 0; top: 78px;">
+    <path d="M-4 52 H 262" stroke="#3B4096" stroke-width="2.25" stroke-linecap="round"></path>
+    <path d="M276 52 L 394 52" stroke="#3B4096" stroke-width="2.25" stroke-linecap="round" stroke-dasharray="0.1 7"></path>
+    <circle cx="34" cy="52" r="6" fill="#B9BADD" stroke="#F6F1E7" stroke-width="2.5"></circle>
+    <circle cx="66" cy="52" r="6" fill="#B9BADD" stroke="#F6F1E7" stroke-width="2.5"></circle>
+    <circle cx="98" cy="52" r="6" fill="#B9BADD" stroke="#F6F1E7" stroke-width="2.5"></circle>
+    <circle cx="150" cy="52" r="20" fill="rgba(47,52,130,0.1)"></circle>
+    <circle cx="150" cy="52" r="11" fill="#2F3482" stroke="#F6F1E7" stroke-width="3"></circle>
+    <path d="M145.2 52.2 L 148.6 55.4 L 155 48.8" stroke="#FFFDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <circle cx="270" cy="52" r="13" fill="#F8EACB"></circle>
+    <circle cx="270" cy="52" r="7" fill="#E8B23F" stroke="#F6F1E7" stroke-width="3"></circle>
+  </svg>
+
+  <div style="position: absolute; left: 24px; right: 24px; top: 190px; display: flex; flex-direction: column; gap: 6px;">
+    <h1 class="th-title" style="font-size: 32px; line-height: 38px;">Session complete.</h1>
+    <p class="th-lede">25 min on Essay outline.</p>
+  </div>
+
+  <div role="radiogroup" aria-label="What next" style="position: absolute; left: 20px; right: 20px; top: 282px; display: flex; flex-direction: column; gap: 10px;">
+    <p class="th-label th-label-ink" style="padding-left: 4px; margin-bottom: 2px;">What about the task?</p>
+    <button type="button" class="th-choice" role="radio" aria-checked="false">
+      <span class="th-radio"></span>
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 1px;">
+        <span style="font-size: 17px; font-weight: 650; color: #23275A;">Task finished</span>
+        <span class="th-cap" style="font-weight: 500;">Mark Essay outline as done</span>
+      </span>
+    </button>
+    <button type="button" class="th-choice" role="radio" aria-checked="false">
+      <span class="th-radio"></span>
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 1px;">
+        <span style="font-size: 17px; font-weight: 650; color: #23275A;">Continue now</span>
+        <span class="th-cap" style="font-weight: 500;">Start another session</span>
+      </span>
+    </button>
+    <button type="button" class="th-choice" role="radio" aria-checked="true">
+      <span class="th-radio"></span>
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 1px;">
+        <span style="font-size: 17px; font-weight: 650; color: #23275A;">Done for today</span>
+        <span class="th-cap" style="font-weight: 500;">The task stays open for next time</span>
+      </span>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M16.5 13.6 C 15.6 13.9, 14.7 14.1, 13.7 14.1 C 9.6 14.1, 6.4 10.9, 6.4 6.8 C 6.4 5.8, 6.6 4.9, 6.9 4 C 4.6 5.1, 3 7.4, 3 10.1 C 3 13.9, 6.1 17 9.9 17 C 12.9 17, 15.4 15.2, 16.5 13.6 Z" stroke="#2F3482" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 538px; display: flex; flex-direction: column; gap: 8px;">
+    <label for="th-next" class="th-label th-label-ink" style="padding-left: 4px; display: flex; justify-content: space-between; padding-right: 4px;">Next time, start with: <span style="color: #62637D; font-weight: 600;">Optional</span></label>
+    <div style="position: relative;">
+      <input id="th-next" class="th-field th-input" value="Write the opening paragraph." readonly style="padding-left: 46px; height: 58px; box-shadow: inset 0 0 0 1.5px #D5CCB9, 0 12px 26px -20px rgba(35, 39, 90, 0.45);">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" style="position: absolute; left: 14px; top: 18px;"><circle cx="11" cy="11" r="10" fill="#F8EACB"></circle><circle cx="11" cy="11" r="5.5" fill="#E8B23F"></circle></svg>
+    </div>
+    <p class="th-cap" style="padding-left: 4px; font-weight: 500;">It will be waiting on Today, as the next bead on the thread.</p>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 752px; display: grid; grid-template-columns: 116px 1fr; gap: 10px;">
+    <button type="button" class="th-btn th-btn-text" style="height: 54px; border-radius: 27px; box-shadow: inset 0 0 0 1.5px rgba(47, 52, 130, 0.28);">Skip</button>
+    <button type="button" class="th-btn th-btn-primary" style="height: 54px; border-radius: 27px;">Save and return</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

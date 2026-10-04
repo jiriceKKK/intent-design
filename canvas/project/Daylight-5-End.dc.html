@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daylight · Session end</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="daylight.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@200..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-daylight" style="background: linear-gradient(180deg, #232745 0%, #4A3A5E 38%, #B97E7E 66%, #F2C1A0 86%, #F6E1D2 100%);">
+  <svg width="390" height="300" viewBox="0 0 390 300" fill="none" aria-hidden="true" style="position: absolute; left: 0; top: 0;">
+    <defs>
+      <radialGradient id="dl-rise" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#FFD2A0" stop-opacity="0.9"></stop>
+        <stop offset="1" stop-color="#FFD2A0" stop-opacity="0"></stop>
+      </radialGradient>
+    </defs>
+    <circle cx="195" cy="262" r="90" fill="url(#dl-rise)"></circle>
+    <path d="M173 262 A 22 22 0 0 1 217 262 Z" fill="#FFE2BF"></path>
+  </svg>
+
+  <div style="position: absolute; left: 24px; right: 24px; top: 92px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; color: #FFFFFF;">
+    <h1 class="dl-title" style="font-size: 32px; line-height: 38px;">Session complete.</h1>
+    <p style="font-size: 15px; font-weight: 500; color: #E6E2F2;">25 min · Essay outline</p>
+  </div>
+
+  <section style="position: absolute; left: 0; right: 0; top: 262px; bottom: 0; border-radius: 34px 34px 0 0; background: rgba(248, 246, 250, 0.9); -webkit-backdrop-filter: blur(30px) saturate(160%); backdrop-filter: blur(30px) saturate(160%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);">
+    <p class="dl-section" style="position: absolute; left: 22px; top: 22px;">And the task?</p>
+    <div role="radiogroup" aria-label="What about the task" class="dl-group" style="position: absolute; left: 16px; right: 16px; top: 46px; background: #FFFFFF;">
+      <button type="button" class="dl-row" role="radio" aria-checked="false" style="width: 100%; border: 0; background: transparent; text-align: left; min-height: 58px;">
+        <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 600;">Task finished</span><span class="dl-cap">Mark Essay outline done</span></span>
+        <span style="width: 22px; height: 22px; border-radius: 11px; box-shadow: inset 0 0 0 1.5px rgba(29, 36, 51, 0.25);"></span>
+      </button>
+      <button type="button" class="dl-row" role="radio" aria-checked="false" style="width: 100%; border: 0; background: transparent; text-align: left; min-height: 58px;">
+        <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 600;">Continue now</span><span class="dl-cap">Start another session</span></span>
+        <span style="width: 22px; height: 22px; border-radius: 11px; box-shadow: inset 0 0 0 1.5px rgba(29, 36, 51, 0.25);"></span>
+      </button>
+      <button type="button" class="dl-row" role="radio" aria-checked="true" style="width: 100%; border: 0; background: rgba(242, 154, 74, 0.1); text-align: left; min-height: 58px;">
+        <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 650;">Done for today</span><span class="dl-cap">The task stays open</span></span>
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#1D2433"></circle><path d="M6.6 11.2 L 9.6 14.2 L 15.4 8.2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
+    </div>
+
+    <div style="position: absolute; left: 16px; right: 16px; top: 244px; background: #FFFFFF; border-radius: 22px; padding: 12px 16px 14px;">
+      <div style="display: flex; justify-content: space-between;">
+        <label class="dl-label" for="dl-next" style="color: #1D2433; font-weight: 600;">Next time, start with:</label>
+        <span class="dl-cap">Optional</span>
+      </div>
+      <input id="dl-next" value="Write the opening paragraph." readonly style="width: 100%; border: 0; outline: none; background: transparent; padding: 8px 0 2px; font-size: 18px; font-weight: 550; color: #1D2433;">
+    </div>
+    <p class="dl-cap" style="position: absolute; left: 22px; right: 22px; top: 330px;">It will be on Today, placed after your cue.</p>
+
+    <div style="position: absolute; left: 16px; right: 16px; top: 490px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+      <button type="button" class="dl-btn" style="height: 54px; border-radius: 27px; background: rgba(29, 36, 51, 0.07); color: #1D2433;">Skip</button>
+      <button type="button" class="dl-btn dl-btn-ink" style="height: 54px; border-radius: 27px;">Save and return</button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

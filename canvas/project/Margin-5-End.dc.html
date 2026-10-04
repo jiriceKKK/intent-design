@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Margin · Session end</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="margin.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-margin">
+  <div style="position: absolute; left: 20px; right: 20px; top: 66px; display: flex; flex-direction: column; gap: 10px;">
+    <p class="mg-kicker">25 min · Essay outline</p>
+    <h1 class="mg-mast" style="font-size: 44px; line-height: 46px;">Session complete.</h1>
+  </div>
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 150px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 168px;">
+    <p class="mg-note" style="padding-top: 6px;">The task</p>
+    <div role="radiogroup" aria-label="What about the task" style="display: flex; flex-direction: column;">
+      <button type="button" role="radio" aria-checked="false" style="display: flex; align-items: flex-start; gap: 14px; border: 0; background: transparent; padding: 6px 0 12px; text-align: left; border-bottom: 1px solid #DCD8CF;">
+        <span class="mg-radio" style="margin-top: 5px;"></span>
+        <span style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 23px; line-height: 30px;">Task finished</span><span class="mg-note">close Essay outline</span></span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" style="display: flex; align-items: flex-start; gap: 14px; border: 0; background: transparent; padding: 12px 0 12px; text-align: left; border-bottom: 1px solid #DCD8CF;">
+        <span class="mg-radio" style="margin-top: 5px;"></span>
+        <span style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 23px; line-height: 30px;">Continue now</span><span class="mg-note">another session, straight away</span></span>
+      </button>
+      <button type="button" role="radio" aria-checked="true" style="display: flex; align-items: flex-start; gap: 14px; border: 0; background: transparent; padding: 12px 0 6px; text-align: left;">
+        <span class="mg-radio" style="margin-top: 5px;"></span>
+        <span style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 23px; line-height: 30px; font-weight: 540;"><span class="mg-mark">Done for today</span></span><span class="mg-note">the task stays open</span></span>
+      </button>
+    </div>
+  </div>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 424px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 442px;">
+    <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 4px;">
+      <p class="mg-note">Optional</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <label for="mg-next" class="mg-project">Next time, start with:</label>
+      <input id="mg-next" class="mg-input" value="Write the opening paragraph." readonly style="font-size: 21px; line-height: 28px; padding-top: 4px;">
+      <p class="mg-note" style="margin-top: 6px;">It will be the first line on Today.</p>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 752px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+    <button type="button" class="mg-btn mg-btn-line" style="height: 54px; border-radius: 27px;">Skip</button>
+    <button type="button" class="mg-btn mg-btn-ink" style="height: 54px; border-radius: 27px;">Save and return</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

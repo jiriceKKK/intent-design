@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Threshold · Progress, all time</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="threshold.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-threshold">
+  <header style="position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: grid; grid-template-columns: 110px 1fr 110px; align-items: center; padding: 0 16px; box-shadow: 0 1px 0 #E0D3C3;">
+    <span></span>
+    <p style="text-align: center; font-size: 17px; font-weight: 600;">Progress</p>
+    <span class="tr-tag" style="justify-self: end;">Sample data</span>
+  </header>
+
+  <section style="position: absolute; left: 20px; right: 20px; top: 112px; padding: 14px 16px 10px; border-radius: 24px; background: #FBF7F1; box-shadow: inset 0 0 0 1.25px #E0D3C3; display: flex; flex-direction: column; gap: 12px;">
+    <div class="tr-seg" role="group" aria-label="Chart range">
+      <button type="button" aria-pressed="false">7 days</button>
+      <button type="button" aria-pressed="true">All time</button>
+    </div>
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <p style="font-size: 16px; font-weight: 600;">Total sessions</p>
+      <p class="tr-cap">Cumulative sessions</p>
+    </div>
+    <svg width="318" height="156" viewBox="0 0 318 156" fill="none" role="img" aria-label="Cumulative sessions from 3 August to 4 October, rising to 56, level from 19 to 31 August when nothing was recorded">
+      <path d="M28 20 H 312 M 28 56 H 312 M 28 92 H 312" stroke="#EDE3D6" stroke-width="1"></path>
+      <path d="M28 128 H 312" stroke="#D8C9B8" stroke-width="1"></path>
+      <text class="tr-axis" x="0" y="24">60</text>
+      <text class="tr-axis" x="0" y="60">40</text>
+      <text class="tr-axis" x="0" y="96">20</text>
+      <text class="tr-axis" x="0" y="132">0</text>
+      <path d="M28.00 128.00 L32.38 126.20 L36.76 124.40 L41.14 124.40 L45.52 120.80 L49.90 119.00 L54.29 119.00 L58.67 117.20 L63.05 113.60 L67.43 111.80 L71.81 110.00 L76.19 110.00 L80.57 106.40 L84.95 104.60 L89.33 102.80 L93.71 101.00 L98.10 99.20 L102.48 99.20 L106.86 99.20 L111.24 99.20 L115.62 99.20 L120.00 99.20 L124.38 99.20 L128.76 99.20 L133.14 99.20 L137.52 99.20 L141.90 99.20 L146.29 99.20 L150.67 99.20 L155.05 99.20 L159.43 95.60 L163.81 93.80 L168.19 90.20 L172.57 88.40 L176.95 86.60 L181.33 84.80 L185.71 81.20 L190.10 79.40 L194.48 75.80 L198.86 74.00 L203.24 70.40 L207.62 70.40 L212.00 68.60 L216.38 66.80 L220.76 63.20 L225.14 61.40 L229.52 57.80 L233.90 56.00 L238.29 54.20 L242.67 52.40 L247.05 50.60 L251.43 48.80 L255.81 48.80 L260.19 47.00 L264.57 43.40 L268.95 43.40 L273.33 41.60 L277.71 38.00 L282.10 38.00 L286.48 36.20 L290.86 32.60 L295.24 30.80 L299.62 30.80 L304.00 27.20 L304.00 128.00 L28.00 128.00 Z" fill="rgba(165, 83, 59, 0.1)"></path>
+      <path d="M28.00 128.00 L32.38 126.20 L36.76 124.40 L41.14 124.40 L45.52 120.80 L49.90 119.00 L54.29 119.00 L58.67 117.20 L63.05 113.60 L67.43 111.80 L71.81 110.00 L76.19 110.00 L80.57 106.40 L84.95 104.60 L89.33 102.80 L93.71 101.00 L98.10 99.20 L102.48 99.20 L106.86 99.20 L111.24 99.20 L115.62 99.20 L120.00 99.20 L124.38 99.20 L128.76 99.20 L133.14 99.20 L137.52 99.20 L141.90 99.20 L146.29 99.20 L150.67 99.20 L155.05 99.20 L159.43 95.60 L163.81 93.80 L168.19 90.20 L172.57 88.40 L176.95 86.60 L181.33 84.80 L185.71 81.20 L190.10 79.40 L194.48 75.80 L198.86 74.00 L203.24 70.40 L207.62 70.40 L212.00 68.60 L216.38 66.80 L220.76 63.20 L225.14 61.40 L229.52 57.80 L233.90 56.00 L238.29 54.20 L242.67 52.40 L247.05 50.60 L251.43 48.80 L255.81 48.80 L260.19 47.00 L264.57 43.40 L268.95 43.40 L273.33 41.60 L277.71 38.00 L282.10 38.00 L286.48 36.20 L290.86 32.60 L295.24 30.80 L299.62 30.80 L304.00 27.20" stroke="#2D1F2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M99 88 V 84 H 154 V 88" stroke="#A8949B" stroke-width="1" stroke-linecap="round"></path>
+      <text class="tr-axis" x="126.5" y="78" text-anchor="middle" style="font-size: 10.5px;">level · nothing recorded</text>
+      <circle cx="304" cy="27.2" r="5.5" fill="#F2B48A" stroke="#2D1F2A" stroke-width="2"></circle>
+      <text x="294" y="16" text-anchor="end" style="font-size: 13px; font-weight: 700; fill: #2D1F2A; font-family: 'Bricolage Grotesque', system-ui, sans-serif;">56</text>
+      <path d="M28 128 V 132 M 155.05 128 V 132 M 286.48 128 V 132" stroke="#D8C9B8" stroke-width="1"></path>
+      <text class="tr-axis" x="28" y="148" text-anchor="start">Aug</text>
+      <text class="tr-axis" x="155" y="148" text-anchor="middle">Sep</text>
+      <text class="tr-axis" x="286.5" y="148" text-anchor="middle">Oct</text>
+    </svg>
+  </section>
+
+  <section style="position: absolute; left: 20px; right: 20px; top: 408px; padding: 14px 16px 14px; border-radius: 24px; background: #FBF7F1; box-shadow: inset 0 0 0 1.25px #E0D3C3; display: flex; flex-direction: column; gap: 8px;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <p class="tr-eyebrow">Routine · Evening reading</p>
+      <svg width="112" height="24" viewBox="0 0 112 24" fill="none" role="img" aria-label="3 days recorded as done, 1 planned day not recorded">
+        <circle cx="12" cy="12" r="10" fill="#A5533B"></circle>
+        <circle cx="41" cy="12" r="10" fill="#A5533B"></circle>
+        <circle cx="70" cy="12" r="10" fill="#A5533B"></circle>
+        <circle cx="99" cy="12" r="9.3" fill="none" stroke="#A8949B" stroke-width="1.4" stroke-dasharray="2.4 2.6"></circle>
+      </svg>
+    </div>
+    <p style="font-size: 19px; line-height: 23px; font-weight: 600;">3 days recorded as done</p>
+    <p class="tr-body" style="margin-top: -4px;">1 planned day not recorded</p>
+  </section>
+
+  <section style="position: absolute; left: 20px; right: 20px; top: 540px; padding: 14px 16px 14px; border-radius: 24px; background: #FBF7F1; box-shadow: inset 0 0 0 1.25px #E0D3C3; display: flex; flex-direction: column; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <svg width="128" height="80" viewBox="0 0 128 80" fill="none" role="img" aria-label="Most recorded starts between 16:00 and 18:00">
+        <path d="M10 66 A 54 54 0 0 1 118 66" stroke="#E0D3C3" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M73.38 12.82 A 54 54 0 0 1 91 19.23" stroke="#A5533B" stroke-width="7" stroke-linecap="round"></path>
+        <path d="M4 66 H 124" stroke="#D8C9B8" stroke-width="1"></path>
+        <text class="tr-axis" x="10" y="78" text-anchor="middle">06</text>
+        <text class="tr-axis" x="31" y="13" text-anchor="end">12</text>
+        <text class="tr-axis" x="97" y="13" text-anchor="start">18</text>
+        <text class="tr-axis" x="118" y="78" text-anchor="middle">24</text>
+      </svg>
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <p class="tr-eyebrow">Most recorded starts</p>
+        <p class="tr-stat" style="font-size: 26px; line-height: 30px;">16:00–18:00</p>
+        <p class="tr-body">6 of the last 8 sessions</p>
+      </div>
+    </div>
+    <p class="tr-cap">A pattern in your records, not a rule about when to work.</p>
+  </section>
+
+  <p class="tr-cap" style="position: absolute; left: 24px; right: 24px; top: 704px;">Shows only what was recorded — not unrecorded work, and not focus or quality.</p>
+
+  <nav class="tr-nav" aria-label="Main">
+    <button type="button" class="tr-tab">
+      <span class="tr-tabicon"><svg width="22" height="24" viewBox="0 0 22 24" fill="none" aria-hidden="true"><path d="M3 22 V 11 A 8 8 0 0 1 19 11 V 22" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path><path d="M1.5 22 H 20.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg></span>
+      Today
+    </button>
+    <button type="button" class="tr-tab">
+      <span class="tr-tabicon"><svg width="26" height="24" viewBox="0 0 26 24" fill="none" aria-hidden="true"><path d="M2 21 V 13 A 3.5 3.5 0 0 1 9 13 V 21 M 9.5 21 V 13 A 3.5 3.5 0 0 1 16.5 13 V 21 M 17 21 V 13 A 3.5 3.5 0 0 1 24 13 V 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><path d="M2 6 H 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
+      Plans
+    </button>
+    <button type="button" class="tr-tab" aria-current="page">
+      <span class="tr-tabicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21 V 16 A 2.5 2.5 0 0 1 8 16 V 21 M 9.5 21 V 11 A 2.5 2.5 0 0 1 14.5 11 V 21 M 16 21 V 6 A 2.5 2.5 0 0 1 21 6 V 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><circle cx="18.5" cy="17" r="1.6" fill="#A5533B"></circle></svg></span>
+      Progress
+    </button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

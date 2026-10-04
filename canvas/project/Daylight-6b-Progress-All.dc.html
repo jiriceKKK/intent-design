@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daylight · Progress, all time</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="daylight.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@200..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-daylight">
+  <header style="position: absolute; left: 0; right: 0; top: 0; height: 100px; padding: 54px 16px 0; display: grid; grid-template-columns: 110px 1fr 110px; align-items: center; background: linear-gradient(180deg, rgba(220, 229, 241, 0.95) 0%, rgba(220, 229, 241, 0.6) 70%, rgba(220, 229, 241, 0) 100%); z-index: 2;">
+    <span></span>
+    <p style="text-align: center; font-size: 17px; font-weight: 650;">Progress</p>
+    <span class="dl-chip" style="justify-self: end; font-weight: 550; color: #3B4457;">Sample data</span>
+  </header>
+
+  <section class="dl-glass" style="position: absolute; left: 16px; right: 16px; top: 108px; padding: 14px 16px 10px; display: flex; flex-direction: column; gap: 12px;">
+    <div class="dl-seg" role="group" aria-label="Chart range" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+      <button type="button" aria-pressed="false" style="height: 32px;">7 days</button>
+      <button type="button" aria-pressed="true" style="height: 32px;">All time</button>
+    </div>
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <p style="font-size: 16px; font-weight: 650;">Total sessions</p>
+      <p class="dl-cap">Cumulative sessions</p>
+    </div>
+    <svg width="326" height="150" viewBox="0 0 326 150" fill="none" role="img" aria-label="Cumulative sessions from 3 August to 4 October, rising to 56, level from 19 to 31 August when nothing was recorded">
+      <defs>
+        <linearGradient id="dl-wash" x1="0" y1="18" x2="0" y2="124" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#F29A4A" stop-opacity="0.22"></stop>
+          <stop offset="1" stop-color="#F29A4A" stop-opacity="0.02"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M28 18 H 322 M 28 53.33 H 322 M 28 88.67 H 322" stroke="rgba(29,36,51,0.08)" stroke-width="1"></path>
+      <path d="M28 124 H 322" stroke="rgba(29,36,51,0.2)" stroke-width="1"></path>
+      <text class="dl-axis" x="0" y="22">60</text>
+      <text class="dl-axis" x="0" y="57.3">40</text>
+      <text class="dl-axis" x="0" y="92.7">20</text>
+      <text class="dl-axis" x="0" y="128">0</text>
+      <path d="M28.00 124.00 L32.67 122.23 L37.33 120.47 L42.00 120.47 L46.67 116.93 L51.33 115.17 L56.00 115.17 L60.67 113.40 L65.33 109.87 L70.00 108.10 L74.67 106.33 L79.33 106.33 L84.00 102.80 L88.67 101.03 L93.33 99.27 L98.00 97.50 L102.67 95.73 L107.33 95.73 L112.00 95.73 L116.67 95.73 L121.33 95.73 L126.00 95.73 L130.67 95.73 L135.33 95.73 L140.00 95.73 L144.67 95.73 L149.33 95.73 L154.00 95.73 L158.67 95.73 L163.33 95.73 L168.00 92.20 L172.67 90.43 L177.33 86.90 L182.00 85.13 L186.67 83.37 L191.33 81.60 L196.00 78.07 L200.67 76.30 L205.33 72.77 L210.00 71.00 L214.67 67.47 L219.33 67.47 L224.00 65.70 L228.67 63.93 L233.33 60.40 L238.00 58.63 L242.67 55.10 L247.33 53.33 L252.00 51.57 L256.67 49.80 L261.33 48.03 L266.00 46.27 L270.67 46.27 L275.33 44.50 L280.00 40.97 L284.67 40.97 L289.33 39.20 L294.00 35.67 L298.67 35.67 L303.33 33.90 L308.00 30.37 L312.67 28.60 L317.33 28.60 L322.00 25.07 L322.00 124.00 L28.00 124.00 Z" fill="url(#dl-wash)"></path>
+      <path d="M28.00 124.00 L32.67 122.23 L37.33 120.47 L42.00 120.47 L46.67 116.93 L51.33 115.17 L56.00 115.17 L60.67 113.40 L65.33 109.87 L70.00 108.10 L74.67 106.33 L79.33 106.33 L84.00 102.80 L88.67 101.03 L93.33 99.27 L98.00 97.50 L102.67 95.73 L107.33 95.73 L112.00 95.73 L116.67 95.73 L121.33 95.73 L126.00 95.73 L130.67 95.73 L135.33 95.73 L140.00 95.73 L144.67 95.73 L149.33 95.73 L154.00 95.73 L158.67 95.73 L163.33 95.73 L168.00 92.20 L172.67 90.43 L177.33 86.90 L182.00 85.13 L186.67 83.37 L191.33 81.60 L196.00 78.07 L200.67 76.30 L205.33 72.77 L210.00 71.00 L214.67 67.47 L219.33 67.47 L224.00 65.70 L228.67 63.93 L233.33 60.40 L238.00 58.63 L242.67 55.10 L247.33 53.33 L252.00 51.57 L256.67 49.80 L261.33 48.03 L266.00 46.27 L270.67 46.27 L275.33 44.50 L280.00 40.97 L284.67 40.97 L289.33 39.20 L294.00 35.67 L298.67 35.67 L303.33 33.90 L308.00 30.37 L312.67 28.60 L317.33 28.60 L322.00 25.07" stroke="#1D2433" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M104 92 V 88 H 162 V 92" stroke="#5A6273" stroke-width="1" stroke-linecap="round"></path>
+      <text class="dl-axis" x="133" y="80" text-anchor="middle" style="font-size: 10.5px;">level · nothing recorded</text>
+      <circle cx="322" cy="25.07" r="12" fill="rgba(242,154,74,0.25)"></circle>
+      <circle cx="322" cy="25.07" r="5.5" fill="#F29A4A" stroke="#FFFFFF" stroke-width="2"></circle>
+      <text x="308" y="14" text-anchor="end" style="font-family: Geist, system-ui, sans-serif; font-size: 13px; font-weight: 700; fill: #1D2433;">56</text>
+      <path d="M28 124 V 128 M 163.33 124 V 128 M 303.33 124 V 128" stroke="rgba(29,36,51,0.2)" stroke-width="1"></path>
+      <text class="dl-axis" x="28" y="143" text-anchor="start">Aug</text>
+      <text class="dl-axis" x="163.3" y="143" text-anchor="middle">Sep</text>
+      <text class="dl-axis" x="303.3" y="143" text-anchor="middle">Oct</text>
+    </svg>
+  </section>
+
+  <section class="dl-glass" style="position: absolute; left: 16px; right: 16px; top: 400px; padding: 14px 18px 14px; display: flex; flex-direction: column; gap: 6px; border-radius: 26px;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <p class="dl-label" style="display: flex; align-items: center; gap: 6px;">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 10 A 6 6 0 1 1 13.6 5.2" stroke="#5B5BA6" stroke-width="2" stroke-linecap="round"></path><path d="M11.2 4 L 14 4.6 L 13.4 7.4" stroke="#5B5BA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Evening reading
+      </p>
+      <svg width="100" height="20" viewBox="0 0 100 20" fill="none" role="img" aria-label="3 days recorded as done, 1 planned day not recorded">
+        <circle cx="10" cy="10" r="8" fill="#5B5BA6"></circle>
+        <circle cx="36" cy="10" r="8" fill="#5B5BA6"></circle>
+        <circle cx="62" cy="10" r="8" fill="#5B5BA6"></circle>
+        <circle cx="88" cy="10" r="7.2" fill="none" stroke="#5A6273" stroke-width="1.4" stroke-dasharray="2.2 2.4"></circle>
+      </svg>
+    </div>
+    <p class="dl-action-sm">3 days recorded as done</p>
+    <p class="dl-body" style="margin-top: -2px;">1 planned day not recorded</p>
+  </section>
+
+  <section class="dl-glass" style="position: absolute; left: 16px; right: 16px; top: 528px; padding: 14px 18px 14px; display: flex; flex-direction: column; gap: 8px; border-radius: 26px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <svg width="160" height="76" viewBox="0 0 160 76" fill="none" role="img" aria-label="Most recorded starts between 16:00 and 18:00">
+        <path d="M4 62 H 156" stroke="rgba(29,36,51,0.16)" stroke-width="1"></path>
+        <path d="M10 62 A 70 44 0 0 1 150 62" stroke="rgba(29,36,51,0.18)" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M45 23.89 A 70 44 0 0 1 80 18" stroke="#F29A4A" stroke-width="8" stroke-linecap="round"></path>
+        <text class="dl-axis" x="10" y="74" text-anchor="middle">12</text>
+        <text class="dl-axis" x="150" y="74" text-anchor="middle">24</text>
+        <text class="dl-axis" x="62" y="10" text-anchor="middle" style="fill: #9E5A1C; font-weight: 650;">16–18</text>
+      </svg>
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <p class="dl-label">Most recorded starts</p>
+        <p class="dl-stat" style="font-size: 22px; line-height: 26px;">16:00–18:00</p>
+        <p class="dl-cap" style="color: #3B4457;">6 of the last 8 sessions</p>
+      </div>
+    </div>
+    <p class="dl-cap">A pattern in your records, not a rule about when to work.</p>
+  </section>
+
+  <p class="dl-cap" style="position: absolute; left: 24px; right: 24px; top: 682px;">Shows only what was recorded — not unrecorded work, and not focus or quality.</p>
+
+  <nav class="dl-tabbar" aria-label="Main">
+    <button type="button" class="dl-tab">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M2 17 A 10 8 0 0 1 22 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><path d="M1 17 H 23" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><circle cx="8" cy="11.2" r="2.4" fill="currentColor"></circle></svg>
+      Today
+    </button>
+    <button type="button" class="dl-tab">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="2.5" y="3" width="17" height="6" rx="3" stroke="currentColor" stroke-width="1.7"></rect><rect x="2.5" y="12.5" width="17" height="6" rx="3" stroke="currentColor" stroke-width="1.7"></rect></svg>
+      Plans
+    </button>
+    <button type="button" class="dl-tab" aria-current="page">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 18 V 13 M 8 18 V 9 M 13 18 V 11 M 18 18 V 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><circle cx="18" cy="5" r="2.2" fill="#F29A4A"></circle></svg>
+      Progress
+    </button>
+  </nav>
+  <button type="button" class="dl-fab" aria-label="Add a task">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3.5 V 16.5 M 3.5 10 H 16.5" stroke="#1D2433" stroke-width="2" stroke-linecap="round"></path></svg>
+  </button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

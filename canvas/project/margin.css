@@ -1,0 +1,109 @@
+/* MARGIN — the next sentence is the interface.
+   Editorial page: a serif for what to do, typed margin notes for everything else,
+   hairline rules instead of cards, and one highlighter stroke per screen. */
+.c-margin {
+  --paper: #F8F6F1;
+  --paper-2: #EFECE4;
+  --ink: #1B1D23;
+  --ink-2: #3D4049;
+  --muted: #666973;
+  --rule: #DCD8CF;
+  --mark: #F7E27A;
+  --night: #15171C;
+  --night-2: #1C1F26;
+  --night-text: #EDEAE2;
+  --night-muted: #9A9CA6;
+  --night-rule: rgba(237, 234, 226, 0.16);
+  --night-mark: #C9B458;
+  width: 390px;
+  height: 844px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: 17px;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+.c-margin * { box-sizing: border-box; }
+.c-margin p, .c-margin h1, .c-margin h2, .c-margin h3, .c-margin ul, .c-margin ol { margin: 0; padding: 0; }
+.c-margin ul, .c-margin ol { list-style: none; }
+.c-margin button, .c-margin input, .c-margin textarea { font: inherit; color: inherit; }
+.c-margin button { cursor: pointer; }
+.c-margin svg { display: block; flex: none; }
+
+/* the grid: a 60px margin column for notes, then the text column */
+.c-margin .mg-row { display: grid; grid-template-columns: 60px minmax(0, 1fr); column-gap: 14px; }
+.c-margin .mg-note { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 15px; color: var(--muted); letter-spacing: 0.01em; }
+.c-margin .mg-note-ink { color: var(--ink); }
+.c-margin .mg-time { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 14px; line-height: 18px; font-weight: 500; color: var(--ink); letter-spacing: 0.01em; }
+.c-margin .mg-rule { height: 1px; background: var(--rule); border: 0; }
+
+/* type */
+.c-margin .mg-mast { font-size: 48px; line-height: 48px; font-weight: 420; letter-spacing: -0.025em; font-variation-settings: 'opsz' 72; }
+.c-margin .mg-kicker { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.c-margin .mg-project { font-style: italic; font-size: 17px; line-height: 22px; color: var(--ink-2); }
+.c-margin .mg-head { font-size: 31px; line-height: 36px; font-weight: 460; letter-spacing: -0.018em; font-variation-settings: 'opsz' 60; text-wrap: pretty; }
+.c-margin .mg-head-sm { font-size: 24px; line-height: 29px; font-weight: 440; letter-spacing: -0.012em; font-variation-settings: 'opsz' 40; }
+.c-margin .mg-body { font-size: 17px; line-height: 23px; color: var(--ink-2); }
+.c-margin .mg-small { font-size: 15px; line-height: 20px; color: var(--muted); }
+
+/* the highlighter: a soft marker stroke under the lower part of the line */
+.c-margin .mg-mark {
+  background-image: linear-gradient(transparent 52%, var(--mark) 52%, var(--mark) 90%, transparent 90%);
+  box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 3px; margin: 0 -3px;
+}
+.c-margin .mg-mark-night {
+  text-decoration: underline; text-decoration-color: var(--mark); text-decoration-thickness: 3px; text-underline-offset: 7px; text-decoration-skip-ink: none;
+}
+
+/* controls */
+.c-margin .mg-btn {
+  height: 48px; padding: 0 22px; border-radius: 24px; border: 0; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 18px; font-weight: 500; letter-spacing: -0.005em; white-space: nowrap; font-variation-settings: 'opsz' 24;
+}
+.c-margin .mg-btn-ink { background: var(--ink); color: var(--paper); }
+.c-margin .mg-btn-line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.25px var(--ink); }
+.c-margin .mg-link {
+  border: 0; background: transparent; padding: 0; min-height: 44px; display: inline-flex; align-items: center; gap: 6px;
+  font-size: 17px; font-style: italic; color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: rgba(27, 29, 35, 0.4);
+}
+
+/* navigation: words only */
+.c-margin .mg-nav {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 83px; padding: 0 20px; background: var(--paper);
+  border-top: 1px solid var(--rule); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.c-margin .mg-tab {
+  height: 50px; border: 0; background: transparent; font-size: 18px; color: var(--muted); font-variation-settings: 'opsz' 24;
+  display: flex; align-items: center; justify-content: center;
+}
+.c-margin .mg-tab[aria-current='page'] { color: var(--ink); font-weight: 560; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 7px; }
+
+/* form */
+.c-margin .mg-input {
+  width: 100%; border: 0; outline: none; background: transparent; padding: 6px 0 8px; border-bottom: 1px solid var(--ink);
+  font-size: 22px; line-height: 28px; color: var(--ink); font-variation-settings: 'opsz' 36;
+}
+.c-margin .mg-switch { width: 46px; height: 28px; border-radius: 14px; border: 0; background: transparent; box-shadow: inset 0 0 0 1.25px var(--ink-2); position: relative; flex: none; }
+.c-margin .mg-switch::after { content: ''; position: absolute; left: 4px; top: 4px; width: 20px; height: 20px; border-radius: 10px; background: transparent; box-shadow: inset 0 0 0 1.25px var(--ink-2); }
+.c-margin .mg-opt { border: 0; background: transparent; min-height: 44px; padding: 0; font-size: 18px; color: var(--muted); display: inline-flex; align-items: center; }
+.c-margin .mg-opt[aria-pressed='true'] { color: var(--ink); font-weight: 560; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 6px; }
+
+/* radios */
+.c-margin .mg-radio { width: 22px; height: 22px; border-radius: 11px; box-shadow: inset 0 0 0 1.25px var(--ink-2); display: block; }
+.c-margin [aria-checked='true'] .mg-radio { box-shadow: inset 0 0 0 1.25px var(--ink), inset 0 0 0 5px var(--paper), inset 0 0 0 11px var(--ink); }
+
+/* night page */
+.c-margin.mg-night { background: var(--night); color: var(--night-text); }
+.c-margin .mg-night-note { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 15px; color: var(--night-muted); letter-spacing: 0.01em; }
+.c-margin .mg-timer { font-size: 104px; line-height: 1; font-weight: 300; letter-spacing: -0.035em; font-variant-numeric: lining-nums tabular-nums; font-variation-settings: 'opsz' 72; }
+.c-margin .mg-btn-night { background: transparent; color: var(--night-text); box-shadow: inset 0 0 0 1.25px rgba(237, 234, 226, 0.5); }
+.c-margin .mg-btn-paper { background: var(--night-text); color: var(--night); }
+
+/* figures */
+.c-margin .mg-fig { font-size: 40px; line-height: 40px; font-weight: 400; letter-spacing: -0.02em; font-variation-settings: 'opsz' 72; font-variant-numeric: lining-nums; }
+.c-margin .mg-axis { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 10.5px; fill: var(--muted); }

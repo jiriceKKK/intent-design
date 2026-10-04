@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Compare two concepts</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="thread.css">
+<link rel="stylesheet" href="threshold.css">
+<link rel="stylesheet" href="margin.css">
+<link rel="stylesheet" href="daylight.css">
+<link rel="stylesheet" href="cairn.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.cmp-seg{height:36px;padding:0 13px;border:0;border-radius:18px;background:rgba(255,255,255,0.7);color:#33322F;font:600 13px/1 system-ui,-apple-system,'Segoe UI',sans-serif;cursor:pointer;white-space:nowrap}
+.cmp-seg[aria-pressed='true']{background:#22211F;color:#FFFFFF}
+.cmp-phone{width:390px;height:844px;border-radius:44px;overflow:hidden;position:relative;box-shadow:0 0 0 1px rgba(0,0,0,0.06),0 30px 60px -30px rgba(0,0,0,0.45)}
+</style>
+</helmet>
+<div style="width: 940px; height: 1120px; box-sizing: border-box; padding: 28px 40px; background: #E8E6E1; color: #22211F; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; display: flex; flex-direction: column; gap: 16px;">
+  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+    <p style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">Compare two concepts</p>
+    <p style="margin: 0; font-size: 13px; color: #5E5C57;">Same screen, same content, same scale · {{ sName }}</p>
+  </div>
+  <div role="group" aria-label="Screen" style="display: flex; flex-wrap: wrap; gap: 6px;">
+    <sc-for list="{{ screens }}" as="it" hint-placeholder-count="7">
+      <button type="button" class="cmp-seg" aria-pressed="{{ it.pressed }}" onClick="{{ it.pick }}">{{ it.label }}</button>
+    </sc-for>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px; margin-top: 6px;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div role="group" aria-label="Left concept" style="display: flex; gap: 4px;">
+        <sc-for list="{{ left }}" as="it" hint-placeholder-count="5">
+          <button type="button" class="cmp-seg" aria-pressed="{{ it.pressed }}" onClick="{{ it.pick }}" style="padding: 0 9px;">{{ it.label }}</button>
+        </sc-for>
+      </div>
+      <div class="cmp-phone">
+        <sc-if value="{{ L.thread_0 }}" hint-placeholder-val="{{ true }}"><dc-import name="Main" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.thread_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.thread_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.thread_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.thread_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.thread_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.thread_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.threshold_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.threshold_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.threshold_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.threshold_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.threshold_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.threshold_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.threshold_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.margin_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.margin_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.margin_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.margin_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.margin_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.margin_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.margin_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylight_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylight_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylight_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylight_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylight_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylight_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.daylight_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.cairn_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.cairn_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.cairn_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.cairn_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.cairn_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.cairn_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ L.cairn_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div role="group" aria-label="Right concept" style="display: flex; gap: 4px;">
+        <sc-for list="{{ right }}" as="it" hint-placeholder-count="5">
+          <button type="button" class="cmp-seg" aria-pressed="{{ it.pressed }}" onClick="{{ it.pick }}" style="padding: 0 9px;">{{ it.label }}</button>
+        </sc-for>
+      </div>
+      <div class="cmp-phone">
+        <sc-if value="{{ R.thread_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Main" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.thread_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.thread_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.thread_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.thread_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.thread_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.thread_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Thread-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.threshold_0 }}" hint-placeholder-val="{{ true }}"><dc-import name="Threshold-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.threshold_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.threshold_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.threshold_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.threshold_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.threshold_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.threshold_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Threshold-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.margin_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.margin_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.margin_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.margin_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.margin_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.margin_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.margin_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Margin-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylight_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylight_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylight_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylight_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylight_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylight_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.daylight_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Daylight-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.cairn_0 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-1-Today" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.cairn_1 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-2-Setup" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.cairn_2 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-3-Plans" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.cairn_3 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-4-Session" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.cairn_4 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-5-End" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.cairn_5 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-6-Progress" hint-size="390px,844px"></dc-import></sc-if>
+        <sc-if value="{{ R.cairn_6 }}" hint-placeholder-val="{{ false }}"><dc-import name="Cairn-6b-Progress-All" hint-size="390px,844px"></dc-import></sc-if>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":940,"height":1120}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const C = ['thread', 'threshold', 'margin', 'daylight', 'cairn'];
+    const NAMES = { thread: 'Thread', threshold: 'Threshold', margin: 'Margin', daylight: 'Daylight', cairn: 'Cairn' };
+    const SCREENS = ['1 Today', '2 Set up', '3 Plans', '4 Session', '5 Session end', '6 Progress', '6 Progress · All time'];
+    const s = this.state.screen ?? 0;
+    const a = this.state.a ?? 'thread';
+    const b = this.state.b ?? 'threshold';
+    const flags = (side) => {
+      const o = {};
+      C.forEach((c) => { for (let i = 0; i < 7; i++) o[c + '_' + i] = side === c && s === i; });
+      return o;
+    };
+    return {
+      screens: SCREENS.map((label, i) => ({ label, pressed: s === i ? 'true' : 'false', pick: () => this.setState({ screen: i }) })),
+      left: C.map((c) => ({ label: NAMES[c], pressed: a === c ? 'true' : 'false', pick: () => this.setState({ a: c }) })),
+      right: C.map((c) => ({ label: NAMES[c], pressed: b === c ? 'true' : 'false', pick: () => this.setState({ b: c }) })),
+      L: flags(a),
+      R: flags(b),
+      sName: SCREENS[s],
+    };
+  }
+}
+</script>
+</body>
+</html>

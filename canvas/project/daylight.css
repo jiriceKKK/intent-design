@@ -1,0 +1,126 @@
+/* DAYLIGHT — plans live in the light of your actual day.
+   A soft sky that follows the time, the day drawn as an arc of light,
+   and glass panels and floating controls in the current iOS idiom. */
+.c-daylight {
+  --ink: #1D2433;
+  --ink-2: #3B4457;
+  --muted: #5A6273;
+  --sun: #F29A4A;
+  --sun-ink: #9E5A1C;
+  --glass: rgba(255, 255, 255, 0.56);
+  --glass-strong: rgba(255, 255, 255, 0.78);
+  --glass-edge: rgba(255, 255, 255, 0.75);
+  --dusk-text: #FFFFFF;
+  --dusk-muted: #C3C3DD;
+  width: 390px;
+  height: 844px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: var(--ink);
+  background:
+    radial-gradient(60% 34% at 26% 20%, rgba(255, 214, 170, 0.75) 0%, rgba(255, 214, 170, 0) 70%),
+    radial-gradient(80% 50% at 100% 100%, rgba(214, 200, 238, 0.7) 0%, rgba(214, 200, 238, 0) 70%),
+    linear-gradient(180deg, #DCE5F1 0%, #ECE6EF 46%, #F6E8E0 100%);
+  font-family: 'Geist', 'SF Pro Text', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+.c-daylight * { box-sizing: border-box; }
+.c-daylight p, .c-daylight h1, .c-daylight h2, .c-daylight h3, .c-daylight ul { margin: 0; padding: 0; }
+.c-daylight ul { list-style: none; }
+.c-daylight button, .c-daylight input, .c-daylight textarea { font: inherit; color: inherit; }
+.c-daylight button { cursor: pointer; }
+.c-daylight svg { display: block; flex: none; }
+
+/* glass */
+.c-daylight .dl-glass {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(24px) saturate(170%); backdrop-filter: blur(24px) saturate(170%);
+  box-shadow: inset 0 0 0 1px var(--glass-edge), inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 12px 32px -16px rgba(40, 46, 80, 0.32);
+  border-radius: 28px;
+}
+.c-daylight .dl-glass-dark {
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(24px) saturate(150%); backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* type */
+.c-daylight .dl-date { font-size: 13px; line-height: 16px; font-weight: 600; color: var(--muted); letter-spacing: 0.01em; }
+.c-daylight .dl-title { font-size: 34px; line-height: 40px; font-weight: 700; letter-spacing: -0.03em; }
+.c-daylight .dl-label { font-size: 13px; line-height: 16px; font-weight: 550; color: var(--muted); }
+.c-daylight .dl-action { font-size: 24px; line-height: 29px; font-weight: 600; letter-spacing: -0.022em; text-wrap: pretty; }
+.c-daylight .dl-action-sm { font-size: 19px; line-height: 24px; font-weight: 600; letter-spacing: -0.015em; }
+.c-daylight .dl-body { font-size: 15px; line-height: 20px; color: var(--ink-2); }
+.c-daylight .dl-cap { font-size: 12.5px; line-height: 16px; font-weight: 500; color: var(--muted); }
+.c-daylight .dl-section { font-size: 13px; line-height: 16px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; padding-left: 6px; }
+
+/* controls */
+.c-daylight .dl-btn {
+  height: 50px; border: 0; border-radius: 25px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap;
+}
+.c-daylight .dl-btn-ink { background: var(--ink); color: #FFFFFF; box-shadow: 0 8px 18px -10px rgba(29, 36, 51, 0.8); }
+.c-daylight .dl-btn-glass {
+  background: rgba(255, 255, 255, 0.6); color: var(--ink);
+  -webkit-backdrop-filter: blur(20px) saturate(170%); backdrop-filter: blur(20px) saturate(170%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 6px 16px -10px rgba(40, 46, 80, 0.35);
+}
+.c-daylight .dl-btn-text { background: transparent; color: var(--ink); padding: 0 10px; }
+.c-daylight .dl-chip {
+  display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px 0 8px; border-radius: 14px;
+  font-size: 13px; font-weight: 600; color: var(--ink); background: rgba(255, 255, 255, 0.7); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+}
+.c-daylight .dl-iconbtn {
+  width: 44px; height: 44px; border-radius: 22px; border: 0; display: inline-flex; align-items: center; justify-content: center; color: var(--ink);
+  background: rgba(255, 255, 255, 0.6); -webkit-backdrop-filter: blur(20px) saturate(170%); backdrop-filter: blur(20px) saturate(170%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85), 0 6px 16px -10px rgba(40, 46, 80, 0.35);
+}
+
+/* floating tab bar (glass capsule) + separate add button */
+.c-daylight .dl-tabbar {
+  position: absolute; left: 20px; bottom: 26px; width: 274px; height: 62px; border-radius: 31px; padding: 5px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px;
+  background: rgba(255, 255, 255, 0.6); -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85), inset 0 1px 1px rgba(255, 255, 255, 1), 0 14px 34px -14px rgba(40, 46, 80, 0.4);
+}
+.c-daylight .dl-tab {
+  border: 0; background: transparent; border-radius: 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font-size: 10.5px; font-weight: 600; color: var(--ink-2); letter-spacing: 0.01em;
+}
+.c-daylight .dl-tab[aria-current='page'] { background: rgba(29, 36, 51, 0.08); color: var(--ink); }
+.c-daylight .dl-fab {
+  position: absolute; right: 20px; bottom: 26px; width: 62px; height: 62px; border-radius: 31px; border: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 255, 255, 0.6); -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85), inset 0 1px 1px rgba(255, 255, 255, 1), 0 14px 34px -14px rgba(40, 46, 80, 0.4);
+}
+
+/* grouped rows (iOS inset list on glass) */
+.c-daylight .dl-group { border-radius: 26px; overflow: hidden; }
+.c-daylight .dl-row { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 16px; }
+.c-daylight .dl-row + .dl-row { box-shadow: inset 0 1px 0 rgba(29, 36, 51, 0.08); }
+.c-daylight .dl-switch { width: 51px; height: 31px; border-radius: 16px; background: rgba(120, 120, 128, 0.2); position: relative; border: 0; flex: none; }
+.c-daylight .dl-switch::after { content: ''; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.16); }
+.c-daylight .dl-seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 3px; border-radius: 16px; background: rgba(118, 118, 128, 0.12); gap: 2px; }
+.c-daylight .dl-seg button { height: 36px; border: 0; border-radius: 13px; background: transparent; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.c-daylight .dl-seg button[aria-pressed='true'] { background: #FFFFFF; color: var(--ink); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+/* dusk (session) */
+.c-daylight.dl-dusk {
+  color: var(--dusk-text);
+  background:
+    radial-gradient(90% 40% at 50% 104%, rgba(255, 160, 110, 0.55) 0%, rgba(255, 160, 110, 0) 70%),
+    radial-gradient(70% 50% at 50% 42%, rgba(120, 104, 190, 0.35) 0%, rgba(120, 104, 190, 0) 70%),
+    linear-gradient(180deg, #171A33 0%, #262A4A 45%, #4A3A5E 82%, #6B4A5E 100%);
+}
+.c-daylight .dl-dusk-label { font-size: 13px; font-weight: 550; color: var(--dusk-muted); }
+.c-daylight .dl-timer { font-size: 66px; line-height: 1; font-weight: 200; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.c-daylight .dl-pill-dusk { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 13px 0 11px; border-radius: 17px; font-size: 13px; font-weight: 550; color: #FFFFFF; }
+
+/* progress */
+.c-daylight .dl-big { font-size: 30px; line-height: 34px; font-weight: 700; letter-spacing: -0.03em; }
+.c-daylight .dl-stat { font-size: 26px; line-height: 30px; font-weight: 650; letter-spacing: -0.03em; }
+.c-daylight .dl-axis { font-size: 11px; font-weight: 500; fill: var(--muted); font-family: 'Geist', system-ui, sans-serif; }

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daylight · Set up a task</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="daylight.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@200..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-daylight">
+  <div style="position: absolute; inset: 0; background: rgba(24, 28, 48, 0.22);"></div>
+  <div style="position: absolute; left: 18px; right: 18px; top: 50px; height: 40px; border-radius: 26px 26px 0 0; background: rgba(255, 255, 255, 0.45);"></div>
+
+  <section style="position: absolute; left: 0; right: 0; top: 62px; bottom: 0; border-radius: 34px 34px 0 0; background: rgba(247, 245, 249, 0.94); -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); box-shadow: 0 -10px 30px -10px rgba(24, 28, 48, 0.25);">
+    <span style="position: absolute; left: 50%; top: 8px; width: 36px; height: 5px; margin-left: -18px; border-radius: 3px; background: rgba(29, 36, 51, 0.2);"></span>
+    <header style="position: absolute; left: 0; right: 0; top: 20px; height: 44px; display: grid; grid-template-columns: 96px 1fr 96px; align-items: center; padding: 0 8px;">
+      <button type="button" class="dl-btn dl-btn-text" style="justify-self: start; font-weight: 500; font-size: 17px; height: 44px;">Cancel</button>
+      <p style="text-align: center; font-size: 17px; font-weight: 650;">New task</p>
+      <span></span>
+    </header>
+
+    <div style="position: absolute; left: 16px; right: 16px; top: 76px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: #FFFFFF; border-radius: 22px; padding: 12px 16px 12px;">
+        <label class="dl-label" for="dl-project" style="display: block;">Project</label>
+        <input id="dl-project" value="Essay outline" readonly style="width: 100%; border: 0; outline: none; background: transparent; padding: 4px 0 0; font-size: 17px; font-weight: 550; color: #1D2433;">
+      </div>
+
+      <div style="background: #FFFFFF; border-radius: 22px; padding: 12px 16px 14px;">
+        <div style="display: flex; justify-content: space-between;">
+          <label class="dl-label" for="dl-step">First step</label>
+          <span class="dl-cap">Small enough to start now</span>
+        </div>
+        <textarea id="dl-step" rows="2" readonly style="width: 100%; height: 60px; border: 0; outline: none; resize: none; background: transparent; padding: 6px 0 0; font-size: 22px; line-height: 27px; font-weight: 600; letter-spacing: -0.02em; color: #1D2433;">Open the document and write three bullet points.</textarea>
+      </div>
+
+      <div style="background: #FFFFFF; border-radius: 22px; padding: 12px 12px 6px;">
+        <p class="dl-label" style="padding: 0 4px 10px;">When to start</p>
+        <div class="dl-seg" role="group" aria-label="Start cue">
+          <button type="button" aria-pressed="false">Now</button>
+          <button type="button" aria-pressed="true">At a time</button>
+          <button type="button" aria-pressed="false">After…</button>
+        </div>
+        <svg width="334" height="84" viewBox="0 0 334 84" fill="none" aria-hidden="true" style="margin-top: 8px;">
+          <defs>
+            <linearGradient id="dl-mini" x1="80" y1="0" x2="306" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#F29A4A"></stop>
+              <stop offset="0.55" stop-color="#C77FA8"></stop>
+              <stop offset="1" stop-color="#5B5BA6"></stop>
+            </linearGradient>
+          </defs>
+          <path d="M8 74 H 326" stroke="rgba(29,36,51,0.12)" stroke-width="1"></path>
+          <path d="M27 74 A 140 56 0 0 1 90.75 27.04" stroke="rgba(29,36,51,0.2)" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M90.75 27.04 A 140 56 0 0 1 307 74" stroke="url(#dl-mini)" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="90.75" cy="27.04" r="5" fill="#F29A4A" stroke="#FFFFFF" stroke-width="2"></circle>
+          <circle cx="113.42" cy="22.26" r="7" fill="#1D2433" stroke="#FFFFFF" stroke-width="2.5"></circle>
+          <text x="113.4" y="10" text-anchor="middle" style="font-family: Geist, system-ui, sans-serif; font-size: 12px; font-weight: 650; fill: #1D2433;">16:30</text>
+        </svg>
+        <button type="button" class="dl-row" style="width: 100%; border: 0; background: transparent; padding: 0 6px; min-height: 48px; box-shadow: inset 0 1px 0 rgba(29, 36, 51, 0.08);">
+          <span style="flex: 1; text-align: left; font-size: 16px; font-weight: 550;">Today</span>
+          <span style="font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums;">16:30</span>
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1.5 1.5 L 6.5 7 L 1.5 12.5" stroke="#9AA0AE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
+
+      <div class="dl-group" style="background: #FFFFFF;">
+        <div class="dl-row">
+          <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 550;">Reminder</span><span class="dl-cap">Optional</span></span>
+          <button type="button" class="dl-switch" role="switch" aria-checked="false" aria-label="Reminder"></button>
+        </div>
+        <button type="button" class="dl-row" style="width: 100%; border: 0; background: transparent; text-align: left;">
+          <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 15px; font-weight: 550; color: #3B4457;">Session</span><span class="dl-cap">25 min · Countdown · 3 apps blocked</span></span>
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1.5 1.5 L 6.5 7 L 1.5 12.5" stroke="#9AA0AE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div style="position: absolute; left: 16px; right: 16px; top: 690px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+      <button type="button" class="dl-btn dl-btn-glass" style="height: 54px; border-radius: 27px; background: rgba(29, 36, 51, 0.07); box-shadow: none;">Save</button>
+      <button type="button" class="dl-btn dl-btn-ink" style="height: 54px; border-radius: 27px;">
+        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.5 3.6 C 5.5 2.9, 6.3 2.5, 6.9 2.9 L 14.2 7.9 C 14.8 8.3, 14.8 9.2, 14.2 9.6 L 6.9 14.6 C 6.3 15, 5.5 14.6, 5.5 13.9 Z" fill="#FFFFFF"></path></svg>
+        Save &amp; start
+      </button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

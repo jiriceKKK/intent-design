@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cairn · Set up a task</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="cairn.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-cairn">
+  <header style="position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: grid; grid-template-columns: 96px 1fr 96px; align-items: center; padding: 0 8px;">
+    <button type="button" class="cn-btn cn-btn-text" style="justify-self: start; height: 44px; font-size: 17px; font-weight: 500;">Cancel</button>
+    <p style="text-align: center; font-size: 17px; font-weight: 700;">New task</p>
+    <span></span>
+  </header>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 112px; display: flex; flex-direction: column; gap: 8px;">
+    <label class="cn-label" for="cn-project" style="padding-left: 6px;">Project</label>
+    <input id="cn-project" class="cn-field" value="Essay outline" readonly style="height: 52px; padding: 0 18px; border-radius: 26px 24px 27px 23px; font-size: 17px; font-weight: 700;">
+  </div>
+
+  <div class="cn-stone" style="position: absolute; left: 16px; right: 16px; top: 200px; padding: 18px 22px 20px; border-radius: 44px 52px 48px 40px / 42px 46px 52px 44px; display: flex; flex-direction: column; gap: 6px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <label class="cn-label" for="cn-step" style="color: #26312B; font-weight: 700;">First step</label>
+      <span class="cn-cap">Small enough to start now</span>
+    </div>
+    <textarea id="cn-step" rows="2" readonly style="width: 100%; height: 66px; border: 0; outline: none; resize: none; background: transparent; padding: 0; font-size: 22px; line-height: 32px; font-weight: 700; color: #26312B;">Open the document and write three bullet points.</textarea>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 340px; display: flex; flex-direction: column; gap: 10px;">
+    <p class="cn-label" style="padding-left: 6px;">When to start</p>
+    <div class="cn-seg" role="group" aria-label="Start cue">
+      <button type="button" aria-pressed="false">Now</button>
+      <button type="button" aria-pressed="true">At a time</button>
+      <button type="button" aria-pressed="false">After…</button>
+    </div>
+    <button type="button" class="cn-field" style="height: 54px; padding: 0 18px; border-radius: 27px 25px 28px 24px; display: flex; align-items: center; gap: 12px; text-align: left;">
+      <svg width="14" height="13" viewBox="0 0 12 11" fill="none" aria-hidden="true"><path d="M6.2 0.8 C 9.6 0.6, 11.4 3, 11.2 5.8 C 11 8.8, 8.6 10.4, 5.6 10.2 C 2.4 10, 0.6 8, 0.8 5.2 C 1 2.4, 3.2 1, 6.2 0.8 Z" fill="#CDBF6E" stroke="#26312B" stroke-width="1"></path></svg>
+      <span style="flex: 1; font-size: 16px; font-weight: 500;">Today</span>
+      <span style="font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums;">16:30</span>
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1.5 1.5 L 6.5 7 L 1.5 12.5" stroke="#8E978F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 530px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 0 16px 0 18px; border-radius: 29px 27px 30px 26px; background: rgba(255, 255, 255, 0.55); box-shadow: inset 0 0 0 1px rgba(38, 49, 43, 0.08);">
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 700;">Reminder</span><span class="cn-cap">Optional</span></span>
+      <button type="button" class="cn-switch" role="switch" aria-checked="false" aria-label="Reminder"></button>
+    </div>
+    <button type="button" style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px 0 18px; border: 0; border-radius: 26px; background: transparent; text-align: left; width: 100%;">
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 14px; font-weight: 700; color: #46524B;">Session</span><span class="cn-cap">25 min · Countdown · 3 apps blocked</span></span>
+      <span class="cn-cap" style="color: #4F6656; font-weight: 700; font-size: 14px;">Change</span>
+    </button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 752px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+    <button type="button" class="cn-btn cn-btn-stone" style="height: 54px;">Save</button>
+    <button type="button" class="cn-btn cn-btn-slate" style="height: 54px;">
+      <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.5 3.6 C 5.5 2.9, 6.3 2.5, 6.9 2.9 L 14.2 7.9 C 14.8 8.3, 14.8 9.2, 14.2 9.6 L 6.9 14.6 C 6.3 15, 5.5 14.6, 5.5 13.9 Z" fill="#FBFAF7"></path></svg>
+      Save &amp; start
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

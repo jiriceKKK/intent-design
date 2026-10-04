@@ -1,0 +1,84 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-04T10:30:32Z"},
+  "title": "Intent — Five Concepts",
+  "launch": {"view": "canvas", "page": "concepts"},
+  "pages": [
+    {"id": "concepts", "name": "Five concepts"},
+    {"id": "compare", "name": "Compare two"}
+  ],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 380, "w": 390, "h": 844, "title": "Thread · 1 Today", "radius": 44},
+    "Thread-2-Setup.dc.html": {"x": 470, "y": 380, "w": 390, "h": 844, "title": "Thread · 2 Set up a task", "radius": 44},
+    "Thread-3-Plans.dc.html": {"x": 940, "y": 380, "w": 390, "h": 844, "title": "Thread · 3 Plans", "radius": 44},
+    "Thread-4-Session.dc.html": {"x": 1410, "y": 380, "w": 390, "h": 844, "title": "Thread · 4 Active session", "radius": 44},
+    "Thread-5-End.dc.html": {"x": 1880, "y": 380, "w": 390, "h": 844, "title": "Thread · 5 Session end", "radius": 44},
+    "Thread-6-Progress.dc.html": {"x": 2350, "y": 380, "w": 390, "h": 844, "title": "Thread · 6 Progress", "radius": 44},
+    "Thread-6b-Progress-All.dc.html": {"x": 2820, "y": 380, "w": 390, "h": 844, "title": "Thread · 6 Progress · scrolled, All time", "radius": 44},
+
+    "Threshold-1-Today.dc.html": {"x": 0, "y": 1720, "w": 390, "h": 844, "title": "Threshold · 1 Today", "radius": 44},
+    "Threshold-2-Setup.dc.html": {"x": 470, "y": 1720, "w": 390, "h": 844, "title": "Threshold · 2 Set up a task", "radius": 44},
+    "Threshold-3-Plans.dc.html": {"x": 940, "y": 1720, "w": 390, "h": 844, "title": "Threshold · 3 Plans", "radius": 44},
+    "Threshold-4-Session.dc.html": {"x": 1410, "y": 1720, "w": 390, "h": 844, "title": "Threshold · 4 Active session", "radius": 44},
+    "Threshold-5-End.dc.html": {"x": 1880, "y": 1720, "w": 390, "h": 844, "title": "Threshold · 5 Session end", "radius": 44},
+    "Threshold-6-Progress.dc.html": {"x": 2350, "y": 1720, "w": 390, "h": 844, "title": "Threshold · 6 Progress", "radius": 44},
+    "Threshold-6b-Progress-All.dc.html": {"x": 2820, "y": 1720, "w": 390, "h": 844, "title": "Threshold · 6 Progress · scrolled, All time", "radius": 44},
+
+    "Margin-1-Today.dc.html": {"x": 0, "y": 3060, "w": 390, "h": 844, "title": "Margin · 1 Today", "radius": 44},
+    "Margin-2-Setup.dc.html": {"x": 470, "y": 3060, "w": 390, "h": 844, "title": "Margin · 2 Set up a task", "radius": 44},
+    "Margin-3-Plans.dc.html": {"x": 940, "y": 3060, "w": 390, "h": 844, "title": "Margin · 3 Plans", "radius": 44},
+    "Margin-4-Session.dc.html": {"x": 1410, "y": 3060, "w": 390, "h": 844, "title": "Margin · 4 Active session", "radius": 44},
+    "Margin-5-End.dc.html": {"x": 1880, "y": 3060, "w": 390, "h": 844, "title": "Margin · 5 Session end", "radius": 44},
+    "Margin-6-Progress.dc.html": {"x": 2350, "y": 3060, "w": 390, "h": 844, "title": "Margin · 6 Progress", "radius": 44},
+    "Margin-6b-Progress-All.dc.html": {"x": 2820, "y": 3060, "w": 390, "h": 844, "title": "Margin · 6 Progress · scrolled, All time", "radius": 44},
+
+    "Daylight-1-Today.dc.html": {"x": 0, "y": 4400, "w": 390, "h": 844, "title": "Daylight · 1 Today", "radius": 44},
+    "Daylight-2-Setup.dc.html": {"x": 470, "y": 4400, "w": 390, "h": 844, "title": "Daylight · 2 Set up a task", "radius": 44},
+    "Daylight-3-Plans.dc.html": {"x": 940, "y": 4400, "w": 390, "h": 844, "title": "Daylight · 3 Plans", "radius": 44},
+    "Daylight-4-Session.dc.html": {"x": 1410, "y": 4400, "w": 390, "h": 844, "title": "Daylight · 4 Active session", "radius": 44},
+    "Daylight-5-End.dc.html": {"x": 1880, "y": 4400, "w": 390, "h": 844, "title": "Daylight · 5 Session end", "radius": 44},
+    "Daylight-6-Progress.dc.html": {"x": 2350, "y": 4400, "w": 390, "h": 844, "title": "Daylight · 6 Progress", "radius": 44},
+    "Daylight-6b-Progress-All.dc.html": {"x": 2820, "y": 4400, "w": 390, "h": 844, "title": "Daylight · 6 Progress · scrolled, All time", "radius": 44},
+
+    "Cairn-1-Today.dc.html": {"x": 0, "y": 5740, "w": 390, "h": 844, "title": "Cairn · 1 Today", "radius": 44},
+    "Cairn-2-Setup.dc.html": {"x": 470, "y": 5740, "w": 390, "h": 844, "title": "Cairn · 2 Set up a task", "radius": 44},
+    "Cairn-3-Plans.dc.html": {"x": 940, "y": 5740, "w": 390, "h": 844, "title": "Cairn · 3 Plans", "radius": 44},
+    "Cairn-4-Session.dc.html": {"x": 1410, "y": 5740, "w": 390, "h": 844, "title": "Cairn · 4 Active session", "radius": 44},
+    "Cairn-5-End.dc.html": {"x": 1880, "y": 5740, "w": 390, "h": 844, "title": "Cairn · 5 Session end", "radius": 44},
+    "Cairn-6-Progress.dc.html": {"x": 2350, "y": 5740, "w": 390, "h": 844, "title": "Cairn · 6 Progress", "radius": 44},
+    "Cairn-6b-Progress-All.dc.html": {"x": 2820, "y": 5740, "w": 390, "h": 844, "title": "Cairn · 6 Progress · scrolled, All time", "radius": 44},
+
+    "Compare.dc.html": {"x": 0, "y": 0, "w": 940, "h": 1120, "title": "Compare two concepts", "page": "compare", "is_interactive": true}
+  },
+  "order": [
+    "Main.dc.html", "Thread-2-Setup.dc.html", "Thread-3-Plans.dc.html", "Thread-4-Session.dc.html", "Thread-5-End.dc.html", "Thread-6-Progress.dc.html", "Thread-6b-Progress-All.dc.html",
+    "Threshold-1-Today.dc.html", "Threshold-2-Setup.dc.html", "Threshold-3-Plans.dc.html", "Threshold-4-Session.dc.html", "Threshold-5-End.dc.html", "Threshold-6-Progress.dc.html", "Threshold-6b-Progress-All.dc.html",
+    "Margin-1-Today.dc.html", "Margin-2-Setup.dc.html", "Margin-3-Plans.dc.html", "Margin-4-Session.dc.html", "Margin-5-End.dc.html", "Margin-6-Progress.dc.html", "Margin-6b-Progress-All.dc.html",
+    "Daylight-1-Today.dc.html", "Daylight-2-Setup.dc.html", "Daylight-3-Plans.dc.html", "Daylight-4-Session.dc.html", "Daylight-5-End.dc.html", "Daylight-6-Progress.dc.html", "Daylight-6b-Progress-All.dc.html",
+    "Cairn-1-Today.dc.html", "Cairn-2-Setup.dc.html", "Cairn-3-Plans.dc.html", "Cairn-4-Session.dc.html", "Cairn-5-End.dc.html", "Cairn-6-Progress.dc.html", "Cairn-6b-Progress-All.dc.html",
+    "Compare.dc.html"
+  ],
+  "notes": {
+    "t-main": {"x": 0, "y": -300, "text": "Intent — five visual concepts, the same six screens", "kind": "title1", "maxW": 3210},
+    "s-read": {"x": -580, "y": -300, "w": 500, "fill": "gray", "text": "How to read this canvas\n\n• Rows are the five concepts. Columns are the same six screens in the same order: 1 Today · 2 Set up a task · 3 Plans · 4 Active session · 5 Session end · 6 Progress. The seventh frame is screen 6 scrolled, with the chart switched to “All time”.\n• Every concept uses the same sample content. All numbers are sample data.\n• Status bar and home indicator are left to iOS: every layout keeps the top 54 px and the bottom 34 px clear.\n• Every session timer shows 18:42 of 25:00 → 25.2 % elapsed, 74.8 % remaining.\n• Page “Compare two”: pick any two concepts and one screen, side by side at full size (press Play on that board)."},
+
+    "t-thread": {"x": 0, "y": 130, "text": "1 · Thread — pick up the thread", "kind": "title1", "maxW": 3210},
+    "s-thread": {"x": -580, "y": 380, "w": 500, "fill": "blue", "text": "THREAD — pick up the thread\n\nIdea: work is one continuous thread. A single soft line links today’s next actions, becomes the hanging thread of the session timer and records progress as a line that rests level in gaps instead of breaking. A yellow bead marks the next thing; tasks are beads, routines are loops.\n\nPalette: cream, indigo, restrained yellow · Type: Figtree\n\nWeakness / tradeoff: the line needs a left gutter, so text columns on Today and Set up are narrower, and the bead/loop meanings must be learned. A long task list would need a collapse rule to keep the thread readable."},
+
+    "t-threshold": {"x": 0, "y": 1470, "text": "2 · Threshold — every start is a small doorway", "kind": "title1", "maxW": 3210},
+    "s-threshold": {"x": -580, "y": 1720, "w": 500, "fill": "orange", "text": "THRESHOLD — every start is a small doorway, and it stays open\n\nIdea: the arch is the system’s one shape. Today shows the next action inside a dark doorway with its start time in the crown and Start at the threshold; the session happens inside that room and the doorway outline is the timer. Tasks are doorways (go through once); routines are round windows (come round again).\n\nPalette: plaster, clay, plum night, apricot light · Type: Bricolage Grotesque\n\nWeakness / tradeoff: arches waste space in their crowns and resist long or changing text; the dark hero is bold for a planning screen and could feel heavy, or more like a brand than a tool, after months of daily use."},
+
+    "t-margin": {"x": 0, "y": 2810, "text": "3 · Margin — the next sentence is the interface", "kind": "title1", "maxW": 3210},
+    "s-margin": {"x": -580, "y": 3060, "w": 500, "fill": "gray", "text": "MARGIN — the next sentence is the interface\n\nIdea: an editorial page instead of app chrome. A serif headline says what to do, typed margin notes carry times and labels, hairline rules replace cards, and exactly one highlighter stroke per screen marks what matters. Navigation is words only; the session is the same page set in ink, with a minute ruler.\n\nPalette: paper, ink, highlighter · Type: Newsreader + IBM Plex Mono\n\nWeakness / tradeoff: very little containment, so controls and states depend on typographic precision; it needs excellent typesetting for Dynamic Type, long names and translation, and some people may find it austere. Word-only tabs are less glanceable than icons."},
+
+    "t-daylight": {"x": 0, "y": 4150, "text": "4 · Daylight — plans live in the light of your day", "kind": "title1", "maxW": 3210},
+    "s-daylight": {"x": -580, "y": 4400, "w": 500, "fill": "purple", "text": "DAYLIGHT — plans live in the light of your actual day\n\nIdea: the day is drawn as an arc of light from noon to midnight; each next action sits at its cue on it, and the background follows the time. Glass panels and floating controls in the current iOS idiom. A session dims the room to dusk; finishing brings the light back.\n\nPalette: soft sky, glass, sun orange, dusk violet · Type: Geist\n\nWeakness / tradeoff: the most native-feeling direction is also the least ownable; glass over gradients needs care for contrast and performance, and cues without a clock time (“after dinner”) can only be placed approximately on the arc."},
+
+    "t-cairn": {"x": 0, "y": 5490, "text": "5 · Cairn — leave a marker; it will still be there", "kind": "title1", "maxW": 3210},
+    "s-cairn": {"x": -580, "y": 5740, "w": 500, "fill": "green", "text": "CAIRN — leave a marker; it will still be there\n\nIdea: smooth stones you can almost pick up. The next step sits on the largest stone with its start time resting on top like a marker; the prepared next step is a marker left for your future self; finished tasks stack into a small cairn. Nothing falls over while you are away: pausing never knocks progress down.\n\nPalette: limestone, sage, slate, lichen · Type: Zen Maru Gothic\n\nWeakness / tradeoff: shaded, tactile objects add visual weight and rendering cost, irregular shapes are harder to keep consistent at every size, and the stone metaphor must never turn into a collection game for counting sessions."},
+
+    "t-compare": {"x": 0, "y": -260, "text": "Compare any two concepts", "kind": "title1", "maxW": 940, "page": "compare"},
+    "s-compare": {"x": -580, "y": 0, "w": 500, "fill": "gray", "page": "compare", "text": "Compare two concepts\n\nChoose a screen along the top, then a concept above each phone. Both phones are the real boards from the “Five concepts” page, shown at the same 390 × 844 scale.\n\nOn the canvas, press Play on this board to use the buttons."}
+  },
+  "designSystems": []
+}

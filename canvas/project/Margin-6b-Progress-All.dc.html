@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Margin · Progress, all time</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="margin.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-margin">
+  <header style="position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: grid; grid-template-columns: 110px 1fr 110px; align-items: center; padding: 0 20px; border-bottom: 1px solid #DCD8CF;">
+    <span></span>
+    <p style="text-align: center; font-size: 19px; font-weight: 520;">Progress</p>
+    <p class="mg-kicker" style="justify-self: end; color: #1B1D23;">Sample data†</p>
+  </header>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 108px; display: flex; flex-direction: column; gap: 6px;">
+    <div role="group" aria-label="Chart range" style="display: flex; gap: 22px;">
+      <button type="button" class="mg-opt" aria-pressed="false" style="font-size: 17px;">7 days</button>
+      <button type="button" class="mg-opt" aria-pressed="true" style="font-size: 17px;">All time</button>
+    </div>
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <p style="font-size: 21px; line-height: 26px; font-weight: 520;">Total sessions</p>
+      <p class="mg-note">cumulative sessions</p>
+    </div>
+    <svg width="350" height="146" viewBox="0 0 350 146" fill="none" role="img" aria-label="Cumulative sessions from 3 August to 4 October, rising to 56, level from 19 to 31 August when nothing was recorded" style="margin-top: 6px;">
+      <path d="M28 16 H 350 M 28 50.67 H 350 M 28 85.33 H 350" stroke="#E7E3DA" stroke-width="1"></path>
+      <path d="M28 120 H 350" stroke="#1B1D23" stroke-width="1"></path>
+      <text class="mg-axis" x="0" y="20">60</text>
+      <text class="mg-axis" x="0" y="54.7">40</text>
+      <text class="mg-axis" x="0" y="89.3">20</text>
+      <text class="mg-axis" x="0" y="124">0</text>
+      <path d="M28.00 120.00 L33.05 118.27 L38.10 116.53 L43.14 116.53 L48.19 113.07 L53.24 111.33 L58.29 111.33 L63.33 109.60 L68.38 106.13 L73.43 104.40 L78.48 102.67 L83.52 102.67 L88.57 99.20 L93.62 97.47 L98.67 95.73 L103.71 94.00 L108.76 92.27 L113.81 92.27 L118.86 92.27 L123.90 92.27 L128.95 92.27 L134.00 92.27 L139.05 92.27 L144.10 92.27 L149.14 92.27 L154.19 92.27 L159.24 92.27 L164.29 92.27 L169.33 92.27 L174.38 92.27 L179.43 88.80 L184.48 87.07 L189.52 83.60 L194.57 81.87 L199.62 80.13 L204.67 78.40 L209.71 74.93 L214.76 73.20 L219.81 69.73 L224.86 68.00 L229.90 64.53 L234.95 64.53 L240.00 62.80 L245.05 61.07 L250.10 57.60 L255.14 55.87 L260.19 52.40 L265.24 50.67 L270.29 48.93 L275.33 47.20 L280.38 45.47 L285.43 43.73 L290.48 43.73 L295.52 42.00 L300.57 38.53 L305.62 38.53 L310.67 36.80 L315.71 33.33 L320.76 33.33 L325.81 31.60 L330.86 28.13 L335.90 26.40 L340.95 26.40 L346.00 22.93 L346.00 120.00 L28.00 120.00 Z" fill="rgba(27, 29, 35, 0.05)"></path>
+      <path d="M28.00 120.00 L33.05 118.27 L38.10 116.53 L43.14 116.53 L48.19 113.07 L53.24 111.33 L58.29 111.33 L63.33 109.60 L68.38 106.13 L73.43 104.40 L78.48 102.67 L83.52 102.67 L88.57 99.20 L93.62 97.47 L98.67 95.73 L103.71 94.00 L108.76 92.27 L113.81 92.27 L118.86 92.27 L123.90 92.27 L128.95 92.27 L134.00 92.27 L139.05 92.27 L144.10 92.27 L149.14 92.27 L154.19 92.27 L159.24 92.27 L164.29 92.27 L169.33 92.27 L174.38 92.27 L179.43 88.80 L184.48 87.07 L189.52 83.60 L194.57 81.87 L199.62 80.13 L204.67 78.40 L209.71 74.93 L214.76 73.20 L219.81 69.73 L224.86 68.00 L229.90 64.53 L234.95 64.53 L240.00 62.80 L245.05 61.07 L250.10 57.60 L255.14 55.87 L260.19 52.40 L265.24 50.67 L270.29 48.93 L275.33 47.20 L280.38 45.47 L285.43 43.73 L290.48 43.73 L295.52 42.00 L300.57 38.53 L305.62 38.53 L310.67 36.80 L315.71 33.33 L320.76 33.33 L325.81 31.60 L330.86 28.13 L335.90 26.40 L340.95 26.40 L346.00 22.93" stroke="#1B1D23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M110 86 V 82 H 173 V 86" stroke="#666973" stroke-width="1" stroke-linecap="round" transform="translate(0 0)"></path>
+      <text class="mg-axis" x="136" y="72" text-anchor="middle">level: nothing recorded</text>
+      <circle cx="346" cy="22.93" r="5" fill="#F7E27A" stroke="#1B1D23" stroke-width="1.5"></circle>
+      <text x="336" y="12" text-anchor="end" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; fill: #1B1D23;">56</text>
+      <path d="M28 120 V 125 M 174.38 120 V 125 M 325.81 120 V 125" stroke="#1B1D23" stroke-width="1"></path>
+      <text class="mg-axis" x="28" y="139" text-anchor="start">Aug</text>
+      <text class="mg-axis" x="174.4" y="139" text-anchor="middle">Sep</text>
+      <text class="mg-axis" x="325.8" y="139" text-anchor="middle">Oct</text>
+    </svg>
+  </div>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 362px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 378px;">
+    <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 6px;">
+      <p class="mg-note">Routine</p>
+      <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M14.6 9 A 5.6 5.6 0 1 1 12.4 4.6" stroke="#1B1D23" stroke-width="1.4" stroke-linecap="round"></path><path d="M10.2 3.6 L 12.8 4.2 L 12.2 6.8" stroke="#1B1D23" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <p style="font-size: 21px; line-height: 28px;">Evening reading</p>
+        <svg width="84" height="14" viewBox="0 0 84 14" fill="none" role="img" aria-label="3 days recorded as done, 1 planned day not recorded">
+          <circle cx="7" cy="7" r="6" fill="#1B1D23"></circle>
+          <circle cx="29" cy="7" r="6" fill="#1B1D23"></circle>
+          <circle cx="51" cy="7" r="6" fill="#1B1D23"></circle>
+          <circle cx="73" cy="7" r="5.4" fill="none" stroke="#666973" stroke-width="1.2" stroke-dasharray="2 2"></circle>
+        </svg>
+      </div>
+      <p class="mg-body"><span style="color: #1B1D23;">3 days recorded as done.</span> 1 planned day not recorded.</p>
+    </div>
+  </div>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 484px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 500px;">
+    <p class="mg-note" style="padding-top: 6px;">Starts</p>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <p class="mg-project">Most recorded starts</p>
+      <p style="font-size: 30px; line-height: 34px; font-weight: 440; letter-spacing: -0.015em;">16:00–18:00</p>
+      <p class="mg-body">6 of the last 8 sessions.</p>
+      <svg width="276" height="30" viewBox="0 0 276 30" fill="none" aria-hidden="true" style="margin-top: 4px;">
+        <path d="M2 12 H 274" stroke="#1B1D23" stroke-width="1"></path>
+        <path d="M2 12 V 6 M 92.7 12 V 6 M 183.3 12 V 6 M 274 12 V 6" stroke="#1B1D23" stroke-width="1"></path>
+        <rect x="153.1" y="4" width="30.2" height="12" fill="#F7E27A"></rect>
+        <path d="M153.1 12 H 183.3" stroke="#1B1D23" stroke-width="2"></path>
+        <text class="mg-axis" x="2" y="28" text-anchor="start">06</text>
+        <text class="mg-axis" x="92.7" y="28" text-anchor="middle">12</text>
+        <text class="mg-axis" x="183.3" y="28" text-anchor="middle">18</text>
+        <text class="mg-axis" x="274" y="28" text-anchor="end">24</text>
+      </svg>
+      <p class="mg-note">A pattern in your records, not a rule about when to work.</p>
+    </div>
+  </div>
+
+  <p class="mg-note" style="position: absolute; left: 20px; right: 20px; top: 704px; line-height: 16px;">† Sample data. Shows only what was recorded — not unrecorded work, and not focus or quality.</p>
+
+  <nav class="mg-nav" aria-label="Main">
+    <button type="button" class="mg-tab">Today</button>
+    <button type="button" class="mg-tab">Plans</button>
+    <button type="button" class="mg-tab" aria-current="page">Progress</button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

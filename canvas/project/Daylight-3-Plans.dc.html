@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daylight · Plans</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="daylight.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@200..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-daylight">
+  <div style="position: absolute; left: 24px; right: 16px; top: 62px; display: flex; align-items: flex-end; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <p class="dl-date">2 tasks · 1 routine</p>
+      <h1 class="dl-title">Plans</h1>
+    </div>
+  </div>
+
+  <p class="dl-section" style="position: absolute; left: 20px; top: 140px;">Tasks</p>
+  <section class="dl-glass" style="position: absolute; left: 16px; right: 16px; top: 162px; padding: 0; border-radius: 26px;">
+    <article style="padding: 16px 16px 12px; display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; row-gap: 4px;">
+      <span style="grid-row: span 2; width: 40px; height: 40px; border-radius: 20px; background: rgba(255, 255, 255, 0.8); display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true"><path d="M2 15 A 10 9 0 0 1 22 15" stroke="#1D2433" stroke-width="1.6" stroke-linecap="round"></path><circle cx="8.6" cy="7.4" r="2.8" fill="#1D2433"></circle></svg>
+      </span>
+      <span style="display: flex; align-items: center; justify-content: space-between;">
+        <span class="dl-label">Essay outline</span>
+        <span class="dl-cap" style="color: #9E5A1C; font-weight: 650;">Next step ready</span>
+      </span>
+      <span class="dl-action-sm" style="font-size: 17px; line-height: 22px;">Open the document and write three bullet points.</span>
+      <span style="grid-column: 2; display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+        <button type="button" class="dl-btn dl-btn-ink" style="height: 44px; padding: 0 18px 0 14px; font-size: 15px;">
+          <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.5 3.6 C 5.5 2.9, 6.3 2.5, 6.9 2.9 L 14.2 7.9 C 14.8 8.3, 14.8 9.2, 14.2 9.6 L 6.9 14.6 C 6.3 15, 5.5 14.6, 5.5 13.9 Z" fill="#FFFFFF"></path></svg>
+          Resume
+        </button>
+        <span class="dl-cap" style="flex: 1;">Today 16:30</span>
+        <button type="button" class="dl-btn dl-btn-text" style="height: 44px; font-size: 15px;">Edit</button>
+      </span>
+    </article>
+    <article style="padding: 14px 16px 12px; display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; row-gap: 4px; box-shadow: inset 0 1px 0 rgba(29, 36, 51, 0.08);">
+      <span style="grid-row: span 2; width: 40px; height: 40px; border-radius: 20px; background: rgba(255, 255, 255, 0.5); box-shadow: inset 0 0 0 1px rgba(29, 36, 51, 0.12); display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true"><path d="M2 15 A 10 9 0 0 1 22 15" stroke="#5A6273" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 3"></path></svg>
+      </span>
+      <span style="display: flex; align-items: center; justify-content: space-between;">
+        <span class="dl-label">Portfolio update</span>
+        <span class="dl-cap" style="font-weight: 600;">Not scheduled yet</span>
+      </span>
+      <span class="dl-body">Not on your day yet. It waits here, no pressure.</span>
+      <span style="grid-column: 2; display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+        <button type="button" class="dl-btn dl-btn-glass" style="height: 44px; padding: 0 16px; font-size: 15px;">Plan a first step</button>
+        <span style="flex: 1;"></span>
+        <button type="button" class="dl-btn dl-btn-text" style="height: 44px; font-size: 15px;">Edit</button>
+      </span>
+    </article>
+  </section>
+
+  <p class="dl-section" style="position: absolute; left: 20px; top: 490px;">Routines</p>
+  <section class="dl-glass" style="position: absolute; left: 16px; right: 16px; top: 512px; padding: 0; border-radius: 26px;">
+    <article class="dl-row" style="min-height: 72px; padding: 0 8px 0 16px;">
+      <span style="width: 40px; height: 40px; border-radius: 20px; background: rgba(255, 255, 255, 0.8); display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 10 A 6 6 0 1 1 13.6 5.2" stroke="#5B5BA6" stroke-width="1.8" stroke-linecap="round"></path><path d="M11.2 4 L 14 4.6 L 13.4 7.4" stroke="#5B5BA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </span>
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 1px;">
+        <span style="font-size: 17px; font-weight: 600;">Evening reading</span>
+        <span class="dl-cap">Read one page · 5 min · after dinner</span>
+      </span>
+      <button type="button" class="dl-btn dl-btn-text" style="height: 44px; font-size: 15px;">Edit</button>
+    </article>
+    <button type="button" class="dl-row" style="width: 100%; border: 0; background: transparent; min-height: 56px; padding: 0 16px; box-shadow: inset 0 1px 0 rgba(29, 36, 51, 0.08); color: #1D2433;">
+      <span style="width: 40px; display: flex; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="#1D2433" stroke-width="1.6"></circle><path d="M10 6.6 V 13.4 M 6.6 10 H 13.4" stroke="#1D2433" stroke-width="1.6" stroke-linecap="round"></path></svg></span>
+      <span style="font-size: 16px; font-weight: 600;">New routine</span>
+    </button>
+  </section>
+
+  <nav class="dl-tabbar" aria-label="Main">
+    <button type="button" class="dl-tab">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M2 17 A 10 8 0 0 1 22 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><path d="M1 17 H 23" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><circle cx="8" cy="11.2" r="2.4" fill="currentColor"></circle></svg>
+      Today
+    </button>
+    <button type="button" class="dl-tab" aria-current="page">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="2.5" y="3" width="17" height="6" rx="3" stroke="currentColor" stroke-width="1.7"></rect><rect x="2.5" y="12.5" width="17" height="6" rx="3" stroke="currentColor" stroke-width="1.7"></rect><circle cx="6" cy="6" r="1.6" fill="#F29A4A"></circle></svg>
+      Plans
+    </button>
+    <button type="button" class="dl-tab">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 18 V 13 M 8 18 V 9 M 13 18 V 11 M 18 18 V 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      Progress
+    </button>
+  </nav>
+  <button type="button" class="dl-fab" aria-label="New task">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3.5 V 16.5 M 3.5 10 H 16.5" stroke="#1D2433" stroke-width="2" stroke-linecap="round"></path></svg>
+  </button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

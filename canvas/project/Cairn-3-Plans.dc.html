@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cairn · Plans</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="cairn.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-cairn">
+  <div style="position: absolute; left: 24px; right: 20px; top: 62px; display: flex; align-items: flex-start; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <p class="cn-date">2 tasks · 1 routine</p>
+      <h1 class="cn-title">Plans</h1>
+    </div>
+    <button type="button" class="cn-pebble-btn" aria-label="New task" style="margin-top: 8px;">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3 V 15 M 3 9 H 15" stroke="#26312B" stroke-width="2" stroke-linecap="round"></path></svg>
+    </button>
+  </div>
+
+  <p class="cn-label" style="position: absolute; left: 26px; top: 142px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M8.2 1.4 C 13 1.2 15.2 4 15 7.4 C 14.8 10.8 12 12.8 7.8 12.6 C 3.4 12.4 0.8 10.2 1 6.8 C 1.2 3.4 3.8 1.6 8.2 1.4 Z" fill="#5A655E"></path></svg>
+    Tasks · finish once
+  </p>
+
+  <article class="cn-stone" style="position: absolute; left: 16px; right: 16px; top: 166px; padding: 16px 18px 12px; border-radius: 40px 48px 44px 36px / 38px 42px 48px 40px; display: grid; grid-template-columns: 44px 1fr; column-gap: 12px; row-gap: 4px;">
+    <svg width="44" height="40" viewBox="0 0 44 40" fill="none" aria-hidden="true" style="grid-row: span 2;">
+      <path d="M22.4 8 C 34.6 7.2 41.4 13.6 40.8 22.4 C 40.2 31.2 32.8 36.4 21.8 36 C 10.6 35.6 3.2 30.6 3.6 21.6 C 4 12.6 11 8.6 22.4 8 Z" fill="#D6D1C6"></path>
+      <path d="M23.2 1.6 C 28.6 1.4 31.2 4 31 7 C 30.8 10 27.8 11.4 23.4 11.4 C 18.8 11.4 16.4 9.8 16.6 6.8 C 16.8 3.8 19 1.8 23.2 1.6 Z" fill="#CDBF6E" stroke="#26312B" stroke-width="1.2"></path>
+    </svg>
+    <span style="display: flex; align-items: center; justify-content: space-between;">
+      <span class="cn-label">Essay outline</span>
+      <span class="cn-cap" style="color: #4F6656; font-weight: 700;">Next step ready</span>
+    </span>
+    <span class="cn-action-sm" style="font-size: 17px; line-height: 24px;">Open the document and write three bullet points.</span>
+    <span style="grid-column: 2; display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+      <button type="button" class="cn-btn cn-btn-slate" style="height: 44px; padding: 0 18px 0 14px; font-size: 15px;">
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.5 3.6 C 5.5 2.9, 6.3 2.5, 6.9 2.9 L 14.2 7.9 C 14.8 8.3, 14.8 9.2, 14.2 9.6 L 6.9 14.6 C 6.3 15, 5.5 14.6, 5.5 13.9 Z" fill="#FBFAF7"></path></svg>
+        Resume
+      </button>
+      <span class="cn-cap" style="flex: 1;">Today 16:30</span>
+      <button type="button" class="cn-btn cn-btn-text" style="height: 44px; font-size: 15px;">Edit</button>
+    </span>
+  </article>
+
+  <article style="position: absolute; left: 16px; right: 16px; top: 340px; padding: 16px 18px 12px; border-radius: 40px 36px 46px 38px / 40px 44px 38px 46px; background: rgba(255, 255, 255, 0.4); border: 1.5px dashed rgba(38, 49, 43, 0.28); display: grid; grid-template-columns: 44px 1fr; column-gap: 12px; row-gap: 4px;">
+    <svg width="44" height="40" viewBox="0 0 44 40" fill="none" aria-hidden="true" style="grid-row: span 2;">
+      <path d="M22.4 8 C 34.6 7.2 41.4 13.6 40.8 22.4 C 40.2 31.2 32.8 36.4 21.8 36 C 10.6 35.6 3.2 30.6 3.6 21.6 C 4 12.6 11 8.6 22.4 8 Z" fill="#E4E0D7"></path>
+      <path d="M23.2 1.6 C 28.6 1.4 31.2 4 31 7 C 30.8 10 27.8 11.4 23.4 11.4 C 18.8 11.4 16.4 9.8 16.6 6.8 C 16.8 3.8 19 1.8 23.2 1.6 Z" stroke="#8E978F" stroke-width="1.2" stroke-dasharray="2 2"></path>
+    </svg>
+    <span style="display: flex; align-items: center; justify-content: space-between;">
+      <span class="cn-label">Portfolio update</span>
+      <span class="cn-cap" style="font-weight: 700;">Not scheduled yet</span>
+    </span>
+    <span class="cn-body">No marker set yet. It stays right here until you want it.</span>
+    <span style="grid-column: 2; display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+      <button type="button" class="cn-btn cn-btn-stone" style="height: 44px; padding: 0 16px; font-size: 15px;">Plan a first step</button>
+      <span style="flex: 1;"></span>
+      <button type="button" class="cn-btn cn-btn-text" style="height: 44px; font-size: 15px;">Edit</button>
+    </span>
+  </article>
+
+  <p class="cn-label" style="position: absolute; left: 26px; top: 522px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+    <svg width="16" height="14" viewBox="0 0 48 46" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.6 2.4 C 38.4 1.6, 46.4 10.4, 45.6 23.4 C 44.8 36.4, 35.2 44.2, 22.4 43.6 C 9.6 43, 1.8 34.6, 2.4 21.8 C 3 9.6, 11.6 3.2, 24.6 2.4 Z M 24 15.6 C 19.4 15.6, 16.2 18.6, 16.4 23 C 16.6 27.4, 19.8 30.2, 24.2 30 C 28.6 29.8, 31.4 26.8, 31.2 22.6 C 31 18.4, 28.2 15.6, 24 15.6 Z" fill="#5A655E"></path></svg>
+    Routines · come round again
+  </p>
+  <article class="cn-stone-sage" style="position: absolute; left: 16px; right: 16px; top: 546px; padding: 14px 10px 14px 16px; border-radius: 36px 42px 34px 40px / 40px 34px 42px 36px; display: flex; align-items: center; gap: 12px;">
+    <svg width="40" height="38" viewBox="0 0 48 46" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.6 2.4 C 38.4 1.6, 46.4 10.4, 45.6 23.4 C 44.8 36.4, 35.2 44.2, 22.4 43.6 C 9.6 43, 1.8 34.6, 2.4 21.8 C 3 9.6, 11.6 3.2, 24.6 2.4 Z M 24 15.6 C 19.4 15.6, 16.2 18.6, 16.4 23 C 16.6 27.4, 19.8 30.2, 24.2 30 C 28.6 29.8, 31.4 26.8, 31.2 22.6 C 31 18.4, 28.2 15.6, 24 15.6 Z" fill="#4F6656"></path></svg>
+    <span style="flex: 1; display: flex; flex-direction: column; gap: 1px;">
+      <span style="font-size: 17px; font-weight: 700;">Evening reading</span>
+      <span class="cn-cap" style="color: #46524B;">Read one page · 5 min · after dinner</span>
+    </span>
+    <button type="button" class="cn-btn cn-btn-text" style="height: 44px; font-size: 15px;">Edit</button>
+  </article>
+  <button type="button" style="position: absolute; left: 16px; right: 16px; top: 638px; height: 54px; background: transparent; border: 1.5px dashed rgba(38, 49, 43, 0.3); border-radius: 30px 26px 32px 24px / 28px 32px 26px 30px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; font-weight: 700; color: #46524B;">
+    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3 V 15 M 3 9 H 15" stroke="#46524B" stroke-width="2" stroke-linecap="round"></path></svg>
+    New routine
+  </button>
+
+  <nav class="cn-tabbar" aria-label="Main">
+    <button type="button" class="cn-tab">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M12.4 9.2 C 18.8 8.8 22.4 12 22 15.6 C 21.6 19.2 17.6 20.8 12 20.6 C 6.2 20.4 2.2 18.6 2.4 15 C 2.6 11.4 6.6 9.6 12.4 9.2 Z" stroke="currentColor" stroke-width="1.8"></path><path d="M12.6 1.8 C 15.6 1.6 17.2 3.2 17 5 C 16.8 6.8 15 7.6 12.6 7.6 C 10 7.6 8.6 6.6 8.8 4.8 C 9 3 10.2 2 12.6 1.8 Z" stroke="currentColor" stroke-width="1.5"></path></svg>
+      Today
+    </button>
+    <button type="button" class="cn-tab" aria-current="page">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M3 6 C 3 4.4 4.4 3.4 6.4 3.4 H 18 C 20 3.4 21 4.6 21 6 C 21 7.6 19.8 8.6 18 8.6 H 6.2 C 4.2 8.6 3 7.6 3 6 Z M 3 15.6 C 3 14 4.4 13 6.4 13 H 18 C 20 13 21 14.2 21 15.6 C 21 17.2 19.8 18.2 18 18.2 H 6.2 C 4.2 18.2 3 17.2 3 15.6 Z" stroke="currentColor" stroke-width="1.7"></path><circle cx="7" cy="6" r="1.8" fill="#CDBF6E"></circle></svg>
+      Plans
+    </button>
+    <button type="button" class="cn-tab">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M5 20.4 C 2.6 20.4 2 18.6 2.6 17.2 C 3.4 15.6 5.8 15.2 12 15.2 C 18.2 15.2 21 15.6 21.6 17.4 C 22.2 19.2 20.6 20.4 18.6 20.4 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8 15 C 6.6 15 6 13.6 6.8 12.4 C 7.6 11.2 9.6 10.8 12.4 10.8 C 15.4 10.8 17 11.4 17.4 12.6 C 17.8 13.8 16.8 15 15.6 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><path d="M10 10.6 C 9.2 10.2 9.2 8.8 10 8.2 C 10.8 7.6 13.2 7.6 14 8.4 C 14.6 9 14.4 10.2 13.6 10.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
+      Progress
+    </button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

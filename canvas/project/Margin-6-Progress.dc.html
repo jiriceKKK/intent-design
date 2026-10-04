@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Margin · Progress</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="margin.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-margin">
+  <div style="position: absolute; left: 20px; right: 20px; top: 60px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <p class="mg-kicker">Last 7 days</p>
+      <p class="mg-kicker" style="color: #1B1D23;">Sample data†</p>
+    </div>
+    <h1 class="mg-mast" style="font-size: 56px; line-height: 56px;">Progress</h1>
+  </div>
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 152px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 170px;">
+    <p class="mg-note" style="padding-top: 10px;">Finished</p>
+    <div style="display: flex; flex-direction: column;">
+      <h2 class="mg-head" style="font-size: 34px; line-height: 40px;"><span class="mg-mark">2 tasks finished</span></h2>
+      <ul style="margin-top: 8px;">
+        <li style="display: flex; align-items: center; gap: 10px; height: 44px; border-top: 1px solid #DCD8CF;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.4 L 6.2 12 L 13.5 4" stroke="#1B1D23" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size: 21px;">Essay outline</span>
+        </li>
+        <li style="display: flex; align-items: center; gap: 10px; height: 44px; border-top: 1px solid #DCD8CF;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.4 L 6.2 12 L 13.5 4" stroke="#1B1D23" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size: 21px;">Source review</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 334px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 350px;">
+    <p class="mg-note" style="padding-top: 8px;">Sessions</p>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+      <p style="display: flex; flex-direction: column; gap: 4px;"><span class="mg-fig">56</span><span class="mg-note">all time</span></p>
+      <p style="display: flex; flex-direction: column; gap: 4px;"><span class="mg-fig">8</span><span class="mg-note">last 7 days</span></p>
+      <p style="display: flex; flex-direction: column; gap: 4px;"><span class="mg-fig" style="color: #666973;">6</span><span class="mg-note">previous 7 days</span></p>
+    </div>
+  </div>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 436px; margin: 0;">
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 444px; display: flex; flex-direction: column; gap: 6px;">
+    <div role="group" aria-label="Chart range" style="display: flex; gap: 22px;">
+      <button type="button" class="mg-opt" aria-pressed="true" style="font-size: 17px;">7 days</button>
+      <button type="button" class="mg-opt" aria-pressed="false" style="font-size: 17px;">All time</button>
+    </div>
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <p style="font-size: 21px; line-height: 26px; font-weight: 520;">Daily sessions</p>
+      <p class="mg-note">sessions per day</p>
+    </div>
+    <svg width="350" height="126" viewBox="0 0 350 126" fill="none" role="img" aria-label="Daily sessions, Monday to Sunday: 2, 0, 1, 2, 1, 0, 2" style="margin-top: 6px;">
+      <path d="M24 24 H 350 M 24 64 H 350" stroke="#E7E3DA" stroke-width="1"></path>
+      <path d="M24 104 H 350" stroke="#1B1D23" stroke-width="1"></path>
+      <text class="mg-axis" x="2" y="28">2</text>
+      <text class="mg-axis" x="2" y="68">1</text>
+      <text class="mg-axis" x="2" y="108">0</text>
+      <path d="M42.00 104.00 L42.00 27.00 Q42.00 24.00 45.00 24.00 L49.00 24.00 Q52.00 24.00 52.00 27.00 L52.00 104.00 Z" fill="#1B1D23"></path>
+      <path d="M89 101 H 97" stroke="#666973" stroke-width="1.5" stroke-linecap="round"></path>
+      <path d="M134.00 104.00 L134.00 67.00 Q134.00 64.00 137.00 64.00 L141.00 64.00 Q144.00 64.00 144.00 67.00 L144.00 104.00 Z" fill="#1B1D23"></path>
+      <path d="M180.00 104.00 L180.00 27.00 Q180.00 24.00 183.00 24.00 L187.00 24.00 Q190.00 24.00 190.00 27.00 L190.00 104.00 Z" fill="#1B1D23"></path>
+      <path d="M226.00 104.00 L226.00 67.00 Q226.00 64.00 229.00 64.00 L233.00 64.00 Q236.00 64.00 236.00 67.00 L236.00 104.00 Z" fill="#1B1D23"></path>
+      <path d="M273 101 H 281" stroke="#666973" stroke-width="1.5" stroke-linecap="round"></path>
+      <path d="M318.00 104.00 L318.00 27.00 Q318.00 24.00 321.00 24.00 L325.00 24.00 Q328.00 24.00 328.00 27.00 L328.00 104.00 Z" fill="#1B1D23"></path>
+      <text class="mg-axis" x="47" y="121" text-anchor="middle">Mon</text>
+      <text class="mg-axis" x="93" y="121" text-anchor="middle">Tue</text>
+      <text class="mg-axis" x="139" y="121" text-anchor="middle">Wed</text>
+      <text class="mg-axis" x="185" y="121" text-anchor="middle">Thu</text>
+      <text class="mg-axis" x="231" y="121" text-anchor="middle">Fri</text>
+      <text class="mg-axis" x="277" y="121" text-anchor="middle">Sat</text>
+      <text class="mg-axis" x="323" y="121" text-anchor="middle" style="fill: #1B1D23; font-weight: 500;">Sun</text>
+    </svg>
+  </div>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 704px; margin: 0;">
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 718px;">
+    <p class="mg-note" style="padding-top: 6px;">Routine</p>
+    <p style="font-size: 21px; line-height: 28px;">Evening reading</p>
+  </div>
+
+  <nav class="mg-nav" aria-label="Main">
+    <button type="button" class="mg-tab">Today</button>
+    <button type="button" class="mg-tab">Plans</button>
+    <button type="button" class="mg-tab" aria-current="page">Progress</button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

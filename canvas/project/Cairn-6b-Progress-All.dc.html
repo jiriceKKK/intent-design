@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cairn · Progress, all time</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="cairn.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-cairn">
+  <header style="position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: grid; grid-template-columns: 110px 1fr 110px; align-items: center; padding: 0 16px;">
+    <span></span>
+    <p style="text-align: center; font-size: 17px; font-weight: 700;">Progress</p>
+    <span class="cn-tag" style="justify-self: end;">Sample data</span>
+  </header>
+
+  <section class="cn-stone" style="position: absolute; left: 16px; right: 16px; top: 108px; padding: 14px 18px 10px; border-radius: 40px 46px 42px 36px / 38px 40px 46px 40px; display: flex; flex-direction: column; gap: 10px;">
+    <div class="cn-seg" role="group" aria-label="Chart range" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+      <button type="button" aria-pressed="false" style="height: 38px; font-size: 14px;">7 days</button>
+      <button type="button" aria-pressed="true" style="height: 38px; font-size: 14px;">All time</button>
+    </div>
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <p style="font-size: 16px; font-weight: 700;">Total sessions</p>
+      <p class="cn-cap">Cumulative sessions</p>
+    </div>
+    <svg width="322" height="150" viewBox="0 0 322 150" fill="none" role="img" aria-label="Cumulative sessions from 3 August to 4 October, rising to 56, level from 19 to 31 August when nothing was recorded">
+      <path d="M28 18 H 318 M 28 53.33 H 318 M 28 88.67 H 318" stroke="rgba(38,49,43,0.08)" stroke-width="1"></path>
+      <path d="M28 124 H 318" stroke="rgba(38,49,43,0.22)" stroke-width="1"></path>
+      <text class="cn-axis" x="0" y="22">60</text>
+      <text class="cn-axis" x="0" y="57.3">40</text>
+      <text class="cn-axis" x="0" y="92.7">20</text>
+      <text class="cn-axis" x="0" y="128">0</text>
+      <path d="M28.00 124.00 L32.60 122.23 L37.21 120.47 L41.81 120.47 L46.41 116.93 L51.02 115.17 L55.62 115.17 L60.22 113.40 L64.83 109.87 L69.43 108.10 L74.03 106.33 L78.63 106.33 L83.24 102.80 L87.84 101.03 L92.44 99.27 L97.05 97.50 L101.65 95.73 L106.25 95.73 L110.86 95.73 L115.46 95.73 L120.06 95.73 L124.67 95.73 L129.27 95.73 L133.87 95.73 L138.48 95.73 L143.08 95.73 L147.68 95.73 L152.29 95.73 L156.89 95.73 L161.49 95.73 L166.10 92.20 L170.70 90.43 L175.30 86.90 L179.90 85.13 L184.51 83.37 L189.11 81.60 L193.71 78.07 L198.32 76.30 L202.92 72.77 L207.52 71.00 L212.13 67.47 L216.73 67.47 L221.33 65.70 L225.94 63.93 L230.54 60.40 L235.14 58.63 L239.75 55.10 L244.35 53.33 L248.95 51.57 L253.56 49.80 L258.16 48.03 L262.76 46.27 L267.37 46.27 L271.97 44.50 L276.57 40.97 L281.17 40.97 L285.78 39.20 L290.38 35.67 L294.98 35.67 L299.59 33.90 L304.19 30.37 L308.79 28.60 L313.40 28.60 L318.00 25.07 L318.00 124.00 L28.00 124.00 Z" fill="rgba(79, 102, 86, 0.12)"></path>
+      <path d="M28.00 124.00 L32.60 122.23 L37.21 120.47 L41.81 120.47 L46.41 116.93 L51.02 115.17 L55.62 115.17 L60.22 113.40 L64.83 109.87 L69.43 108.10 L74.03 106.33 L78.63 106.33 L83.24 102.80 L87.84 101.03 L92.44 99.27 L97.05 97.50 L101.65 95.73 L106.25 95.73 L110.86 95.73 L115.46 95.73 L120.06 95.73 L124.67 95.73 L129.27 95.73 L133.87 95.73 L138.48 95.73 L143.08 95.73 L147.68 95.73 L152.29 95.73 L156.89 95.73 L161.49 95.73 L166.10 92.20 L170.70 90.43 L175.30 86.90 L179.90 85.13 L184.51 83.37 L189.11 81.60 L193.71 78.07 L198.32 76.30 L202.92 72.77 L207.52 71.00 L212.13 67.47 L216.73 67.47 L221.33 65.70 L225.94 63.93 L230.54 60.40 L235.14 58.63 L239.75 55.10 L244.35 53.33 L248.95 51.57 L253.56 49.80 L258.16 48.03 L262.76 46.27 L267.37 46.27 L271.97 44.50 L276.57 40.97 L281.17 40.97 L285.78 39.20 L290.38 35.67 L294.98 35.67 L299.59 33.90 L304.19 30.37 L308.79 28.60 L313.40 28.60 L318.00 25.07" stroke="#4F6656" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M103 92 V 88 H 160 V 92" stroke="#8E978F" stroke-width="1" stroke-linecap="round"></path>
+      <text class="cn-axis" x="131.5" y="80" text-anchor="middle" style="font-size: 10.5px;">level · nothing recorded</text>
+      <circle cx="318" cy="25.07" r="6" fill="#CDBF6E" stroke="#26312B" stroke-width="1.5"></circle>
+      <text x="304" y="14" text-anchor="end" style="font-family: 'Zen Maru Gothic', system-ui, sans-serif; font-size: 13px; font-weight: 700; fill: #26312B;">56</text>
+      <path d="M28 124 V 128 M 161.49 124 V 128 M 299.59 124 V 128" stroke="rgba(38,49,43,0.22)" stroke-width="1"></path>
+      <text class="cn-axis" x="28" y="143" text-anchor="start">Aug</text>
+      <text class="cn-axis" x="161.5" y="143" text-anchor="middle">Sep</text>
+      <text class="cn-axis" x="299.6" y="143" text-anchor="middle">Oct</text>
+    </svg>
+  </section>
+
+  <section class="cn-stone-sage" style="position: absolute; left: 16px; right: 16px; top: 404px; padding: 14px 18px 14px; border-radius: 36px 42px 34px 40px / 40px 34px 42px 36px; display: flex; flex-direction: column; gap: 6px;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <p class="cn-label" style="color: #4F6656; font-weight: 700;">Evening reading · routine</p>
+      <svg width="104" height="22" viewBox="0 0 104 22" fill="none" role="img" aria-label="3 days recorded as done, 1 planned day not recorded">
+        <path d="M11 3 C 17 2.8 20.4 6 20.2 11 C 20 16 16.6 19 11 18.8 C 5.2 18.6 2 15.6 2.2 10.6 C 2.4 5.8 5.6 3.2 11 3 Z" fill="#4F6656"></path>
+        <path d="M38 2.6 C 44 2.4 47.6 5.8 47.4 10.8 C 47.2 15.8 43.6 19.2 37.8 19 C 32 18.8 28.8 15.4 29 10.4 C 29.2 5.6 32.4 2.8 38 2.6 Z" fill="#4F6656"></path>
+        <path d="M65 3 C 71 2.8 74.4 6.2 74.2 11.2 C 74 16.2 70.4 19 64.8 18.8 C 59 18.6 55.8 15.4 56 10.6 C 56.2 5.8 59.4 3.2 65 3 Z" fill="#4F6656"></path>
+        <path d="M92 3.4 C 97.8 3.2 101 6.4 100.8 11 C 100.6 15.8 97.2 18.6 91.8 18.4 C 86.2 18.2 83.2 15.2 83.4 10.6 C 83.6 6 86.6 3.6 92 3.4 Z" stroke="#5A655E" stroke-width="1.3" stroke-dasharray="2.2 2.2"></path>
+      </svg>
+    </div>
+    <p class="cn-action-sm">3 days recorded as done</p>
+    <p class="cn-body" style="margin-top: -2px;">1 planned day not recorded</p>
+  </section>
+
+  <section class="cn-stone" style="position: absolute; left: 16px; right: 16px; top: 532px; padding: 14px 18px 12px; border-radius: 42px 36px 44px 40px / 40px 44px 38px 42px; display: flex; flex-direction: column; gap: 6px;">
+    <p class="cn-label" style="font-weight: 700;">Most recorded starts</p>
+    <div style="display: flex; align-items: baseline; gap: 10px;">
+      <p class="cn-stat">16:00–18:00</p>
+      <p class="cn-body">6 of the last 8 sessions</p>
+    </div>
+    <svg width="318" height="32" viewBox="0 0 318 32" fill="none" aria-hidden="true">
+      <path d="M6 12 H 312" stroke="#D6D1C6" stroke-width="3" stroke-linecap="round"></path>
+      <path d="M193 4.6 C 203.4 4.2 210.6 7 210.8 12 C 211 17 203.4 19.8 193 19.6 C 182.6 19.4 175.8 17 176 12 C 176.2 7 182.6 5 193 4.6 Z" fill="#CDBF6E" stroke="#26312B" stroke-width="1"></path>
+      <text class="cn-axis" x="6" y="30" text-anchor="start">06</text>
+      <text class="cn-axis" x="108" y="30" text-anchor="middle">12</text>
+      <text class="cn-axis" x="210" y="30" text-anchor="middle">18</text>
+      <text class="cn-axis" x="312" y="30" text-anchor="end">24</text>
+    </svg>
+    <p class="cn-cap">A pattern in your records, not a rule about when to work.</p>
+  </section>
+
+  <p class="cn-cap" style="position: absolute; left: 24px; right: 24px; top: 700px;">Shows only what was recorded — not unrecorded work, and not focus or quality.</p>
+
+  <nav class="cn-tabbar" aria-label="Main">
+    <button type="button" class="cn-tab">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M12.4 9.2 C 18.8 8.8 22.4 12 22 15.6 C 21.6 19.2 17.6 20.8 12 20.6 C 6.2 20.4 2.2 18.6 2.4 15 C 2.6 11.4 6.6 9.6 12.4 9.2 Z" stroke="currentColor" stroke-width="1.8"></path><path d="M12.6 1.8 C 15.6 1.6 17.2 3.2 17 5 C 16.8 6.8 15 7.6 12.6 7.6 C 10 7.6 8.6 6.6 8.8 4.8 C 9 3 10.2 2 12.6 1.8 Z" stroke="currentColor" stroke-width="1.5"></path></svg>
+      Today
+    </button>
+    <button type="button" class="cn-tab">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M3 6 C 3 4.4 4.4 3.4 6.4 3.4 H 18 C 20 3.4 21 4.6 21 6 C 21 7.6 19.8 8.6 18 8.6 H 6.2 C 4.2 8.6 3 7.6 3 6 Z M 3 15.6 C 3 14 4.4 13 6.4 13 H 18 C 20 13 21 14.2 21 15.6 C 21 17.2 19.8 18.2 18 18.2 H 6.2 C 4.2 18.2 3 17.2 3 15.6 Z" stroke="currentColor" stroke-width="1.7"></path></svg>
+      Plans
+    </button>
+    <button type="button" class="cn-tab" aria-current="page">
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none" aria-hidden="true"><path d="M5 20.4 C 2.6 20.4 2 18.6 2.6 17.2 C 3.4 15.6 5.8 15.2 12 15.2 C 18.2 15.2 21 15.6 21.6 17.4 C 22.2 19.2 20.6 20.4 18.6 20.4 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8 15 C 6.6 15 6 13.6 6.8 12.4 C 7.6 11.2 9.6 10.8 12.4 10.8 C 15.4 10.8 17 11.4 17.4 12.6 C 17.8 13.8 16.8 15 15.6 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><path d="M10 10.6 C 9.2 10.2 9.2 8.8 10 8.2 C 10.8 7.6 13.2 7.6 14 8.4 C 14.6 9 14.4 10.2 13.6 10.6" fill="#CDBF6E" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
+      Progress
+    </button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

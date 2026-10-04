@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Threshold · Active session</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="threshold.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-threshold tr-room">
+  <div style="position: absolute; left: 24px; right: 20px; top: 62px; display: flex; align-items: center; justify-content: space-between;">
+    <p class="tr-room-label">Essay outline</p>
+    <span class="tr-pill-room">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.8 L 13.2 3.8 V 7.6 C 13.2 10.8, 11 13.2, 8 14.2 C 5 13.2, 2.8 10.8, 2.8 7.6 V 3.8 Z" stroke="#F6EDE4" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5.8 8 L 7.4 9.6 L 10.4 6.4" stroke="#F6EDE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      Blocking 3 apps
+    </span>
+  </div>
+
+  <h1 style="position: absolute; left: 30px; right: 30px; top: 110px; text-align: center; font-size: 24px; line-height: 29px; font-weight: 500; letter-spacing: -0.012em; color: #F6EDE4; font-variation-settings: 'opsz' 40; text-wrap: balance;">Open the document and write three bullet points.</h1>
+
+  <div style="position: absolute; left: 50px; top: 250px; width: 290px; height: 400px; border-radius: 145px 145px 0 0; background: radial-gradient(70% 45% at 50% 100%, rgba(242, 180, 138, 0.2) 0%, rgba(242, 180, 138, 0.05) 55%, rgba(242, 180, 138, 0) 100%);"></div>
+
+  <svg width="390" height="844" viewBox="0 0 390 844" fill="none" style="position: absolute; left: 0; top: 0;" role="img" aria-label="25.2 percent of the session elapsed, 74.8 percent remaining">
+    <path d="M20 650 H 370" stroke="rgba(246,237,228,0.18)" stroke-width="1"></path>
+    <path d="M50 650 L 50 395 A 145 145 0 0 1 340 395 L 340 650" stroke="rgba(246,237,228,0.2)" stroke-width="1.5"></path>
+    <path d="M50 650 L 50 395 A 145 145 0 0 1 340 395 L 340 650" pathLength="100" stroke-dasharray="25.2 100" stroke="#F2B48A" stroke-width="3.5" stroke-linecap="round"></path>
+    <circle cx="50" cy="406.69" r="13" fill="rgba(242,180,138,0.18)"></circle>
+    <circle cx="50" cy="406.69" r="6.5" fill="#F2B48A" stroke="#2D1F2A" stroke-width="2.5"></circle>
+  </svg>
+
+  <div style="position: absolute; left: 50px; width: 290px; top: 418px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+    <p class="tr-timer" aria-label="18 minutes 42 seconds remaining">18:42</p>
+    <p class="tr-room-label" style="font-size: 15px;">remaining of 25 min</p>
+  </div>
+
+  <div style="position: absolute; left: 50px; width: 290px; top: 580px; display: flex; justify-content: center;">
+    <button type="button" class="tr-btn tr-btn-room" style="height: 46px; font-size: 15px; padding: 0 18px;">I’m feeling stuck</button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 704px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <button type="button" class="tr-btn tr-btn-room" style="height: 56px; border-radius: 28px;">End</button>
+    <button type="button" class="tr-btn" style="height: 56px; border-radius: 28px; background: #F6EDE4; color: #2D1F2A;">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1.3" fill="#2D1F2A"></rect><rect x="9.5" y="2.5" width="3" height="11" rx="1.3" fill="#2D1F2A"></rect></svg>
+      Pause
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

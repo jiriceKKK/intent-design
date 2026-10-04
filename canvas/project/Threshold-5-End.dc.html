@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Threshold · Session end</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="threshold.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-threshold">
+  <div style="position: absolute; left: 50%; top: 78px; width: 64px; height: 82px; margin-left: -32px; border-radius: 32px 32px 8px 8px; background: radial-gradient(80% 50% at 50% 100%, #6A4542 0%, #2D1F2A 100%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12px;">
+    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" aria-hidden="true"><path d="M5 10.5 L 10.5 16 L 21 4.5" stroke="#F2B48A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  </div>
+
+  <div style="position: absolute; left: 24px; right: 24px; top: 180px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;">
+    <h1 class="tr-display" style="font-size: 38px; line-height: 40px;">Session complete.</h1>
+    <p class="tr-body">25 min on Essay outline</p>
+  </div>
+
+  <div role="radiogroup" aria-label="What next" style="position: absolute; left: 20px; right: 20px; top: 280px; display: flex; flex-direction: column; gap: 10px;">
+    <p class="tr-eyebrow" style="text-align: center; margin-bottom: 2px;">And the task?</p>
+    <button type="button" class="tr-choice" role="radio" aria-checked="false">
+      <span class="tr-dot"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.4 L 7.6 13 L 14.4 5.6" stroke="#4A3845" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 17px; font-weight: 600;">Task finished</span><span class="tr-cap">Close Essay outline</span></span>
+    </button>
+    <button type="button" class="tr-choice" role="radio" aria-checked="false">
+      <span class="tr-dot"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.5 3.6 C 5.5 2.9, 6.3 2.5, 6.9 2.9 L 14.2 7.9 C 14.8 8.3, 14.8 9.2, 14.2 9.6 L 6.9 14.6 C 6.3 15, 5.5 14.6, 5.5 13.9 Z" stroke="#4A3845" stroke-width="1.6" stroke-linejoin="round"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 17px; font-weight: 600;">Continue now</span><span class="tr-cap">Another session, straight away</span></span>
+    </button>
+    <button type="button" class="tr-choice" role="radio" aria-checked="true">
+      <span class="tr-dot"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M16.5 13.6 C 15.6 13.9, 14.7 14.1, 13.7 14.1 C 9.6 14.1, 6.4 10.9, 6.4 6.8 C 6.4 5.8, 6.6 4.9, 6.9 4 C 4.6 5.1, 3 7.4, 3 10.1 C 3 13.9, 6.1 17 9.9 17 C 12.9 17, 15.4 15.2, 16.5 13.6 Z" fill="#2D1F2A"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 17px; font-weight: 600;">Done for today</span><span class="tr-cap" style="color: #C9B4B9;">The task stays open</span></span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#F2B48A"></circle><path d="M6 10.2 L 8.8 13 L 14 7.4" stroke="#2D1F2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 520px; padding: 34px 18px 16px; border-radius: 175px 175px 22px 22px / 46px 46px 22px 22px; background: #FBF7F1; box-shadow: inset 0 0 0 1.25px #E0D3C3; display: flex; flex-direction: column; gap: 8px;">
+    <label for="tr-next" style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span style="font-size: 15px; font-weight: 600;">Next time, start with:</span>
+      <span class="tr-cap">Optional</span>
+    </label>
+    <input id="tr-next" readonly value="Write the opening paragraph." style="height: 52px; border: 0; outline: none; border-radius: 16px; padding: 0 14px; background: #F3ECE3; font-size: 17px; font-weight: 550; color: #2D1F2A;">
+    <p class="tr-cap">It will be waiting at the door on Today.</p>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 752px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+    <button type="button" class="tr-btn tr-btn-line" style="height: 54px; border-radius: 27px;">Skip</button>
+    <button type="button" class="tr-btn tr-btn-clay" style="height: 54px; border-radius: 27px;">Save and return</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

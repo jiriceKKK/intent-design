@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Margin · Set up a task</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="margin.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-margin">
+  <header style="position: absolute; left: 20px; right: 20px; top: 54px; height: 44px; display: flex; align-items: center; justify-content: space-between;">
+    <button type="button" class="mg-link" style="text-decoration: none;">Cancel</button>
+    <p class="mg-kicker">New task</p>
+    <span style="width: 52px;"></span>
+  </header>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 108px;">
+    <h1 class="mg-mast" style="font-size: 31px; line-height: 38px;">What’s the first move?</h1>
+  </div>
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 164px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 190px; align-items: end;">
+    <label class="mg-note" for="mg-project" style="padding-bottom: 12px;">Project</label>
+    <input id="mg-project" class="mg-input" value="Essay outline" readonly>
+  </div>
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 262px;">
+    <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 8px;">
+      <label class="mg-note mg-note-ink" for="mg-step">First step</label>
+      <p class="mg-note">keep it small</p>
+    </div>
+    <textarea id="mg-step" rows="3" readonly style="width: 100%; height: 118px; border: 0; outline: none; resize: none; background: transparent; padding: 4px 0 8px; border-bottom: 4px solid #F7E27A; font-size: 29px; line-height: 35px; font-weight: 460; letter-spacing: -0.015em; color: #1B1D23; font-variation-settings: 'opsz' 48;">Open the document and write three bullet points.</textarea>
+  </div>
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 408px;">
+    <p class="mg-note" style="padding-top: 14px;">Start</p>
+    <div style="display: flex; flex-direction: column; gap: 2px;">
+      <div role="group" aria-label="Start cue" style="display: flex; gap: 20px;">
+        <button type="button" class="mg-opt" aria-pressed="false">Now</button>
+        <button type="button" class="mg-opt" aria-pressed="true">At a time</button>
+        <button type="button" class="mg-opt" aria-pressed="false">After…</button>
+      </div>
+      <button type="button" style="display: flex; align-items: baseline; justify-content: space-between; border: 0; background: transparent; padding: 4px 0 8px; border-bottom: 1px solid #1B1D23; width: 100%; text-align: left;">
+        <span style="font-size: 22px; line-height: 28px;">Today</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 500;">16:30</span>
+      </button>
+    </div>
+  </div>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 532px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 546px; align-items: center;">
+    <p class="mg-note">Reminder</p>
+    <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px;">
+      <span class="mg-small" style="font-style: italic;">Optional — off</span>
+      <button type="button" class="mg-switch" role="switch" aria-checked="false" aria-label="Reminder"></button>
+    </div>
+  </div>
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 600px; align-items: center;">
+    <p class="mg-note">Session</p>
+    <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; gap: 10px;">
+      <span class="mg-small">25 min · Countdown · 3 apps blocked</span>
+      <button type="button" class="mg-link" style="font-size: 15px;">Change</button>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 752px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+    <button type="button" class="mg-btn mg-btn-line" style="height: 54px; border-radius: 27px;">Save</button>
+    <button type="button" class="mg-btn mg-btn-ink" style="height: 54px; border-radius: 27px;">
+      <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true"><path d="M2 2.2 C 2 1.5, 2.8 1.1, 3.4 1.5 L 12.2 7.2 C 12.8 7.6, 12.8 8.4, 12.2 8.8 L 3.4 14.5 C 2.8 14.9, 2 14.5, 2 13.8 Z" fill="#F8F6F1"></path></svg>
+      Save &amp; start
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

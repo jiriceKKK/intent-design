@@ -1,0 +1,153 @@
+/* THREAD — one continuous line links today's actions, the session and the record.
+   Cream paper, indigo ink, a restrained yellow bead for "the next thing". */
+.c-thread {
+  --paper: #F6F1E7;
+  --paper-deep: #EDE5D5;
+  --card: #FFFDF8;
+  --ink: #23275A;
+  --ink-2: #3F426B;
+  --muted: #62637D;
+  --line: #E3DAC8;
+  --indigo: #2F3482;
+  --indigo-tint: #E6E5F3;
+  --thread: #3B4096;
+  --yellow: #E8B23F;
+  --yellow-tint: #F8EACB;
+  --night: #161939;
+  --night-2: #1F2357;
+  --night-text: #F4EFE6;
+  --night-muted: #ABADD0;
+  --night-line: rgba(244, 239, 230, 0.16);
+  width: 390px;
+  height: 844px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Figtree', 'Avenir Next', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'ss01' 0;
+}
+.c-thread * { box-sizing: border-box; }
+.c-thread p, .c-thread h1, .c-thread h2, .c-thread h3, .c-thread ul, .c-thread ol { margin: 0; padding: 0; }
+.c-thread ul, .c-thread ol { list-style: none; }
+.c-thread button, .c-thread input, .c-thread textarea { font: inherit; color: inherit; }
+.c-thread button { cursor: pointer; }
+.c-thread svg { display: block; flex: none; }
+
+/* ---------- type ---------- */
+.c-thread .th-date { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.01em; }
+.c-thread .th-title { font-size: 34px; line-height: 40px; font-weight: 700; letter-spacing: -0.025em; color: var(--ink); }
+.c-thread .th-lede { font-size: 15px; line-height: 20px; color: var(--muted); font-weight: 500; }
+.c-thread .th-label { font-size: 13px; line-height: 16px; font-weight: 600; color: var(--muted); letter-spacing: 0.01em; }
+.c-thread .th-label-ink { color: var(--ink-2); }
+.c-thread .th-action { font-size: 23px; line-height: 28px; font-weight: 650; letter-spacing: -0.012em; color: var(--ink); text-wrap: pretty; }
+.c-thread .th-action-sm { font-size: 19px; line-height: 24px; font-weight: 620; letter-spacing: -0.008em; color: var(--ink); }
+.c-thread .th-body { font-size: 15px; line-height: 20px; font-weight: 500; color: var(--ink-2); }
+.c-thread .th-cap { font-size: 12px; line-height: 16px; font-weight: 600; color: var(--muted); }
+.c-thread .th-section { font-size: 13px; line-height: 16px; font-weight: 700; color: var(--ink-2); letter-spacing: 0.02em; display: flex; align-items: center; gap: 8px; }
+
+/* ---------- surfaces ---------- */
+.c-thread .th-card {
+  background: var(--card);
+  border-radius: 26px;
+  box-shadow: 0 1px 0 rgba(35, 39, 90, 0.04), 0 14px 30px -18px rgba(35, 39, 90, 0.28);
+}
+.c-thread .th-card-quiet {
+  background: rgba(255, 253, 248, 0.55);
+  border: 1.5px solid var(--line);
+  border-radius: 24px;
+}
+
+/* ---------- controls ---------- */
+.c-thread .th-btn {
+  height: 48px; padding: 0 20px 0 16px; border-radius: 24px; border: 0;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 16px; font-weight: 650; letter-spacing: -0.005em; white-space: nowrap;
+}
+.c-thread .th-btn-primary { background: var(--indigo); color: #FFFDF8; box-shadow: 0 6px 14px -8px rgba(47, 52, 130, 0.7); }
+.c-thread .th-btn-outline { background: transparent; color: var(--indigo); box-shadow: inset 0 0 0 1.5px rgba(47, 52, 130, 0.35); height: 44px; }
+.c-thread .th-btn-soft { background: var(--indigo-tint); color: var(--indigo); }
+.c-thread .th-btn-text { background: transparent; color: var(--indigo); padding: 0 12px; }
+.c-thread .th-chip {
+  display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px 0 8px; border-radius: 14px;
+  font-size: 13px; font-weight: 650; color: var(--indigo); background: var(--indigo-tint); white-space: nowrap;
+}
+.c-thread .th-chip-quiet { background: transparent; box-shadow: inset 0 0 0 1.25px var(--line); color: var(--ink-2); }
+.c-thread .th-iconbtn {
+  width: 44px; height: 44px; border-radius: 22px; border: 0; background: transparent; color: var(--indigo);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.c-thread .th-tag {
+  display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 11px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.02em; color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); background: var(--card);
+}
+
+/* ---------- navigation ---------- */
+.c-thread .th-nav {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 83px; padding: 7px 18px 0;
+  background: rgba(246, 241, 231, 0.94); border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.c-thread .th-tab {
+  border: 0; background: transparent; height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 3px;
+  color: #66677F; font-size: 11px; font-weight: 650; letter-spacing: 0.01em;
+}
+.c-thread .th-tab[aria-current='page'] { color: var(--indigo); }
+.c-thread .th-tab .th-tabmark { width: 5px; height: 5px; border-radius: 3px; background: transparent; margin-top: 1px; }
+.c-thread .th-tab[aria-current='page'] .th-tabmark { background: var(--yellow); }
+
+/* ---------- form ---------- */
+.c-thread .th-field {
+  width: 100%; border: 0; outline: none; background: var(--card); border-radius: 18px;
+  box-shadow: inset 0 0 0 1.25px var(--line);
+}
+.c-thread .th-input { height: 52px; padding: 0 16px; font-size: 17px; font-weight: 600; color: var(--ink); }
+.c-thread .th-textarea { padding: 14px 16px; font-size: 21px; line-height: 27px; font-weight: 650; letter-spacing: -0.01em; resize: none; display: block; color: var(--ink); }
+.c-thread .th-row {
+  display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 16px; border-radius: 18px; background: var(--card);
+  box-shadow: inset 0 0 0 1.25px var(--line);
+}
+.c-thread .th-seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 16px; background: var(--paper-deep); }
+.c-thread .th-seg button {
+  height: 40px; border-radius: 12px; border: 0; background: transparent; font-size: 15px; font-weight: 650; color: var(--ink-2);
+}
+.c-thread .th-seg button[aria-pressed='true'] { background: var(--card); color: var(--indigo); box-shadow: 0 1px 2px rgba(35, 39, 90, 0.12), 0 4px 10px -6px rgba(35, 39, 90, 0.3); }
+.c-thread .th-switch {
+  width: 51px; height: 31px; border-radius: 16px; background: #DCD3C2; position: relative; border: 0; flex: none;
+}
+.c-thread .th-switch::after {
+  content: ''; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 14px; background: #FFFDF8;
+  box-shadow: 0 2px 5px rgba(35, 39, 90, 0.25);
+}
+
+/* ---------- radio choices ---------- */
+.c-thread .th-choice {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; min-height: 64px; padding: 10px 16px; border: 0;
+  border-radius: 20px; background: var(--card); box-shadow: inset 0 0 0 1.25px var(--line);
+}
+.c-thread .th-choice[aria-checked='true'] { box-shadow: inset 0 0 0 2px var(--indigo), 0 10px 24px -16px rgba(47, 52, 130, 0.6); }
+.c-thread .th-radio { width: 22px; height: 22px; border-radius: 11px; box-shadow: inset 0 0 0 1.75px #B9B3A6; flex: none; position: relative; }
+.c-thread .th-choice[aria-checked='true'] .th-radio { box-shadow: inset 0 0 0 7px var(--indigo); }
+
+/* ---------- night (session) ---------- */
+.c-thread.th-night {
+  background: radial-gradient(120% 70% at 50% 38%, #262A66 0%, var(--night-2) 34%, var(--night) 78%);
+  color: var(--night-text);
+}
+.c-thread .th-night-label { font-size: 13px; font-weight: 600; color: var(--night-muted); letter-spacing: 0.01em; }
+.c-thread .th-pill-night {
+  display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px 0 10px; border-radius: 16px;
+  background: rgba(244, 239, 230, 0.08); box-shadow: inset 0 0 0 1px var(--night-line); color: var(--night-text); font-size: 13px; font-weight: 600;
+}
+.c-thread .th-btn-night { background: rgba(244, 239, 230, 0.1); color: var(--night-text); box-shadow: inset 0 0 0 1px var(--night-line); }
+.c-thread .th-btn-cream { background: var(--night-text); color: var(--night); }
+.c-thread .th-timer { font-size: 88px; line-height: 1; font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--night-text); }
+
+/* ---------- progress ---------- */
+.c-thread .th-big { font-size: 30px; line-height: 34px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+.c-thread .th-stat { font-size: 24px; line-height: 28px; font-weight: 700; letter-spacing: -0.015em; color: var(--ink); }
+.c-thread .th-axis { font-size: 11px; font-weight: 600; fill: var(--muted); font-family: 'Figtree', system-ui, sans-serif; }

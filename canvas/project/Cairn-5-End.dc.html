@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cairn · Session end</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="cairn.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-cairn">
+  <svg width="140" height="120" viewBox="0 0 140 120" fill="none" aria-hidden="true" style="position: absolute; left: 125px; top: 64px;">
+    <defs>
+      <linearGradient id="cn-s1" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#F7F5F0"></stop><stop offset="1" stop-color="#CFC9BD"></stop></linearGradient>
+      <linearGradient id="cn-s2" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#E9EEE6"></stop><stop offset="1" stop-color="#A9B8A6"></stop></linearGradient>
+      <linearGradient id="cn-s3" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#EDE3A6"></stop><stop offset="1" stop-color="#C2B15A"></stop></linearGradient>
+    </defs>
+    <ellipse cx="70" cy="116" rx="58" ry="4" fill="rgba(38,49,43,0.12)"></ellipse>
+    <path d="M70 74 C 104 72, 128 82, 127 96 C 126 110, 102 116, 68 115 C 34 114, 13 106, 14 94 C 15 82, 38 75, 70 74 Z" fill="url(#cn-s1)"></path>
+    <path d="M71 46 C 94 45, 108 53, 107 62 C 106 71, 92 76, 70 75.5 C 48 75, 34 70, 35 61 C 36 52, 49 47, 71 46 Z" fill="url(#cn-s2)"></path>
+    <path d="M72 22 C 86 21.4, 94 27, 93.4 34 C 92.8 41, 84 45.2, 71 45 C 57.6 44.8, 49.6 40.4, 50.2 33.4 C 50.8 26.4, 58.6 22.6, 72 22 Z" fill="url(#cn-s3)"></path>
+    <path d="M58 28 C 62 25.4, 67 24.6, 72 24.6" stroke="rgba(255,255,255,0.7)" stroke-width="2.4" stroke-linecap="round"></path>
+  </svg>
+
+  <div style="position: absolute; left: 24px; right: 24px; top: 196px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center;">
+    <h1 class="cn-title" style="font-size: 30px; line-height: 36px;">Session complete.</h1>
+    <p class="cn-body" style="color: #5A655E;">25 min · Essay outline</p>
+  </div>
+
+  <div role="radiogroup" aria-label="What next" style="position: absolute; left: 16px; right: 16px; top: 284px; display: flex; flex-direction: column; gap: 10px;">
+    <p class="cn-label" style="text-align: center; font-weight: 700; margin-bottom: 2px;">And the task?</p>
+    <button type="button" class="cn-choice" role="radio" aria-checked="false">
+      <span class="cn-mark"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.4 L 7.6 13 L 14.4 5.6" stroke="#46524B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 17px; font-weight: 700;">Task finished</span><span class="cn-cap">Close Essay outline</span></span>
+    </button>
+    <button type="button" class="cn-choice" role="radio" aria-checked="false">
+      <span class="cn-mark"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.5 3.6 C 5.5 2.9, 6.3 2.5, 6.9 2.9 L 14.2 7.9 C 14.8 8.3, 14.8 9.2, 14.2 9.6 L 6.9 14.6 C 6.3 15, 5.5 14.6, 5.5 13.9 Z" stroke="#46524B" stroke-width="1.6" stroke-linejoin="round"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 17px; font-weight: 700;">Continue now</span><span class="cn-cap">Another session, straight away</span></span>
+    </button>
+    <button type="button" class="cn-choice" role="radio" aria-checked="true">
+      <span class="cn-mark"><svg width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M16.5 13.6 C 15.6 13.9, 14.7 14.1, 13.7 14.1 C 9.6 14.1, 6.4 10.9, 6.4 6.8 C 6.4 5.8, 6.6 4.9, 6.9 4 C 4.6 5.1, 3 7.4, 3 10.1 C 3 13.9, 6.1 17 9.9 17 C 12.9 17, 15.4 15.2, 16.5 13.6 Z" fill="#26312B"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 17px; font-weight: 700;">Done for today</span><span class="cn-cap" style="color: #AEB8B0;">The task stays open</span></span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#CDBF6E"></circle><path d="M6 10.2 L 8.8 13 L 14 7.4" stroke="#26312B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+
+  <div style="position: absolute; left: 16px; right: 16px; top: 534px; padding: 16px 18px 16px; border-radius: 40px 46px 42px 36px / 38px 42px 46px 40px; background: linear-gradient(160deg, #F6F1D6 0%, #EFEACB 60%, #E6DFB6 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 12px 22px -16px rgba(38, 49, 43, 0.5); display: flex; flex-direction: column; gap: 8px;">
+    <label for="cn-next" style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span style="font-size: 15px; font-weight: 700;">Next time, start with:</span>
+      <span class="cn-cap">Optional</span>
+    </label>
+    <input id="cn-next" class="cn-field" readonly value="Write the opening paragraph." style="height: 52px; padding: 0 16px; border-radius: 26px 24px 27px 23px; font-size: 17px; font-weight: 700; background: rgba(255, 255, 255, 0.7);">
+    <p class="cn-cap" style="color: #46524B;">A marker for next time. It waits on Today.</p>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 752px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+    <button type="button" class="cn-btn cn-btn-stone" style="height: 54px;">Skip</button>
+    <button type="button" class="cn-btn cn-btn-slate" style="height: 54px;">Save and return</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* CAIRN — leave a marker; it will still be there.
+   Smooth stones you can almost pick up: the next step sits on the largest one,
+   sessions set stones down, and nothing falls over while you are away. */
+.c-cairn {
+  --lime: #EFECE5;
+  --stone: #FBFAF7;
+  --stone-2: #E4E0D7;
+  --stone-3: #D6D1C6;
+  --sage: #A9B8A6;
+  --sage-tint: #E4EBE1;
+  --moss: #4F6656;
+  --slate: #26312B;
+  --slate-2: #46524B;
+  --muted: #5A655E;
+  --lichen: #CDBF6E;
+  --lichen-tint: #EFEACB;
+  --night: #1D2521;
+  --night-2: #2A342F;
+  --night-text: #EEEBE3;
+  --night-muted: #AEB8B0;
+  width: 390px;
+  height: 844px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(120% 60% at 20% 0%, #F5F3EE 0%, var(--lime) 60%, #E9E5DD 100%);
+  color: var(--slate);
+  font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+.c-cairn * { box-sizing: border-box; }
+.c-cairn p, .c-cairn h1, .c-cairn h2, .c-cairn h3, .c-cairn ul { margin: 0; padding: 0; }
+.c-cairn ul { list-style: none; }
+.c-cairn button, .c-cairn input, .c-cairn textarea { font: inherit; color: inherit; }
+.c-cairn button { cursor: pointer; }
+.c-cairn svg { display: block; flex: none; }
+
+/* type */
+.c-cairn .cn-date { font-size: 13px; line-height: 16px; font-weight: 500; color: var(--muted); letter-spacing: 0.02em; }
+.c-cairn .cn-title { font-size: 34px; line-height: 40px; font-weight: 700; letter-spacing: -0.01em; }
+.c-cairn .cn-label { font-size: 13px; line-height: 17px; font-weight: 500; color: var(--muted); }
+.c-cairn .cn-action { font-size: 23px; line-height: 31px; font-weight: 700; letter-spacing: -0.005em; text-wrap: pretty; }
+.c-cairn .cn-action-sm { font-size: 19px; line-height: 26px; font-weight: 700; }
+.c-cairn .cn-body { font-size: 15px; line-height: 22px; color: var(--slate-2); }
+.c-cairn .cn-cap { font-size: 12.5px; line-height: 17px; font-weight: 500; color: var(--muted); }
+
+/* stone surfaces: soft top light, a little weight at the bottom */
+.c-cairn .cn-stone {
+  background: linear-gradient(160deg, #FFFFFF 0%, var(--stone) 40%, #F1EEE7 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -6px 14px -8px rgba(38, 49, 43, 0.12), 0 14px 26px -18px rgba(38, 49, 43, 0.45), 0 2px 4px -2px rgba(38, 49, 43, 0.12);
+}
+.c-cairn .cn-stone-sage {
+  background: linear-gradient(160deg, #EEF3EC 0%, var(--sage-tint) 50%, #DCE5D9 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -6px 14px -8px rgba(38, 49, 43, 0.14), 0 12px 22px -18px rgba(38, 49, 43, 0.45);
+}
+
+/* controls */
+.c-cairn .cn-btn {
+  height: 52px; border: 0; padding: 0 24px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-size: 16px; font-weight: 700; white-space: nowrap; border-radius: 26px 28px 26px 24px;
+}
+.c-cairn .cn-btn-slate {
+  background: radial-gradient(120% 140% at 30% 20%, #3E4B44 0%, var(--slate) 60%); color: var(--stone);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -4px 10px rgba(0, 0, 0, 0.25), 0 10px 18px -10px rgba(38, 49, 43, 0.75);
+}
+.c-cairn .cn-btn-stone { background: linear-gradient(160deg, #FFFFFF, var(--stone-2)); color: var(--slate); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 -3px 8px -4px rgba(38, 49, 43, 0.18), 0 6px 14px -10px rgba(38, 49, 43, 0.5); }
+.c-cairn .cn-btn-line { background: transparent; color: var(--slate); box-shadow: inset 0 0 0 1.5px rgba(38, 49, 43, 0.35); }
+.c-cairn .cn-btn-text { background: transparent; color: var(--moss); padding: 0 10px; }
+.c-cairn .cn-chip { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px 0 8px; border-radius: 14px 15px 14px 13px; font-size: 13px; font-weight: 700; background: var(--stone-2); color: var(--slate); white-space: nowrap; }
+.c-cairn .cn-pebble-btn {
+  width: 46px; height: 44px; border: 0; border-radius: 23px 22px 24px 21px / 22px 23px 21px 22px; display: inline-flex; align-items: center; justify-content: center;
+  background: linear-gradient(160deg, #FFFFFF, var(--stone-2)); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 -3px 8px -4px rgba(38, 49, 43, 0.2), 0 6px 14px -10px rgba(38, 49, 43, 0.5);
+}
+
+/* floating pebble tab bar */
+.c-cairn .cn-tabbar {
+  position: absolute; left: 34px; right: 34px; bottom: 24px; height: 64px; padding: 6px;
+  border-radius: 34px 30px 32px 28px / 32px 30px 34px 30px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: linear-gradient(160deg, #FFFFFF 0%, #F4F1EB 100%);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 16px 30px -16px rgba(38, 49, 43, 0.5), 0 2px 6px -3px rgba(38, 49, 43, 0.2);
+}
+.c-cairn .cn-tab {
+  border: 0; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  font-size: 11px; font-weight: 700; color: var(--muted); border-radius: 26px 24px 27px 23px;
+}
+.c-cairn .cn-tab[aria-current='page'] { color: var(--slate); background: var(--stone-2); box-shadow: inset 0 2px 5px -2px rgba(38, 49, 43, 0.25); }
+
+/* fields */
+.c-cairn .cn-field { width: 100%; border: 0; outline: none; background: rgba(255, 255, 255, 0.65); color: var(--slate); box-shadow: inset 0 2px 6px -3px rgba(38, 49, 43, 0.22), inset 0 0 0 1px rgba(38, 49, 43, 0.06); }
+.c-cairn .cn-switch { width: 51px; height: 31px; border-radius: 16px; background: var(--stone-3); position: relative; border: 0; flex: none; box-shadow: inset 0 2px 4px rgba(38, 49, 43, 0.18); }
+.c-cairn .cn-switch::after { content: ''; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 14px; background: linear-gradient(160deg, #FFFFFF, #EDEAE3); box-shadow: 0 2px 5px rgba(38, 49, 43, 0.3); }
+.c-cairn .cn-seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.c-cairn .cn-seg button { height: 46px; border: 0; border-radius: 23px 25px 22px 24px; font-size: 15px; font-weight: 700; color: var(--slate-2); background: rgba(255, 255, 255, 0.55); box-shadow: inset 0 0 0 1px rgba(38, 49, 43, 0.08); }
+.c-cairn .cn-seg button[aria-pressed='true'] { color: var(--stone); background: radial-gradient(120% 140% at 30% 20%, #3E4B44 0%, var(--slate) 60%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 8px 14px -10px rgba(38, 49, 43, 0.8); }
+
+/* choices */
+.c-cairn .cn-choice {
+  width: 100%; min-height: 62px; border: 0; padding: 10px 18px 10px 14px; display: flex; align-items: center; gap: 14px; text-align: left;
+  border-radius: 30px 34px 32px 28px / 30px 30px 34px 32px; background: rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 0 1px rgba(38, 49, 43, 0.08);
+}
+.c-cairn .cn-choice[aria-checked='true'] { background: radial-gradient(120% 160% at 25% 15%, #3E4B44 0%, var(--slate) 60%); color: var(--night-text); box-shadow: 0 12px 22px -14px rgba(38, 49, 43, 0.8); }
+.c-cairn .cn-choice .cn-mark { width: 34px; height: 32px; border-radius: 17px 16px 18px 15px / 16px 17px 15px 16px; background: var(--stone-2); display: flex; align-items: center; justify-content: center; flex: none; }
+.c-cairn .cn-choice[aria-checked='true'] .cn-mark { background: var(--lichen); }
+
+/* night (session) */
+.c-cairn.cn-night { background: radial-gradient(110% 70% at 50% 45%, #34413A 0%, var(--night-2) 40%, var(--night) 85%); color: var(--night-text); }
+.c-cairn .cn-night-label { font-size: 13px; font-weight: 500; color: var(--night-muted); }
+.c-cairn .cn-timer { font-size: 70px; line-height: 1; font-weight: 500; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.c-cairn .cn-pill-night { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 13px 0 11px; border-radius: 16px 17px 16px 15px; font-size: 13px; font-weight: 700; background: rgba(238, 235, 227, 0.08); box-shadow: inset 0 0 0 1px rgba(238, 235, 227, 0.14); }
+.c-cairn .cn-btn-night { background: rgba(238, 235, 227, 0.08); color: var(--night-text); box-shadow: inset 0 0 0 1px rgba(238, 235, 227, 0.16); }
+
+/* progress */
+.c-cairn .cn-big { font-size: 28px; line-height: 34px; font-weight: 700; }
+.c-cairn .cn-stat { font-size: 26px; line-height: 30px; font-weight: 700; }
+.c-cairn .cn-axis { font-size: 11px; font-weight: 500; fill: var(--muted); font-family: 'Zen Maru Gothic', system-ui, sans-serif; }
+.c-cairn .cn-tag { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border-radius: 13px 14px 13px 12px; font-size: 12px; font-weight: 700; color: var(--muted); background: var(--stone-2); }

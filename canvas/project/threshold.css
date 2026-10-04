@@ -1,0 +1,114 @@
+/* THRESHOLD — every start is a small doorway, and the door stays open.
+   Warm plaster, clay and a deep plum "room"; the arch is the system's one shape. */
+.c-threshold {
+  --plaster: #F3ECE3;
+  --plaster-2: #EAE0D3;
+  --card: #FBF7F1;
+  --line: #E0D3C3;
+  --plum: #2D1F2A;
+  --plum-2: #4A3845;
+  --muted: #6A5962;
+  --clay: #A5533B;
+  --clay-ink: #8E432F;
+  --clay-tint: #F1DDD2;
+  --apricot: #F2B48A;
+  --apricot-soft: #F8DCC6;
+  --room: #241820;
+  --room-2: #33222D;
+  --room-text: #F6EDE4;
+  --room-muted: #C9B4B9;
+  --room-line: rgba(246, 237, 228, 0.16);
+  width: 390px;
+  height: 844px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--plaster);
+  color: var(--plum);
+  font-family: 'Bricolage Grotesque', 'Avenir Next Condensed', system-ui, sans-serif;
+  font-optical-sizing: auto;
+  font-size: 15px;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+.c-threshold * { box-sizing: border-box; }
+.c-threshold p, .c-threshold h1, .c-threshold h2, .c-threshold h3, .c-threshold ul { margin: 0; padding: 0; }
+.c-threshold ul { list-style: none; }
+.c-threshold button, .c-threshold input, .c-threshold textarea { font: inherit; color: inherit; }
+.c-threshold button { cursor: pointer; }
+.c-threshold svg { display: block; flex: none; }
+
+/* type */
+.c-threshold .tr-display { font-size: 46px; line-height: 46px; font-weight: 600; letter-spacing: -0.03em; font-variation-settings: 'opsz' 96; }
+.c-threshold .tr-h2 { font-size: 30px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em; font-variation-settings: 'opsz' 96; }
+.c-threshold .tr-eyebrow { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.c-threshold .tr-label { font-size: 13px; line-height: 16px; font-weight: 600; color: var(--muted); letter-spacing: 0.01em; }
+.c-threshold .tr-action { font-size: 25px; line-height: 29px; font-weight: 550; letter-spacing: -0.015em; font-variation-settings: 'opsz' 48; text-wrap: pretty; }
+.c-threshold .tr-action-sm { font-size: 19px; line-height: 23px; font-weight: 550; letter-spacing: -0.01em; font-variation-settings: 'opsz' 32; }
+.c-threshold .tr-body { font-size: 15px; line-height: 20px; color: var(--plum-2); }
+.c-threshold .tr-cap { font-size: 12.5px; line-height: 16px; font-weight: 500; color: var(--muted); }
+
+/* the arch: semicircular crown on a rectangle */
+.c-threshold .tr-arch { border-radius: 999px 999px 26px 26px; }
+
+/* buttons */
+.c-threshold .tr-btn {
+  height: 50px; border: 0; border-radius: 25px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap;
+}
+.c-threshold .tr-btn-clay { background: var(--clay); color: #FBF7F1; }
+.c-threshold .tr-btn-apricot { background: var(--apricot); color: var(--plum); }
+.c-threshold .tr-btn-plum { background: var(--plum); color: var(--room-text); }
+.c-threshold .tr-btn-line { background: transparent; color: var(--clay-ink); box-shadow: inset 0 0 0 1.5px rgba(165, 83, 59, 0.45); }
+.c-threshold .tr-btn-ghost { background: transparent; color: var(--clay-ink); padding: 0 12px; }
+.c-threshold .tr-btn-room { background: rgba(246, 237, 228, 0.08); color: var(--room-text); box-shadow: inset 0 0 0 1px var(--room-line); }
+
+/* navigation */
+.c-threshold .tr-nav {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 84px; padding: 6px 28px 0; background: var(--plaster);
+  box-shadow: 0 -1px 0 var(--line); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.c-threshold .tr-tab {
+  height: 52px; border: 0; background: transparent; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  color: #6A5962; font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em;
+}
+.c-threshold .tr-tab .tr-tabicon { width: 46px; height: 32px; display: flex; align-items: flex-end; justify-content: center; border-radius: 23px 23px 6px 6px; padding-bottom: 3px; }
+.c-threshold .tr-tab[aria-current='page'] { color: var(--plum); }
+.c-threshold .tr-tab[aria-current='page'] .tr-tabicon { background: var(--plaster-2); }
+
+/* fields */
+.c-threshold .tr-field { width: 100%; border: 0; outline: none; background: var(--card); border-radius: 18px; box-shadow: inset 0 0 0 1.25px var(--line); color: var(--plum); }
+.c-threshold .tr-input { height: 52px; padding: 0 16px; font-size: 17px; font-weight: 550; }
+.c-threshold .tr-row { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 16px; border-radius: 18px; background: var(--card); box-shadow: inset 0 0 0 1.25px var(--line); }
+.c-threshold .tr-switch { width: 51px; height: 31px; border-radius: 16px; background: #DDCFC0; position: relative; border: 0; flex: none; }
+.c-threshold .tr-switch::after { content: ''; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 14px; background: #FBF7F1; box-shadow: 0 2px 5px rgba(45, 31, 42, 0.25); }
+
+/* door choice tiles (start cue) */
+.c-threshold .tr-door {
+  height: 96px; border: 0; border-radius: 999px 999px 16px 16px; background: var(--card); box-shadow: inset 0 0 0 1.25px var(--line);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; padding-bottom: 14px; font-size: 15px; font-weight: 600; color: var(--plum-2);
+}
+.c-threshold .tr-door[aria-pressed='true'] { background: var(--plum); color: var(--room-text); box-shadow: none; }
+
+/* choices */
+.c-threshold .tr-choice {
+  width: 100%; min-height: 60px; border: 0; border-radius: 30px; padding: 8px 18px 8px 10px; display: flex; align-items: center; gap: 12px; text-align: left;
+  background: var(--card); box-shadow: inset 0 0 0 1.25px var(--line);
+}
+.c-threshold .tr-choice .tr-dot { width: 40px; height: 40px; border-radius: 20px; display: flex; align-items: center; justify-content: center; background: var(--plaster-2); flex: none; }
+.c-threshold .tr-choice[aria-checked='true'] { background: var(--plum); box-shadow: none; color: var(--room-text); }
+.c-threshold .tr-choice[aria-checked='true'] .tr-dot { background: var(--apricot); }
+
+/* room (session) */
+.c-threshold.tr-room { background: radial-gradient(90% 60% at 50% 74%, #4A2F35 0%, var(--room-2) 42%, var(--room) 80%); color: var(--room-text); }
+.c-threshold .tr-room-label { font-size: 13px; font-weight: 600; color: var(--room-muted); letter-spacing: 0.01em; }
+.c-threshold .tr-timer { font-size: 80px; line-height: 1; font-weight: 400; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; font-variation-settings: 'opsz' 96; }
+.c-threshold .tr-pill-room { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px 0 10px; border-radius: 16px; background: rgba(246, 237, 228, 0.08); box-shadow: inset 0 0 0 1px var(--room-line); font-size: 13px; font-weight: 600; }
+
+/* progress */
+.c-threshold .tr-stat { font-size: 30px; line-height: 32px; font-weight: 600; letter-spacing: -0.02em; font-variation-settings: 'opsz' 72; }
+.c-threshold .tr-axis { font-size: 11px; font-weight: 600; fill: var(--muted); font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+.c-threshold .tr-tag { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 12px 12px 4px 4px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); background: var(--plaster-2); }
+.c-threshold .tr-seg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 3px; border-radius: 14px; background: var(--plaster-2); }
+.c-threshold .tr-seg button { height: 32px; border: 0; border-radius: 11px; background: transparent; font-size: 14px; font-weight: 600; color: var(--plum-2); }
+.c-threshold .tr-seg button[aria-pressed='true'] { background: var(--plum); color: var(--room-text); }

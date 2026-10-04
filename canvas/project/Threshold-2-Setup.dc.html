@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Threshold · Set up a task</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="threshold.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-threshold">
+  <header style="position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: grid; grid-template-columns: 96px 1fr 96px; align-items: center; padding: 0 8px;">
+    <button type="button" class="tr-btn tr-btn-ghost" style="justify-self: start; font-size: 17px; font-weight: 500; height: 44px;">Cancel</button>
+    <p style="text-align: center; font-size: 17px; font-weight: 600;">New task</p>
+    <span></span>
+  </header>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 112px; display: flex; flex-direction: column; gap: 8px;">
+    <label class="tr-label" for="tr-project" style="padding-left: 4px;">Project</label>
+    <input id="tr-project" class="tr-field tr-input" value="Essay outline" readonly>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 208px; padding: 40px 20px 18px; border-radius: 175px 175px 22px 22px / 52px 52px 22px 22px; background: #2D1F2A; display: flex; flex-direction: column; gap: 8px;">
+    <label for="tr-step" class="tr-eyebrow" style="color: #C9B4B9; text-align: center;">First step · your way in</label>
+    <textarea id="tr-step" rows="2" readonly style="border: 0; outline: none; resize: none; background: transparent; color: #F6EDE4; font-size: 22px; line-height: 27px; font-weight: 550; letter-spacing: -0.012em; text-align: center; height: 58px; padding: 0; font-variation-settings: 'opsz' 40;">Open the document and write three bullet points.</textarea>
+    <p class="tr-cap" style="color: #C9B4B9; text-align: center;">Small enough to start without warming up.</p>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 384px; display: flex; flex-direction: column; gap: 8px;">
+    <p class="tr-label" style="padding-left: 4px;">When to start</p>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;" role="group" aria-label="Start cue">
+      <button type="button" class="tr-door" aria-pressed="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6.5 4.4 C 6.5 3.6, 7.4 3.2, 8 3.6 L 15.4 9 C 16 9.4, 16 10.4, 15.4 10.8 L 8 16.2 C 7.4 16.6, 6.5 16.2, 6.5 15.4 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+        Now
+      </button>
+      <button type="button" class="tr-door" aria-pressed="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.4" stroke="#F2B48A" stroke-width="1.7"></circle><path d="M10 6 V 10.2 L 12.8 12" stroke="#F2B48A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        At a time
+      </button>
+      <button type="button" class="tr-door" aria-pressed="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 5 V 9 C 3.5 11, 5 12.5, 7 12.5 H 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M13 9.5 L 16 12.5 L 13 15.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        After…
+      </button>
+    </div>
+    <button type="button" class="tr-row" style="border: 0; text-align: left; width: 100%;">
+      <span style="flex: 1; font-size: 16px; font-weight: 550;">Today</span>
+      <span style="font-size: 20px; font-weight: 600; color: #8E432F; font-variant-numeric: tabular-nums; font-variation-settings: 'opsz' 48;">16:30</span>
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1.5 1.5 L 6.5 7 L 1.5 12.5" stroke="#A8949B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 578px; display: flex; flex-direction: column; gap: 8px;">
+    <div class="tr-row">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 13.6 V 9 C 5 6.2, 7.2 4, 10 4 C 12.8 4, 15 6.2, 15 9 V 13.6 L 16.2 15 H 3.8 Z" stroke="#4A3845" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.2 17.2 C 8.6 17.9, 9.2 18.2, 10 18.2 C 10.8 18.2, 11.4 17.9, 11.8 17.2" stroke="#4A3845" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      <span style="flex: 1; display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 550;">Reminder</span><span class="tr-cap">Optional</span></span>
+      <button type="button" class="tr-switch" role="switch" aria-checked="false" aria-label="Reminder"></button>
+    </div>
+    <button type="button" style="display: flex; align-items: center; gap: 12px; min-height: 50px; padding: 0 16px; border: 0; border-radius: 18px; background: transparent; text-align: left; width: 100%;">
+      <span style="flex: 1; display: flex; flex-direction: column;">
+        <span class="tr-label" style="color: #4A3845;">Session preferences</span>
+        <span class="tr-cap">25 min · Countdown · 3 apps blocked</span>
+      </span>
+      <span class="tr-cap" style="color: #8E432F; font-weight: 600; font-size: 14px;">Change</span>
+    </button>
+  </div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 752px; display: grid; grid-template-columns: 112px 1fr; gap: 10px;">
+    <button type="button" class="tr-btn tr-btn-line" style="height: 54px; border-radius: 27px;">Save</button>
+    <button type="button" class="tr-btn tr-btn-clay" style="height: 54px; border-radius: 27px;">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5.5 3.6 C 5.5 2.9, 6.3 2.5, 6.9 2.9 L 14.2 7.9 C 14.8 8.3, 14.8 9.2, 14.2 9.6 L 6.9 14.6 C 6.3 15, 5.5 14.6, 5.5 13.9 Z" fill="#FBF7F1"></path></svg>
+      Save &amp; start
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

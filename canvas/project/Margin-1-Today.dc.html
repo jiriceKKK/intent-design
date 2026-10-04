@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Margin · Today</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="margin.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-margin">
+  <div style="position: absolute; left: 20px; right: 20px; top: 60px; display: flex; flex-direction: column; gap: 10px;">
+    <p class="mg-kicker">Sunday 4 October</p>
+    <h1 class="mg-mast" style="font-size: 56px; line-height: 56px;">Today</h1>
+  </div>
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 152px; margin: 0;">
+
+  <article class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 176px;">
+    <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 2px;">
+      <p class="mg-time">16:30</p>
+      <p class="mg-note">25 min</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <p class="mg-project">Essay outline</p>
+      <h2 class="mg-head" style="font-size: 30px; line-height: 36px;"><span class="mg-mark">Open the document and write three bullet points.</span></h2>
+      <div style="display: flex; align-items: center; gap: 18px; margin-top: 14px;">
+        <button type="button" class="mg-btn mg-btn-ink">
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true"><path d="M2 2.2 C 2 1.5, 2.8 1.1, 3.4 1.5 L 12.2 7.2 C 12.8 7.6, 12.8 8.4, 12.2 8.8 L 3.4 14.5 C 2.8 14.9, 2 14.5, 2 13.8 Z" fill="#F8F6F1"></path></svg>
+          Start
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 436px; margin: 0;">
+
+  <article class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 458px;">
+    <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 3px;">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M14.6 9 A 5.6 5.6 0 1 1 12.4 4.6" stroke="#1B1D23" stroke-width="1.4" stroke-linecap="round"></path><path d="M10.2 3.6 L 12.8 4.2 L 12.2 6.8" stroke="#1B1D23" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <p class="mg-note mg-note-ink">After dinner</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <p class="mg-project">Evening reading <span style="font-style: normal; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #666973; margin-left: 4px;">Routine</span></p>
+      <h2 class="mg-head-sm">Read one page.</h2>
+      <div style="display: flex; align-items: center; gap: 16px; margin-top: 10px;">
+        <button type="button" class="mg-btn mg-btn-line" style="height: 44px; padding: 0 18px; font-size: 17px;">Start</button>
+        <span class="mg-note">5 min</span>
+      </div>
+    </div>
+  </article>
+
+  <hr class="mg-rule" style="position: absolute; left: 20px; right: 20px; top: 616px; margin: 0;">
+
+  <div class="mg-row" style="position: absolute; left: 20px; right: 20px; top: 628px;">
+    <span></span>
+    <button type="button" class="mg-link" style="justify-self: start;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5 V 12.5 M 1.5 7 H 12.5" stroke="#1B1D23" stroke-width="1.3" stroke-linecap="round"></path></svg>
+      Add a task
+    </button>
+  </div>
+
+  <nav class="mg-nav" aria-label="Main">
+    <button type="button" class="mg-tab" aria-current="page">Today</button>
+    <button type="button" class="mg-tab">Plans</button>
+    <button type="button" class="mg-tab">Progress</button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

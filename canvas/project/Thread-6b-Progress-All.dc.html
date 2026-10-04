@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thread · Progress, all time</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="thread.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="c-thread">
+  <header style="position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: grid; grid-template-columns: 110px 1fr 110px; align-items: center; padding: 0 16px; border-bottom: 1px solid #E3DAC8; background: rgba(246, 241, 231, 0.94);">
+    <span></span>
+    <p style="text-align: center; font-size: 17px; font-weight: 700; color: #23275A;">Progress</p>
+    <span class="th-tag" style="justify-self: end;">Sample data</span>
+  </header>
+
+  <section class="th-card" style="position: absolute; left: 20px; right: 20px; top: 112px; padding: 14px 18px 12px; display: flex; flex-direction: column; gap: 12px;">
+    <div class="th-seg" role="group" aria-label="Chart range" style="grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 3px; border-radius: 13px;">
+      <button type="button" aria-pressed="false" style="height: 32px; border-radius: 10px; font-size: 14px;">7 days</button>
+      <button type="button" aria-pressed="true" style="height: 32px; border-radius: 10px; font-size: 14px;">All time</button>
+    </div>
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <p style="font-size: 16px; font-weight: 700; color: #23275A;">Total sessions</p>
+      <p class="th-cap" style="font-weight: 550;">Cumulative sessions</p>
+    </div>
+    <svg width="314" height="160" viewBox="0 0 314 160" fill="none" role="img" aria-label="Cumulative sessions from 3 August to 4 October, rising to 56, level from 19 to 31 August when nothing was recorded">
+      <path d="M28 22 H 306 M 28 58.67 H 306 M 28 95.33 H 306" stroke="#EFE7D8" stroke-width="1"></path>
+      <path d="M28 132 H 306" stroke="#D9CFBC" stroke-width="1"></path>
+      <text class="th-axis" x="0" y="26">60</text>
+      <text class="th-axis" x="0" y="62.7">40</text>
+      <text class="th-axis" x="0" y="99.3">20</text>
+      <text class="th-axis" x="0" y="136">0</text>
+      <path d="M28.00 132.00 L32.32 130.17 L36.63 128.33 L40.95 128.33 L45.27 124.67 L49.59 122.83 L53.90 122.83 L58.22 121.00 L62.54 117.33 L66.86 115.50 L71.17 113.67 L75.49 113.67 L79.81 110.00 L84.13 108.17 L88.44 106.33 L92.76 104.50 L97.08 102.67 L101.40 102.67 L105.71 102.67 L110.03 102.67 L114.35 102.67 L118.67 102.67 L122.98 102.67 L127.30 102.67 L131.62 102.67 L135.94 102.67 L140.25 102.67 L144.57 102.67 L148.89 102.67 L153.21 102.67 L157.52 99.00 L161.84 97.17 L166.16 93.50 L170.48 91.67 L174.79 89.83 L179.11 88.00 L183.43 84.33 L187.75 82.50 L192.06 78.83 L196.38 77.00 L200.70 73.33 L205.02 73.33 L209.33 71.50 L213.65 69.67 L217.97 66.00 L222.29 64.17 L226.60 60.50 L230.92 58.67 L235.24 56.83 L239.56 55.00 L243.87 53.17 L248.19 51.33 L252.51 51.33 L256.83 49.50 L261.14 45.83 L265.46 45.83 L269.78 44.00 L274.10 40.33 L278.41 40.33 L282.73 38.50 L287.05 34.83 L291.37 33.00 L295.68 33.00 L300.00 29.33 L300.00 132.00 L28.00 132.00 Z" fill="rgba(47, 52, 130, 0.08)"></path>
+      <path d="M28.00 132.00 L32.32 130.17 L36.63 128.33 L40.95 128.33 L45.27 124.67 L49.59 122.83 L53.90 122.83 L58.22 121.00 L62.54 117.33 L66.86 115.50 L71.17 113.67 L75.49 113.67 L79.81 110.00 L84.13 108.17 L88.44 106.33 L92.76 104.50 L97.08 102.67 L101.40 102.67 L105.71 102.67 L110.03 102.67 L114.35 102.67 L118.67 102.67 L122.98 102.67 L127.30 102.67 L131.62 102.67 L135.94 102.67 L140.25 102.67 L144.57 102.67 L148.89 102.67 L153.21 102.67 L157.52 99.00 L161.84 97.17 L166.16 93.50 L170.48 91.67 L174.79 89.83 L179.11 88.00 L183.43 84.33 L187.75 82.50 L192.06 78.83 L196.38 77.00 L200.70 73.33 L205.02 73.33 L209.33 71.50 L213.65 69.67 L217.97 66.00 L222.29 64.17 L226.60 60.50 L230.92 58.67 L235.24 56.83 L239.56 55.00 L243.87 53.17 L248.19 51.33 L252.51 51.33 L256.83 49.50 L261.14 45.83 L265.46 45.83 L269.78 44.00 L274.10 40.33 L278.41 40.33 L282.73 38.50 L287.05 34.83 L291.37 33.00 L295.68 33.00 L300.00 29.33" stroke="#2F3482" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M98 92 V 88 H 152 V 92" stroke="#8E8BA6" stroke-width="1" stroke-linecap="round"></path>
+      <text class="th-axis" x="125" y="82" text-anchor="middle" style="font-size: 10.5px;">level · nothing recorded</text>
+      <circle cx="300" cy="29.33" r="5.5" fill="#E8B23F" stroke="#FFFDF8" stroke-width="2"></circle>
+      <text x="290" y="18" text-anchor="end" style="font-size: 13px; font-weight: 750; fill: #23275A; font-family: Figtree, system-ui, sans-serif;">56</text>
+      <path d="M28 132 V 136 M 153.21 132 V 136 M 282.73 132 V 136" stroke="#D9CFBC" stroke-width="1"></path>
+      <text class="th-axis" x="28" y="152" text-anchor="start">Aug</text>
+      <text class="th-axis" x="153.2" y="152" text-anchor="middle">Sep</text>
+      <text class="th-axis" x="282.7" y="152" text-anchor="middle">Oct</text>
+    </svg>
+  </section>
+
+  <section class="th-card-quiet" style="position: absolute; left: 20px; right: 20px; top: 398px; padding: 14px 18px 14px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <p class="th-label" style="display: flex; align-items: center; gap: 7px;">
+        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" aria-hidden="true"><path d="M1.5 12 H 7 C 9 12, 9.6 10.6, 9.6 9 C 9.6 6, 11 3.4, 13 3.4 C 15 3.4, 16 5, 16 6.6 C 16 9.6, 12.4 9.8, 11 8.4 M 12.6 12 H 18.5" stroke="#62637D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Evening reading
+      </p>
+      <svg width="132" height="20" viewBox="0 0 132 20" fill="none" role="img" aria-label="3 days recorded as done, 1 planned day not recorded">
+        <path d="M2 10 H 130" stroke="#3B4096" stroke-width="1.6" stroke-linecap="round"></path>
+        <circle cx="18" cy="10" r="6" fill="#2F3482" stroke="#FAF6EE" stroke-width="2"></circle>
+        <circle cx="50" cy="10" r="6" fill="#2F3482" stroke="#FAF6EE" stroke-width="2"></circle>
+        <circle cx="82" cy="10" r="6" fill="#2F3482" stroke="#FAF6EE" stroke-width="2"></circle>
+        <circle cx="114" cy="10" r="6" fill="#FAF6EE" stroke="#8E8BA6" stroke-width="1.5" stroke-dasharray="2.2 2.2"></circle>
+      </svg>
+    </div>
+    <p style="font-size: 17px; font-weight: 650; color: #23275A; line-height: 22px;">3 days recorded as done</p>
+    <p class="th-body" style="margin-top: -6px;">1 planned day not recorded</p>
+  </section>
+
+  <section class="th-card-quiet" style="position: absolute; left: 20px; right: 20px; top: 536px; padding: 14px 18px 12px; display: flex; flex-direction: column; gap: 8px;">
+    <p class="th-label">Most recorded starts</p>
+    <div style="display: flex; align-items: baseline; gap: 10px;">
+      <p class="th-stat">16:00–18:00</p>
+      <p class="th-body">6 of the last 8 sessions</p>
+    </div>
+    <svg width="310" height="30" viewBox="0 0 310 30" fill="none" aria-hidden="true">
+      <path d="M8 10 H 302" stroke="#D9CFBC" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M171.3 10 H 204" stroke="#E8B23F" stroke-width="6" stroke-linecap="round"></path>
+      <text class="th-axis" x="8" y="27" text-anchor="start">06</text>
+      <text class="th-axis" x="106" y="27" text-anchor="middle">12</text>
+      <text class="th-axis" x="204" y="27" text-anchor="middle">18</text>
+      <text class="th-axis" x="302" y="27" text-anchor="end">24</text>
+    </svg>
+    <p class="th-cap" style="font-weight: 500;">A pattern in your records, not a rule about when to work.</p>
+  </section>
+
+  <p class="th-cap" style="position: absolute; left: 24px; right: 24px; top: 712px; font-weight: 500; line-height: 16px;">Shows only what was recorded — not unrecorded work, and not focus or quality.</p>
+
+  <nav class="th-nav" aria-label="Main">
+    <button type="button" class="th-tab">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M3 15 C 7 15, 8 11, 13 11 C 18 11, 19 15, 23 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><circle cx="13" cy="11" r="3.6" fill="currentColor"></circle></svg>
+      Today
+    </button>
+    <button type="button" class="th-tab">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="6" cy="7" r="2" fill="currentColor"></circle><circle cx="6" cy="13" r="2" fill="currentColor"></circle><path d="M6 17.5 C 6 19.5, 7 20.5, 8.6 19.4 C 10 18.4, 8.6 16.6, 6 18.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M11 7 H 22 M 11 13 H 22 M 11 19 H 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      Plans
+    </button>
+    <button type="button" class="th-tab" aria-current="page">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M3 20 L 8 20 C 10 20, 10 14, 12.5 14 L 15 14 C 17.5 14, 17.5 7, 20 7 L 22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="22" cy="7" r="2.6" fill="#E8B23F" stroke="#2F3482" stroke-width="1.4"></circle></svg>
+      Progress
+    </button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
