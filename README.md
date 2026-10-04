@@ -36,7 +36,7 @@ Page *Five concepts*: one row per concept, one column per screen, all at 390 × 
 
 ## Hodnocení (česky)
 
-**Co je ověřené a co ne.** Nic z toho nebylo testováno s lidmi. Ověřil jsem jen to, co jde ověřit bez uživatelů: všechny obrazovky jsem vyrenderoval a prošel, grafy i ukazatele času jsou spočítané z čísel v zadání, kontrast hlavních textových barev jsem spočítal (běžný text ≥ 4,5 : 1) a dotykové plochy mají aspoň 44 px. Všechno ostatní níže je můj designérský úsudek.
+**Co je ověřené a co ne.** Nic z toho nebylo testováno s lidmi. Ověřené je jen to, co jde zkontrolovat bez uživatelů: všechny obrazovky jsou vyrenderované a prošlé, grafy i ukazatele času jsou spočítané z čísel v zadání, kontrast hlavních textových barev je spočítaný (běžný text ≥ 4,5 : 1) a dotykové plochy mají aspoň 44 px. Všechno ostatní níže je můj designérský úsudek.
 
 - **Thread** má nejblíž k vašim uvedeným preferencím a jeho metafora přímo odpovídá návratu bez viny. Riziko: linka zabírá levý okraj a delší seznamy budou potřebovat pravidlo pro sbalování.
 - **Threshold** má nejsilnější a nejlépe zapamatovatelnou siluetu. Riziko: oblouky špatně snášejí dlouhý text a tmavé dveře mohou při každodenním používání působit těžce.
