@@ -20,7 +20,7 @@ Page *Five concepts*: one row per concept (plus Daylight's dark appearance as ro
 
 ### Daylight dark (variant of 4)
 
-Daylight's dark appearance, for when iOS is set to Dark Mode (canvas row 4b; also selectable on *Compare two*). The same circular path, cues, layout and content on a night sky. A rendered moon takes the sun's place as the "now" marker and the light source, and accents change from sun orange to moonlight silver and violet. The moon is always full, whatever the date: a steady symbol rather than an almanac. Its place on the circle is the "now" marker, not its position in the real sky. The session goes one step darker than the planning screens, and at session end the moon rises behind the sheet.
+Daylight's dark appearance, for when iOS is set to Dark Mode (canvas row 4b; also selectable on *Compare two*). The same circular path, cues, layout and content on a calm blue-black night sky, without stars. A rendered white moon takes the sun's place as the "now" marker and the light source, and accents change from sun orange to white moonlight and a soft violet. The moon is always full, whatever the date: a steady symbol rather than an almanac. Its place on the circle is the "now" marker, not its position in the real sky. The session goes one step darker than the planning screens, and at session end the moon rises behind the sheet.
 Tradeoff: with every screen dark, the light-planning / dark-focus contrast of the light theme is gone, so the session has to go darker still to feel different; moonlight also makes finishing feel calm rather than celebratory.
 
 ## Shared rules (all five)
@@ -38,6 +38,7 @@ Tradeoff: with every screen dark, the light-planning / dark-focus contrast of th
 - `renders/` — every screen as a 780 × 1688 PNG (@2x). `renders/sheets/` — contact sheets per concept and per screen.
 - `tools/shoot.sh` — renders boards to PNG with Playwright. It needs the canvas runtime (`support.js`, served by the Design artifact type and not included here): `DC_RUNTIME=/path/to/support.js ./tools/shoot.sh --all`.
 - `tools/geometry.py` — sample data and exact geometry for charts and progress marks. `tools/sheet.py` — contact sheets.
+- `daylight/Intent-Daylight.html` — one self-contained file with Daylight in both appearances, sun (light) and moon (dark), seven screens each; styles, images and font are embedded, so it opens offline in any browser. `daylight/Intent-Daylight.png` is the same page as an image. Rebuild both with `python3 tools/daylight_file.py daylight/Intent-Daylight.html`.
 - `tools/sun.py`, `tools/moon.py` — procedural renders of the Daylight sun and the (always full) moon (`python3 tools/moon.py canvas/project` writes `moon.png` and `moon-low.png`).
 
 ## Hodnocení (česky)
@@ -49,7 +50,7 @@ Tradeoff: with every screen dark, the light-planning / dark-focus contrast of th
 - **Margin** je nejklidnější a nejuniverzálnější. Riziko: skoro žádné kontejnery, takže hodně stojí na precizní sazbě; někomu může připadat strohý.
 - **Daylight** nejvíc odpovídá současnému iOS. Riziko: má nejslabší vlastní identitu a sklo je náročné na kontrast i výkon.
 - **Cairn** je nejhmatatelnější a nejvíc emocionální. Riziko: je vizuálně nejtěžší a jeho metafora nesmí sklouznout ke sbírání.
-- **Daylight tmavý** (varianta Daylightu, ne šestý koncept) přenáší stejný systém do noci: místo slunce je tu měsíc, vždy v úplňku bez ohledu na datum, a akcenty mají barvu měsíčního světla. Riziko: když je tmavé všechno, mizí rozdíl mezi světlým plánováním a tmavým soustředěním, proto je sezení ještě o stupeň tmavší; měsíční světlo je chladnější, takže konec sezení působí spíš klidně než oslavně.
+- **Daylight tmavý** (varianta Daylightu, ne šestý koncept) přenáší stejný systém do noci: místo slunce je tu bílý měsíc, vždy v úplňku bez ohledu na datum, na klidné modročerné obloze bez hvězd; akcenty mají barvu měsíčního světla. Riziko: když je tmavé všechno, mizí rozdíl mezi světlým plánováním a tmavým soustředěním, proto je sezení ještě o stupeň tmavší; měsíční světlo je chladnější, takže konec sezení působí spíš klidně než oslavně.
 
 **Doporučené ověření s lidmi:** pětivteřinový test obrazovky Today („co uděláte teď?“), první klepnutí na Start, jestli lidé bez barev poznají úkol od rutiny, jestli Progress po pauze nevyvolává pocit viny a jestli jde v tmavém sezení přečíst čas a průběh; u tmavého Daylightu také, jestli lidé chápou měsíc jako značku „teď“.
 

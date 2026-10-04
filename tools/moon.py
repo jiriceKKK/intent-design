@@ -7,7 +7,7 @@ moon lit straight on (Lommel–Seeliger at zero phase gives no limb darkening), 
 hint of rim shading to keep it round, and a cool halo.
 
   python3 tools/moon.py canvas/project
-writes moon.png (high in the sky) and moon-low.png (rising: warmer, a touch flattened).
+writes moon.png (high in the sky) and moon-low.png (rising: a touch flattened). Both are white.
 """
 import sys
 import numpy as np
@@ -125,8 +125,7 @@ def render(lit_tint, mare_tint, halo, flatten=1.0, gain=1.0, seed=3):
 
 if __name__ == '__main__':
     out = sys.argv[1] if len(sys.argv) > 1 else '.'
-    render(lit_tint=(244, 246, 252), mare_tint=(190, 196, 212),
-           halo=(0.30, 0.16, 0.08, (206, 216, 255))).save(f'{out}/moon.png', optimize=True)
-    render(lit_tint=(255, 236, 206), mare_tint=(205, 180, 160),
-           halo=(0.34, 0.20, 0.11, (255, 218, 182)), flatten=0.95).save(f'{out}/moon-low.png', optimize=True)
+    white = dict(lit_tint=(246, 247, 250), mare_tint=(184, 187, 196))      # white moonlight, no warm cast
+    render(halo=(0.30, 0.16, 0.08, (224, 228, 238)), **white).save(f'{out}/moon.png', optimize=True)
+    render(halo=(0.34, 0.20, 0.11, (224, 228, 238)), flatten=0.95, **white).save(f'{out}/moon-low.png', optimize=True)
     print('ok')

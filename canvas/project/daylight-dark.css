@@ -1,57 +1,26 @@
-/* DAYLIGHT · DARK — the same system after dark: a night sky, moonlight instead of sun,
+/* DAYLIGHT · DARK — the same system after dark: a calm night sky, moonlight instead of sun,
    dark glass. Loaded after daylight.css; everything is scoped to .c-daylight.dl-dark. */
 .c-daylight.dl-dark {
-  --ink: #F2F4FA;
-  --ink-2: #C9CEDF;
-  --muted: #A3AAC2;
-  --moon: #C9D4FF;
-  --moon-ink: #C7D2FF;
-  --violet: #A9A9F0;
+  --ink: #F3F4F9;
+  --ink-2: #CBCFDD;
+  --muted: #A6ACBF;
+  --moon: #CED7FA;
+  --moon-ink: #CDD5F9;
+  --violet: #B0B0E9;
   --glass: rgba(255, 255, 255, 0.07);
   --glass-edge: rgba(255, 255, 255, 0.10);
-  --stars:
-    radial-gradient(circle 0.8px at 247px 10px, rgba(255,255,255,0.31) 0%, rgba(255,255,255,0.31) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.1px at 46px 229px, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.26) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 19px 69px, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.46) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.0px at 276px 198px, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.34) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.3px at 311px 8px, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.45) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 112px 79px, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 44px 271px, rgba(255,255,255,0.29) 0%, rgba(255,255,255,0.29) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.1px at 209px 263px, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 25px 59px, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.9px at 332px 112px, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.26) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.3px at 141px 227px, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.32) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.8px at 236px 63px, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.42) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.8px at 109px 309px, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.24) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 323px 177px, rgba(255,255,255,0.43) 0%, rgba(255,255,255,0.43) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.1px at 158px 30px, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.65) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.3px at 126px 182px, rgba(255,255,255,0.31) 0%, rgba(255,255,255,0.31) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.9px at 107px 80px, rgba(255,255,255,0.53) 0%, rgba(255,255,255,0.53) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.8px at 168px 157px, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.3px at 42px 11px, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.32) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.1px at 262px 164px, rgba(255,255,255,0.51) 0%, rgba(255,255,255,0.51) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 206px 350px, rgba(255,255,255,0.19) 0%, rgba(255,255,255,0.19) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.3px at 51px 305px, rgba(255,255,255,0.17) 0%, rgba(255,255,255,0.17) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.3px at 118px 9px, rgba(255,255,255,0.68) 0%, rgba(255,255,255,0.68) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 107px 106px, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.55) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.8px at 120px 206px, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.26) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.7px at 68px 353px, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.18) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.9px at 191px 34px, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 1.3px at 98px 90px, rgba(255,255,255,0.41) 0%, rgba(255,255,255,0.41) 60%, rgba(255,255,255,0) 100%),
-    radial-gradient(circle 0.8px at 34px 265px, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.28) 60%, rgba(255,255,255,0) 100%);
   color: var(--ink);
   background:
-    var(--stars),
-    radial-gradient(48% 26% at 74% 16%, rgba(170, 186, 255, 0.2) 0%, rgba(170, 186, 255, 0) 70%),
-    radial-gradient(80% 50% at 0% 100%, rgba(120, 92, 190, 0.22) 0%, rgba(120, 92, 190, 0) 70%),
-    linear-gradient(180deg, #0C1124 0%, #111735 42%, #18183C 78%, #211B42 100%);
+    radial-gradient(48% 26% at 74% 16%, rgba(186, 196, 239, 0.2) 0%, rgba(186, 196, 239, 0) 70%),
+    radial-gradient(80% 50% at 0% 100%, rgba(128, 111, 171, 0.22) 0%, rgba(128, 111, 171, 0) 70%),
+    linear-gradient(180deg, #0E111C 0%, #14182A 42%, #1A1A30 78%, #211D35 100%);
 }
 
 .c-daylight.dl-dark .dl-glass {
   background: var(--glass);
   box-shadow: inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 14px 34px -16px rgba(0, 0, 0, 0.6);
 }
-.c-daylight.dl-dark .dl-btn-ink { background: #F2F4FA; color: #12162C; box-shadow: 0 10px 24px -12px rgba(170, 186, 255, 0.45); }
+.c-daylight.dl-dark .dl-btn-ink { background: #F3F4F9; color: #141623; box-shadow: 0 10px 24px -12px rgba(186, 196, 239, 0.45); }
 .c-daylight.dl-dark .dl-btn-glass {
   background: rgba(255, 255, 255, 0.12); color: var(--ink);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), 0 6px 16px -10px rgba(0, 0, 0, 0.6);
@@ -61,26 +30,26 @@
 .c-daylight.dl-dark .dl-iconbtn,
 .c-daylight.dl-dark .dl-tabbar,
 .c-daylight.dl-dark .dl-fab {
-  background: rgba(30, 34, 62, 0.62);
+  background: rgba(31, 33, 50, 0.62);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 16px 36px -14px rgba(0, 0, 0, 0.7);
 }
 .c-daylight.dl-dark .dl-tab { color: var(--ink-2); }
 .c-daylight.dl-dark .dl-tab[aria-current='page'] { background: rgba(255, 255, 255, 0.12); color: #FFFFFF; }
 .c-daylight.dl-dark .dl-row + .dl-row { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); }
-.c-daylight.dl-dark .dl-switch { background: rgba(120, 120, 140, 0.36); }
-.c-daylight.dl-dark .dl-switch::after { background: #F2F4FA; }
-.c-daylight.dl-dark .dl-seg { background: rgba(118, 118, 140, 0.24); }
+.c-daylight.dl-dark .dl-switch { background: rgba(124, 124, 136, 0.36); }
+.c-daylight.dl-dark .dl-switch::after { background: #F3F4F9; }
+.c-daylight.dl-dark .dl-seg { background: rgba(122, 122, 136, 0.24); }
 .c-daylight.dl-dark .dl-seg button { color: var(--ink-2); }
 .c-daylight.dl-dark .dl-seg button[aria-pressed='true'] { background: rgba(255, 255, 255, 0.2); color: #FFFFFF; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); }
 .c-daylight.dl-dark .dl-axis { fill: var(--muted); }
 
 /* elevated surfaces inside sheets */
-.c-daylight.dl-dark .dl-elev { background: #1F2440; }
+.c-daylight.dl-dark .dl-elev { background: #202334; }
 
 /* the session goes one step deeper than the planning screens */
 .c-daylight.dl-dark.dl-deep {
   background:
-    radial-gradient(70% 46% at 50% 42%, rgba(110, 122, 210, 0.16) 0%, rgba(110, 122, 210, 0) 70%),
-    radial-gradient(90% 34% at 50% 104%, rgba(120, 92, 190, 0.22) 0%, rgba(120, 92, 190, 0) 70%),
-    linear-gradient(180deg, #04060E 0%, #080B1C 55%, #100E26 100%);
+    radial-gradient(70% 46% at 50% 42%, rgba(129, 136, 191, 0.16) 0%, rgba(129, 136, 191, 0) 70%),
+    radial-gradient(90% 34% at 50% 104%, rgba(128, 111, 171, 0.22) 0%, rgba(128, 111, 171, 0) 70%),
+    linear-gradient(180deg, #05060B 0%, #0A0C16 55%, #11101E 100%);
 }
