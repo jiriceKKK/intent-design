@@ -123,3 +123,12 @@ def pebble_rect(w, h, r=(46, 58, 50, 40), bulge=(3, 4, 3, 5), x=0, y=0):
         (P(0, tl), P(0, tl * (1 - k)), P(tl * (1 - k), 0), P(tl, 0)),
     ]
     return segments_to_d(segs)
+
+
+# ---------- Daylight: the day as the sun's circular path ----------
+SOLAR_NOON = 12 + 50 / 60     # top of the circle; sunrise 07:00 and sunset 18:40 sit on the horizon
+
+def sun_circle(h, cx, cy, r):
+    """Point for clock time h (hours) on a 24 h circle, clockwise, solar noon at the top."""
+    t = math.radians((h - SOLAR_NOON) * 15)
+    return (cx + r * math.sin(t), cy - r * math.cos(t))

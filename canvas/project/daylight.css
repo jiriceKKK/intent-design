@@ -19,8 +19,8 @@
   box-sizing: border-box;
   color: var(--ink);
   background:
-    radial-gradient(60% 34% at 26% 20%, rgba(255, 214, 170, 0.75) 0%, rgba(255, 214, 170, 0) 70%),
-    radial-gradient(80% 50% at 100% 100%, rgba(214, 200, 238, 0.7) 0%, rgba(214, 200, 238, 0) 70%),
+    radial-gradient(56% 30% at 74% 16%, rgba(255, 216, 176, 0.7) 0%, rgba(255, 216, 176, 0) 70%),
+    radial-gradient(80% 50% at 0% 100%, rgba(214, 200, 238, 0.65) 0%, rgba(214, 200, 238, 0) 70%),
     linear-gradient(180deg, #DCE5F1 0%, #ECE6EF 46%, #F6E8E0 100%);
   font-family: 'Geist', 'SF Pro Text', system-ui, sans-serif;
   font-size: 15px;
