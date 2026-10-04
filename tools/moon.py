@@ -1,12 +1,10 @@
 """Renders the Daylight (dark) moon as a transparent PNG, in the same spirit as sun.py.
 
+The moon is always full, whatever the date: a steady symbol, not an almanac.
 Photographic cues, softened: the maria in roughly their real places on the near side,
-a few bright young craters, regolith grain, Lommel–Seeliger shading (the moon looks
-flat-lit, not like a matte ball), a soft terminator, faint earthshine on the dark side
-and a cool halo centred on the lit part.
-
-The phase is the real one for the date on the screens, Sunday 4 October 2026: last
-quarter, about 43 % lit, waning, so the left half is lit as seen from Europe.
+bright young craters (Tycho with faint rays), regolith grain, the flat look of a full
+moon lit straight on (Lommel–Seeliger at zero phase gives no limb darkening), only a
+hint of rim shading to keep it round, and a cool halo.
 
   python3 tools/moon.py canvas/project
 writes moon.png (high in the sky) and moon-low.png (rising: warmer, a touch flattened).
@@ -18,21 +16,32 @@ from PIL import Image
 S = 1024
 R = 128
 
-# (u, v, rx, ry, depth) in disc units, north up, as seen from the northern hemisphere
+# (u, v, rx, ry, depth) in disc units, north up, as seen from the northern hemisphere.
+# Centres follow the real selenographic positions projected onto the disc.
 MARIA = [
-    (-0.50, 0.02, 0.30, 0.52, 0.30),   # Oceanus Procellarum
-    (-0.28, -0.38, 0.26, 0.24, 0.36),  # Mare Imbrium
-    (0.00, -0.66, 0.42, 0.07, 0.24),   # Mare Frigoris
-    (0.15, -0.36, 0.15, 0.15, 0.34),   # Mare Serenitatis
-    (0.30, -0.08, 0.21, 0.16, 0.34),   # Mare Tranquillitatis
-    (0.66, -0.30, 0.11, 0.09, 0.36),   # Mare Crisium
-    (0.56, 0.12, 0.12, 0.16, 0.28),    # Mare Fecunditatis
-    (0.36, 0.27, 0.09, 0.09, 0.26),    # Mare Nectaris
-    (-0.18, 0.36, 0.18, 0.13, 0.26),   # Mare Nubium
-    (-0.50, 0.36, 0.09, 0.09, 0.30),   # Mare Humorum
-    (0.00, -0.12, 0.08, 0.06, 0.20),   # Sinus Medii / Mare Vaporum
+    (-0.70, -0.08, 0.26, 0.50, 0.20),  # Oceanus Procellarum
+    (-0.23, -0.52, 0.29, 0.24, 0.27),  # Mare Imbrium
+    (0.02, -0.80, 0.40, 0.06, 0.13),   # Mare Frigoris
+    (0.27, -0.46, 0.18, 0.16, 0.28),   # Mare Serenitatis
+    (0.49, -0.13, 0.22, 0.19, 0.27),   # Mare Tranquillitatis
+    (0.80, -0.29, 0.09, 0.13, 0.30),   # Mare Crisium
+    (0.73, 0.14, 0.13, 0.21, 0.22),    # Mare Fecunditatis
+    (0.55, 0.27, 0.09, 0.09, 0.21),    # Mare Nectaris
+    (-0.25, 0.36, 0.20, 0.14, 0.20),   # Mare Nubium
+    (-0.56, 0.41, 0.09, 0.10, 0.24),   # Mare Humorum
+    (-0.47, -0.10, 0.13, 0.10, 0.18),  # Mare Insularum
+    (-0.38, 0.17, 0.08, 0.07, 0.16),   # Mare Cognitum
+    (0.06, -0.23, 0.08, 0.06, 0.18),   # Mare Vaporum
+    (0.03, -0.04, 0.06, 0.04, 0.12),   # Sinus Medii
+    (0.10, -0.33, 0.12, 0.06, 0.13),   # (between Imbrium and Serenitatis)
+    (0.62, 0.04, 0.10, 0.12, 0.15),    # (Tranquillitatis to Fecunditatis)
+    (0.53, 0.13, 0.07, 0.10, 0.14),    # (Tranquillitatis to Nectaris)
+    (-0.45, 0.26, 0.12, 0.10, 0.14),   # (Nubium, Cognitum, Humorum, Procellarum)
 ]
-BRIGHT = [(-0.12, 0.72, 0.035, 0.30), (-0.30, -0.10, 0.028, 0.22), (-0.68, -0.27, 0.02, 0.32), (-0.55, -0.05, 0.018, 0.16)]
+# (u, v, radius, gain): Tycho, Copernicus, Kepler, Aristarchus, Proclus
+BRIGHT = [(-0.14, 0.69, 0.030, 0.20), (-0.34, -0.17, 0.026, 0.16), (-0.61, -0.14, 0.018, 0.12),
+          (-0.67, -0.40, 0.016, 0.14), (0.70, -0.28, 0.014, 0.12)]
+TYCHO = BRIGHT[0]
 
 
 def blur(a, sigma):
@@ -48,58 +57,64 @@ def smoothstep(e0, e1, x):
     return t * t * (3 - 2 * t)
 
 
-def render(lit_tint, mare_tint, shine_tint, halo, flatten=1.0, seed=3, shade=0.24, veil=1.0):
+def render(lit_tint, mare_tint, halo, flatten=1.0, gain=1.0, seed=3):
     rng = np.random.default_rng(seed)
     y, x = np.mgrid[0:S, 0:S].astype(np.float64)
     u = (x - S / 2 + 0.5) / R
     v = (y - S / 2 + 0.5) / (R * flatten)
     rr = np.sqrt(u ** 2 + v ** 2)
-    inside = rr <= 1
     nz = np.sqrt(np.clip(1 - rr ** 2, 0, 1))
 
-    # albedo: highlands, maria with ragged edges, bright craters, grain
-    wobble = blur(rng.standard_normal((S, S)), 14) ; wobble /= wobble.std()
-    albedo = np.full((S, S), 0.86)
+    def noise(sigma):
+        n = blur(rng.standard_normal((S, S)), sigma)
+        return n / n.std()
+
+    # albedo: highlands with soft mottling, merging maria with ragged edges, bright craters,
+    # Tycho's rays, small fresh craters, fine grain
+    wu, wv = 0.07 * noise(28), 0.07 * noise(28)                   # domain warp: organic outlines
+    edge = 0.12 * noise(10) + 0.06 * noise(4)
+    uw, vw = u + wu, v + wv
+    mask = np.zeros((S, S))
     for (cu, cv, rx, ry, depth) in MARIA:
-        d = np.sqrt(((u - cu) / rx) ** 2 + ((v - cv) / ry) ** 2) + 0.18 * wobble
-        albedo -= depth * (1 - smoothstep(0.75, 1.15, d))
-    for (cu, cv, r0, gain) in BRIGHT:
+        parts = [(cu, cv, rx, ry)] + [(cu + rng.uniform(-0.3, 0.3) * rx, cv + rng.uniform(-0.3, 0.3) * ry,
+                                        rx * rng.uniform(0.55, 0.85), ry * rng.uniform(0.55, 0.85)) for _ in range(3)]
+        for (pu, pv, px, py) in parts:
+            d = np.sqrt(((uw - pu) / px) ** 2 + ((vw - pv) / py) ** 2) + edge
+            mask = np.maximum(mask, depth * (1 - smoothstep(0.5, 1.15, d)))
+    mask = blur(mask, 3)
+    south = smoothstep(0.1, 0.7, v)                                 # the cratered southern highlands
+    albedo = 0.86 + 0.03 * noise(30) - 0.03 * south * np.abs(noise(9)) - mask * (0.9 + 0.2 * noise(8))
+    for (cu, cv, r0, g) in BRIGHT:
         d = np.sqrt((u - cu) ** 2 + (v - cv) ** 2)
-        albedo += gain * np.exp(-(d / r0) ** 2) + 0.35 * gain * np.exp(-(d / (r0 * 4)) ** 2)
-    grain = blur(rng.standard_normal((S, S)), 1.2); grain /= grain.std()
-    pits = blur(rng.standard_normal((S, S)), 3.5); pits /= pits.std()
-    albedo += 0.025 * grain + 0.03 * np.clip(pits, -3, 0) * 0.5
+        albedo += g * np.exp(-(d / r0) ** 2) + 0.35 * g * np.exp(-(d / (r0 * 4)) ** 2)
+    tu, tv = TYCHO[0], TYCHO[1]
+    td = np.sqrt((u - tu) ** 2 + (v - tv) ** 2)
+    ta = np.arctan2(v - tv, u - tu)
+    for ang, length, g in zip(rng.uniform(-np.pi, np.pi, 12), rng.uniform(0.4, 1.2, 12), rng.uniform(0.02, 0.045, 12)):
+        da = np.angle(np.exp(1j * (ta - ang)))                     # wrapped angle difference
+        albedo += g * np.exp(-(da * td / 0.02) ** 2) * np.exp(-td / length) * smoothstep(0.03, 0.08, td)
+    for _ in range(90):
+        r = np.sqrt(rng.uniform(0, 0.9)); th = rng.uniform(0, 2 * np.pi)
+        cu, cv, r0 = r * np.cos(th), r * np.sin(th), rng.uniform(0.006, 0.014)
+        albedo += rng.uniform(0.04, 0.10) * np.exp(-(((u - cu) ** 2 + (v - cv) ** 2) / r0 ** 2))
+    albedo += 0.008 * noise(1.0)
     albedo = np.clip(albedo, 0.3, 1.1)
 
-    # light: last quarter, slightly past (43 % lit), sun to the left and a little behind
-    alpha = np.radians(98)
-    L = np.array([-np.sin(alpha), 0.0, np.cos(alpha)])
-    mu0 = u * L[0] + v * L[1] + nz * L[2]
-    mu = nz
-    ls = np.where(mu0 > 0, 2 * mu0 / (mu0 + mu + 1e-6), 0)          # Lommel–Seeliger, ~1 across the lit disc
-    term = smoothstep(-0.03, 0.10, mu0)                               # soft terminator
-    lit = np.clip(ls, 0, 1.15) * term
-
-    lit_tint, mare_tint, shine_tint = (np.array(c, float) for c in (lit_tint, mare_tint, shine_tint))
-    t = np.clip((albedo - 0.45) / 0.55, 0, 1)[..., None]
-    surface = mare_tint * (1 - t) + lit_tint * t
-    rgb = surface * (np.clip(1.12 * lit * albedo / 0.86, 0, 1.18))[..., None]
-    rgb += shine_tint[None, None, :] * (0.032 * albedo * (1 - term))[..., None]       # earthshine, faint
+    # full moon, lit straight on: flat brightness, a hint of rim shading
+    rim = 0.92 + 0.08 * nz ** 0.35
+    t = np.clip((albedo - 0.5) / 0.36, 0, 1)[..., None]
+    surface = np.array(mare_tint, float) * (1 - t) + np.array(lit_tint, float) * t
+    rgb = surface * np.clip(gain * rim * albedo / 0.86, 0, 1.12)[..., None]
     disc_a = np.clip((1 + 0.9 / R - rr) * R / 1.8, 0, 1)
-    disc_a = np.where(inside | (disc_a > 0), disc_a, 0)
-    edge = disc_a.copy()
-    disc_a = disc_a * (shade + (1 - shade) * term)      # the unlit side lets the night sky through, like a faint silhouette
 
-    # halo centred on the lit part
-    hu, hv = u + 0.35, v
-    hd = np.clip(np.sqrt(hu ** 2 + hv ** 2) - 0.85, 0, None) * R
+    # halo around the whole disc
+    hd = np.clip(rr - 1.0, 0, None) * R
     h1 = halo[0] * np.exp(-hd / (0.16 * R))
     h2 = halo[1] * np.exp(-hd / (0.70 * R))
     h3 = halo[2] * np.exp(-hd / (2.0 * R))
     window = np.clip(1 - ((np.sqrt((x - S / 2) ** 2 + (y - S / 2) ** 2)) / (S / 2)) ** 2, 0, 1) ** 2
     h1, h2, h3 = h1 * window, h2 * window, h3 * window
     ga = 1 - (1 - h1) * (1 - h2) * (1 - h3)
-    ga = ga * (1 - edge * (1 - veil) * (1 - term))      # veil < 1 keeps the glow off the dark side
     gcol = np.array(halo[3], float)
 
     a = disc_a + (1 - disc_a) * ga
@@ -110,9 +125,8 @@ def render(lit_tint, mare_tint, shine_tint, halo, flatten=1.0, seed=3, shade=0.2
 
 if __name__ == '__main__':
     out = sys.argv[1] if len(sys.argv) > 1 else '.'
-    render(lit_tint=(244, 246, 252), mare_tint=(166, 172, 186), shine_tint=(120, 136, 176),
+    render(lit_tint=(244, 246, 252), mare_tint=(190, 196, 212),
            halo=(0.30, 0.16, 0.08, (206, 216, 255))).save(f'{out}/moon.png', optimize=True)
-    render(lit_tint=(255, 236, 206), mare_tint=(190, 168, 150), shine_tint=(130, 120, 150),
-           halo=(0.34, 0.20, 0.11, (255, 218, 182)), flatten=0.95, seed=5,
-           shade=0.16, veil=0.45).save(f'{out}/moon-low.png', optimize=True)   # seen large: a quieter dark side
+    render(lit_tint=(255, 236, 206), mare_tint=(205, 180, 160),
+           halo=(0.34, 0.20, 0.11, (255, 218, 182)), flatten=0.95).save(f'{out}/moon-low.png', optimize=True)
     print('ok')
