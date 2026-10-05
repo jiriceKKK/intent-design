@@ -61,10 +61,10 @@ def fetch(url):
         return r.read()
 
 
-def embedded_font():
+def embedded_font(font_css=FONT_CSS):
     """@font-face rules for the latin and latin-ext subsets, with the woff2 files inlined."""
     try:
-        css = fetch(FONT_CSS).decode()
+        css = fetch(font_css).decode()
         rules = []
         for block in re.findall(r'/\* (latin(?:-ext)?) \*/\s*(@font-face \{.*?\})', css, re.S):
             rule = block[1]
@@ -75,7 +75,7 @@ def embedded_font():
             return '<style>\n' + '\n'.join(rules) + '\n</style>'
     except Exception as e:  # offline: fall back to the hosted font
         print('font not embedded:', e, file=sys.stderr)
-    return f'<link rel="stylesheet" href="{FONT_CSS.replace("&", "&amp;")}">'
+    return f'<link rel="stylesheet" href="{font_css.replace("&", "&amp;")}">'
 
 
 def board(name, images):
