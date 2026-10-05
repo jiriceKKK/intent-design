@@ -1,8 +1,11 @@
-// Renders the Intent app icon from Daylight's day circle: the sun's path cut by the horizon,
-// the rest of today as a bright arc with one dot for the next step, and the sun on the path
-// (light appearance) or the white full moon (dark appearance). Also a tinted (grayscale)
-// variant for the tinted Home Screen, separate layers for Icon Composer, and a preview sheet.
-//   node tools/icon.mjs        → icon/Intent-icon-{light,dark,tinted}.png, icon/layers/*, icon/Intent-icon-preview.png
+// Renders the Intent app icon: Daylight's day circle as a flat, bold symbol. One thick ring is
+// the day's path: the part of the day already gone in the neutral colour, the rest of today in
+// the accent colour, night in violet; the night half of the circle is filled and two short
+// marks carry the horizon out of the ring. The sun (light appearance) or the full moon (dark)
+// sits on the ring at "now", cut free by a small gap. No glows; the backgrounds are almost flat.
+// Also a tinted (grayscale) variant, SVG masters, separate layers for Icon Composer and a
+// preview sheet.
+//   node tools/icon.mjs        → icon/Intent-icon-{light,dark,tinted}.{png,svg}, icon/layers/*, icon/Intent-icon-preview.png
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,100 +15,81 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const out = path.join(root, 'icon');
 const layersDir = path.join(out, 'layers');
-const project = path.join(root, 'canvas', 'project');
+fs.rmSync(layersDir, { recursive: true, force: true });
 fs.mkdirSync(layersDir, { recursive: true });
 
 // geometry (1024 grid)
-const S = 1024, cx = 512, cy = 536, R = 318;
-const hy = cy + 20;                                    // horizon a little below the centre: a bit more day than night
+const S = 1024, cx = 512, cy = 530, R = 286, W = 68;      // ring centre line and stroke
+const BODY = 96, GAP = 26, aBody = -45;                     // sun / moon disc, the gap around it, its place on the ring
+const HZ_IN = R + W / 2 + 20, HZ_OUT = R + W / 2 + 104, HZ_W = 30;   // horizon marks outside the ring
 const deg = Math.PI / 180;
 const at = (a) => [cx + R * Math.cos(a * deg), cy + R * Math.sin(a * deg)];   // 0° = right, -90° = top
 const f = (n) => n.toFixed(1);
 const P = (a) => at(a).map(f).join(' ');
-const aSet = Math.asin((hy - cy) / R) / deg, aRise = 180 - aSet;
-const aBody = -45, aNext = -14;
 const arc = (a0, a1) => `M ${P(a0)} A ${R} ${R} 0 ${Math.abs(a1 - a0) > 180 ? 1 : 0} 1 ${P(a1)}`;
-const [bx, by] = at(aBody), [nx, ny] = at(aNext), [sx, sy] = at(aSet);
-const BODY_R = 72, BODY_IMG = BODY_R * 1024 / 128;      // sun.png / moon.png: disc radius is 1/8 of the image
+const [bx, by] = at(aBody);
+const MARIA = [[-0.3, -0.08, 0.3, 0.38], [0.3, -0.3, 0.2, 0.16], [0.42, 0.2, 0.12, 0.13]];   // simplified and asymmetric (never a face), disc units
 
-const rgba = (c, a = c[3]) => `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${a})`;
 const PALETTES = {
-  light: {   // the light theme's sky, deeper: icons sit among saturated neighbours
-    bg: [[0, '#8FB0DE'], [0.52, '#BDB7E2'], [1, '#F3C6AA']],
-    glow: [255, 214, 160, 0.8], glow2: [250, 216, 196, 0.5],
-    below: ['#3E3A8C', 0.2], horizon: [255, 255, 255, 0.55], past: 'rgba(255, 255, 255, 0.72)',
-    rest: ['#FFB25E', '#F07E6E'], night: ['#4B4A9E', 0.75, 0.2], dot: ['#1D2433', '#FFFFFF'],
-    body: 'sun.png', bodyFilter: 'saturate(1.3)',
+  light: {
+    bg: ['#DCE6F5', '#F6E7DD'], past: '#1D2433', rest: '#F29A4A', night: '#7474C4', fill: 'rgba(116, 116, 196, 0.16)',
+    horizon: '#1D2433', body: '#F29A4A', maria: null,
   },
   dark: {
-    bg: [[0, '#0E111C'], [0.5, '#161A2D'], [1, '#241F3A']],
-    glow: [196, 206, 245, 0.3], glow2: [120, 104, 170, 0.3],
-    below: ['#8C8CE0', 0.16], horizon: [255, 255, 255, 0.3], past: 'rgba(255, 255, 255, 0.42)',
-    rest: ['#F3F5FD', '#B4B4EE'], night: ['#A4A4E8', 0.85, 0.15], dot: ['#F3F4F9', '#161A2D'],
-    body: 'moon.png', bodyFilter: 'contrast(0.8) brightness(1.08)',   // softer maria at icon size
+    bg: ['#141827', '#1D1C30'], past: '#8A90A8', rest: '#F3F4F9', night: '#7E7ED0', fill: 'rgba(126, 126, 208, 0.18)',
+    horizon: '#8A90A8', body: '#F3F4F9', maria: '#DADDE8',
   },
   tinted: {
-    bg: [[0, '#000000'], [1, '#000000']],
-    glow: [255, 255, 255, 0.12], glow2: [255, 255, 255, 0],
-    below: ['#FFFFFF', 0.1], horizon: [255, 255, 255, 0.3], past: 'rgba(255, 255, 255, 0.45)',
-    rest: ['#FFFFFF', '#FFFFFF'], night: ['#FFFFFF', 0.6, 0.1], dot: ['#FFFFFF', '#000000'],
-    body: 'moon.png', bodyFilter: 'grayscale(1) contrast(0.8) brightness(1.1)',
+    bg: ['#000000', '#000000'], past: '#8C8C8C', rest: '#FFFFFF', night: '#6A6A6A', fill: 'rgba(255, 255, 255, 0.1)',
+    horizon: '#8C8C8C', body: '#FFFFFF', maria: '#D0D0D0',
   },
 };
 
-function backgroundSvg(p) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="${S}" gradientUnits="userSpaceOnUse">${p.bg.map(([o, c]) => `<stop offset="${o}" stop-color="${c}"/>`).join('')}</linearGradient>
-    <radialGradient id="glow" cx="${f(bx)}" cy="${f(by)}" r="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${rgba(p.glow)}"/><stop offset="1" stop-color="${rgba(p.glow, 0)}"/></radialGradient>
-    <radialGradient id="glow2" cx="0" cy="${S}" r="700" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${rgba(p.glow2)}"/><stop offset="1" stop-color="${rgba(p.glow2, 0)}"/></radialGradient>
-  </defs>
-  <rect width="${S}" height="${S}" fill="url(#bg)"/>
-  <rect width="${S}" height="${S}" fill="url(#glow2)"/>
-  <rect width="${S}" height="${S}" fill="url(#glow)"/>
-</svg>`;
-}
+// background colour at a height, so the gap around the sun or moon matches what is behind it
+const hex = (c) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16));
+const mix = (a, b, t) => '#' + hex(a).map((v, i) => Math.round(v + (hex(b)[i] - v) * t).toString(16).padStart(2, '0')).join('').toUpperCase();
+const svg = (body) => `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">\n${body}\n</svg>\n`;
 
-function pathSvg(p) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}" fill="none">
-  <defs>
-    <linearGradient id="below" x1="0" y1="${hy}" x2="0" y2="${cy + R}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${p.below[0]}" stop-opacity="${p.below[1]}"/><stop offset="1" stop-color="${p.below[0]}" stop-opacity="0"/></linearGradient>
-    <linearGradient id="horizon" x1="0" y1="0" x2="${S}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${rgba(p.horizon, 0)}"/><stop offset="0.16" stop-color="${rgba(p.horizon)}"/><stop offset="0.84" stop-color="${rgba(p.horizon)}"/><stop offset="1" stop-color="${rgba(p.horizon, 0)}"/></linearGradient>
-    <linearGradient id="rest" x1="${f(bx)}" y1="${f(by)}" x2="${f(sx)}" y2="${f(sy)}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${p.rest[0]}"/><stop offset="1" stop-color="${p.rest[1]}"/></linearGradient>
-    <linearGradient id="night" x1="0" y1="${hy}" x2="0" y2="${cy + R}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${p.night[0]}" stop-opacity="${p.night[1]}"/><stop offset="1" stop-color="${p.night[0]}" stop-opacity="${p.night[2]}"/></linearGradient>
-  </defs>
-  <path d="${arc(aSet, aRise)} Z" fill="url(#below)"/>
-  <path d="M 0 ${hy} H ${S}" stroke="url(#horizon)" stroke-width="7"/>
-  <path d="${arc(aRise, aBody + 360)}" stroke="${p.past}" stroke-width="22" stroke-linecap="round"/>
-  <path d="${arc(aSet, aRise)}" stroke="url(#night)" stroke-width="24" stroke-linecap="round"/>
-  <path d="${arc(aBody, aSet)}" stroke="url(#rest)" stroke-width="36" stroke-linecap="round"/>
-  <circle cx="${f(nx)}" cy="${f(ny)}" r="25" fill="${p.dot[0]}" stroke="${p.dot[1]}" stroke-width="9"/>
-</svg>`;
+function background(p) {
+  return `  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="${S}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${p.bg[0]}"/><stop offset="1" stop-color="${p.bg[1]}"/></linearGradient></defs>
+  <rect width="${S}" height="${S}" fill="url(#bg)"/>`;
 }
-
-const dataUri = (file) => 'data:image/png;base64,' + fs.readFileSync(file).toString('base64');
-const bodyImg = (p) => `<img src="${dataUri(path.join(project, p.body))}" style="position:absolute;left:${f(bx - BODY_IMG / 2)}px;top:${f(by - BODY_IMG / 2)}px;width:${BODY_IMG}px;height:${BODY_IMG}px;filter:${p.bodyFilter}">`;
-const page = (inner) => `<!doctype html><html><body style="margin:0;background:transparent"><div id="icon" style="position:relative;width:${S}px;height:${S}px;overflow:hidden">${inner}</div></body></html>`;
-const layer = (svg) => `<div style="position:absolute;inset:0">${svg}</div>`;
+function symbol(p) {
+  return `  <path d="${arc(0, 180)} Z" fill="${p.fill}"/>
+  <g fill="none" stroke-width="${W}">
+    <path d="${arc(180, aBody + 360)}" stroke="${p.past}"/>
+    <path d="${arc(aBody, 0)}" stroke="${p.rest}"/>
+    <path d="${arc(0, 180)}" stroke="${p.night}"/>
+  </g>
+  <path d="M ${cx - HZ_OUT} ${cy} H ${cx - HZ_IN} M ${cx + HZ_IN} ${cy} H ${cx + HZ_OUT}" stroke="${p.horizon}" stroke-width="${HZ_W}" stroke-linecap="round"/>`;
+}
+function body(p, cut = true) {
+  const gap = cut ? `<circle cx="${f(bx)}" cy="${f(by)}" r="${BODY + GAP}" fill="${mix(p.bg[0], p.bg[1], by / S)}"/>\n  ` : '';
+  const maria = p.maria ? MARIA.map(([u, v, rx, ry]) => `\n  <ellipse cx="${f(bx + u * BODY)}" cy="${f(by + v * BODY)}" rx="${f(rx * BODY)}" ry="${f(ry * BODY)}" fill="${p.maria}"/>`).join('') : '';
+  return `  ${gap}<circle cx="${f(bx)}" cy="${f(by)}" r="${BODY}" fill="${p.body}"/>${maria}`;
+}
 
 const browser = await chromium.launch();
 const tab = await browser.newPage({ viewport: { width: S, height: S } });
-async function shoot(html, file, transparent = false) {
-  await tab.setContent(html, { waitUntil: 'load' });
+async function png(svgText, file, transparent = false) {
+  await tab.setContent(`<!doctype html><body style="margin:0;background:transparent"><div id="icon" style="width:${S}px;height:${S}px">${svgText}</div></body>`);
   await (await tab.$('#icon')).screenshot({ path: file, omitBackground: transparent });
 }
+const dataUri = (file) => 'data:image/png;base64,' + fs.readFileSync(file).toString('base64');
 
 const icons = {};
 for (const [name, p] of Object.entries(PALETTES)) {
-  const file = path.join(out, `Intent-icon-${name}.png`);
-  await shoot(page(layer(backgroundSvg(p)) + layer(pathSvg(p)) + bodyImg(p)), file);
-  icons[name] = file;
+  const full = svg([background(p), symbol(p), body(p)].join('\n'));
+  fs.writeFileSync(path.join(out, `Intent-icon-${name}.svg`), full);
+  icons[name] = path.join(out, `Intent-icon-${name}.png`);
+  await png(full, icons[name]);
   if (name === 'tinted') continue;
-  fs.writeFileSync(path.join(layersDir, `1-background-${name}.svg`), backgroundSvg(p) + '\n');
-  fs.writeFileSync(path.join(layersDir, `2-path-${name}.svg`), pathSvg(p) + '\n');
-  await shoot(page(layer(backgroundSvg(p))), path.join(layersDir, `1-background-${name}.png`));
-  await shoot(page(layer(pathSvg(p))), path.join(layersDir, `2-path-${name}.png`), true);
-  await shoot(page(bodyImg(p)), path.join(layersDir, `3-${name === 'light' ? 'sun' : 'moon'}.png`), true);
+  const layers = { [`1-background-${name}`]: [background(p), false], [`2-day-circle-${name}`]: [symbol(p), true],
+                   [`3-${name === 'light' ? 'sun' : 'moon'}`]: [body(p, false), true] };
+  for (const [file, [content, transparent]] of Object.entries(layers)) {
+    fs.writeFileSync(path.join(layersDir, `${file}.svg`), svg(content));
+    await png(svg(content), path.join(layersDir, `${file}.png`), transparent);
+  }
 }
 
 // preview sheet: the three appearances, both Home Screens, and real pixel sizes
@@ -138,7 +122,7 @@ h2{margin:44px 0 16px;font-size:18px}
 .ladder figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}.ladder figcaption{font-size:12px;opacity:0.75}
 </style></head><body><div id="icon">
 <h1>Intent — app icon</h1>
-<p class="intro">Daylight’s day circle: the horizon, the rest of today as a bright arc with one dot for the next step, and the sun marking now. By night the white full moon takes its place. iOS switches between the two with the Home Screen’s light and dark appearance; the tinted version is used on a tinted Home Screen.</p>
+<p class="intro">Daylight’s day circle as a flat, bold symbol: one thick ring for the day (what is gone, the rest of today in the accent colour, night in violet), the night half filled, the horizon carried out of the ring, and the sun at now. By night the full moon takes its place. iOS switches between the two with the Home Screen’s light and dark appearance; the tinted version is used on a tinted Home Screen.</p>
 <div class="big">
   <figure>${img('light', 300, 'box-shadow:0 24px 50px -24px rgba(40,46,80,0.45)')}<figcaption>Light<small>default, App Store</small></figcaption></figure>
   <figure>${img('dark', 300, 'box-shadow:0 24px 50px -24px rgba(0,0,0,0.6)')}<figcaption>Dark<small>dark Home Screen</small></figcaption></figure>

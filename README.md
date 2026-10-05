@@ -25,7 +25,7 @@ Tradeoff: with every screen dark, the light-planning / dark-focus contrast of th
 
 ### App icon
 
-Daylight's day circle as the mark: the horizon, the rest of today as a bright arc with one dot for the next step, and the sun at "now" (light) or the white full moon (dark). On iOS 18 and later the system switches between the two with the Home Screen's light or dark appearance; the tinted version is the grayscale source iOS colours on a tinted Home Screen. For iOS 26, the separate layers in `icon/layers/` can be put together in Icon Composer so the system can add its glass effects.
+Daylight's day circle as a flat, bold symbol: one thick ring for the day (the part already gone, the rest of today in the accent colour, night in violet), the night half of the circle filled, two short marks carrying the horizon out of the ring, and the sun at "now", cut free from the ring by a small gap. In the dark icon the full moon takes the sun's place. No glows, and the backgrounds are almost flat, so the shape stays clear down to the smallest sizes. On iOS 18 and later the system switches between the two with the Home Screen's light or dark appearance; the tinted version is the grayscale source iOS colours on a tinted Home Screen. For iOS 26, the separate layers in `icon/layers/` can be put together in Icon Composer so the system can add its glass effects.
 
 ## Shared rules (all five)
 
@@ -43,7 +43,7 @@ Daylight's day circle as the mark: the horizon, the rest of today as a bright ar
 - `tools/shoot.sh` — renders boards to PNG with Playwright. It needs the canvas runtime (`support.js`, served by the Design artifact type and not included here): `DC_RUNTIME=/path/to/support.js ./tools/shoot.sh --all`.
 - `tools/geometry.py` — sample data and exact geometry for charts and progress marks. `tools/sheet.py` — contact sheets.
 - `daylight/Intent-Daylight.html` — one self-contained file with Daylight in both appearances, sun (light) and moon (dark), seven screens each; styles, images and font are embedded, so it opens offline in any browser. `daylight/Intent-Daylight.png` is the same page as an image. Rebuild both with `python3 tools/daylight_file.py daylight/Intent-Daylight.html`.
-- `icon/` — the app icon at 1024 × 1024 without transparency: `Intent-icon-light.png` (default, also the App Store icon), `Intent-icon-dark.png`, `Intent-icon-tinted.png`; `Intent-icon-preview.png` shows them on light and dark Home Screens and at real pixel sizes; `layers/` holds the background, the path and the sun or moon as separate SVG/PNG layers. Rebuild with `node tools/icon.mjs`.
+- `icon/` — the app icon at 1024 × 1024 without transparency: `Intent-icon-light.png` (default, also the App Store icon), `Intent-icon-dark.png`, `Intent-icon-tinted.png`, each with an SVG master; `Intent-icon-preview.png` shows them on light and dark Home Screens and at real pixel sizes; `layers/` holds the background, the day circle and the sun or moon as separate SVG/PNG layers. Rebuild with `node tools/icon.mjs`.
 - `tools/sun.py`, `tools/moon.py` — procedural renders of the Daylight sun and the (always full) moon (`python3 tools/moon.py canvas/project` writes `moon.png` and `moon-low.png`).
 
 ## Hodnocení (česky)
