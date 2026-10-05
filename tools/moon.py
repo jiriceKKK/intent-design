@@ -126,6 +126,6 @@ def render(lit_tint, mare_tint, halo, flatten=1.0, gain=1.0, seed=3):
 if __name__ == '__main__':
     out = sys.argv[1] if len(sys.argv) > 1 else '.'
     white = dict(lit_tint=(246, 247, 250), mare_tint=(184, 187, 196))      # white moonlight, no warm cast
-    render(halo=(0.30, 0.16, 0.08, (224, 228, 238)), **white).save(f'{out}/moon.png', optimize=True)
+    render(halo=(0.14, 0.06, 0.025, (224, 228, 238)), **white).save(f'{out}/moon.png', optimize=True)   # quiet halo, like the sun's bloom
     render(halo=(0.34, 0.20, 0.11, (224, 228, 238)), flatten=0.95, **white).save(f'{out}/moon-low.png', optimize=True)
     print('ok')
